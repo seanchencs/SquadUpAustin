@@ -89,10 +89,49 @@
                     <view key="view" contentMode="scaleToFill" id="E5C-9h-J5v">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="25" translatesAutoresizingMaskIntoConstraints="NO" id="7cr-WF-HPn">
+                                <rect key="frame" x="25" y="296" width="364" height="250"/>
+                                <subviews>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Email" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="Ldz-t7-wva">
+                                        <rect key="frame" x="0.0" y="0.0" width="364" height="66.5"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" keyboardType="emailAddress" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="email"/>
+                                    </textField>
+                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Password" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="EiS-ga-IDs">
+                                        <rect key="frame" x="0.0" y="91.5" width="364" height="67"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocorrectionType="no" spellCheckingType="no" secureTextEntry="YES" smartDashesType="no" smartInsertDeleteType="no" smartQuotesType="no" textContentType="new-password"/>
+                                    </textField>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XdB-xh-NHY">
+                                        <rect key="frame" x="0.0" y="183.5" width="364" height="66.5"/>
+                                        <state key="normal" title="Login"/>
+                                        <connections>
+                                            <action selector="loginButtonPressed:" destination="4X4-Qn-PQX" eventType="touchUpInside" id="Ytg-oc-Cqp"/>
+                                            <action selector="registerButtonPressed:" destination="cQT-Pk-aIw" eventType="touchUpInside" id="n5K-wi-UED"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="250" id="f6a-Id-aJg"/>
+                                </constraints>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="bab-oj-Kud"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="7cr-WF-HPn" firstAttribute="centerX" secondItem="E5C-9h-J5v" secondAttribute="centerX" id="F0t-py-lgx"/>
+                            <constraint firstItem="7cr-WF-HPn" firstAttribute="leading" secondItem="bab-oj-Kud" secondAttribute="leading" constant="25" id="GTF-oa-AYk"/>
+                            <constraint firstItem="bab-oj-Kud" firstAttribute="trailing" secondItem="7cr-WF-HPn" secondAttribute="trailing" constant="25" id="WoU-ba-TfD"/>
+                            <constraint firstItem="7cr-WF-HPn" firstAttribute="centerY" secondItem="E5C-9h-J5v" secondAttribute="centerY" id="zdL-Hp-erD"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="PGb-Ta-48t"/>
+                    <connections>
+                        <outlet property="emailField" destination="Ldz-t7-wva" id="us7-F9-GJU"/>
+                        <outlet property="passwordField" destination="EiS-ga-IDs" id="5Pm-6h-lq8"/>
+                        <segue destination="BYZ-38-t0r" kind="show" identifier="LoginToMainSegue" id="Fb1-8P-MVb"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zm5-di-bj2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -159,6 +198,9 @@
             <point key="canvasLocation" x="-1126.0869565217392" y="-132.58928571428572"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Fb1-8P-MVb"/>
+    </inferredMetricsTieBreakers>
     <resources>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
