@@ -3,13 +3,16 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 50;
+	objectVersion = 51;
 	objects = {
 
 /* Begin PBXBuildFile section */
+		145CE926253F9075007C77C2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145CE925253F9075007C77C2 /* LoginViewController.swift */; };
+		145CE929253F918C007C77C2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145CE928253F918C007C77C2 /* RegisterViewController.swift */; };
+		145CE92C253F9199007C77C2 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145CE92B253F9199007C77C2 /* WelcomeViewController.swift */; };
 		14961D3C253A20EE00E721DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14961D3B253A20EE00E721DC /* AppDelegate.swift */; };
 		14961D3E253A20EE00E721DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14961D3D253A20EE00E721DC /* SceneDelegate.swift */; };
-		14961D40253A20EE00E721DC /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14961D3F253A20EE00E721DC /* ViewController.swift */; };
+		14961D40253A20EE00E721DC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14961D3F253A20EE00E721DC /* MainViewController.swift */; };
 		14961D43253A20EE00E721DC /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14961D41253A20EE00E721DC /* Main.storyboard */; };
 		14961D46253A20EE00E721DC /* SquadUpAustin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14961D44253A20EE00E721DC /* SquadUpAustin.xcdatamodeld */; };
 		14961D48253A20F200E721DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14961D47253A20F200E721DC /* Assets.xcassets */; };
@@ -20,10 +23,13 @@
 
 /* Begin PBXFileReference section */
 		1164F026CD38579E93434CD7 /* Pods-SquadUpAustin.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SquadUpAustin.debug.xcconfig"; path = "Target Support Files/Pods-SquadUpAustin/Pods-SquadUpAustin.debug.xcconfig"; sourceTree = "<group>"; };
+		145CE925253F9075007C77C2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
+		145CE928253F918C007C77C2 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
+		145CE92B253F9199007C77C2 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
 		14961D38253A20EE00E721DC /* SquadUpAustin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SquadUpAustin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14961D3B253A20EE00E721DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14961D3D253A20EE00E721DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		14961D3F253A20EE00E721DC /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		14961D3F253A20EE00E721DC /* MainViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewController.swift; sourceTree = "<group>"; };
 		14961D42253A20EE00E721DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		14961D45253A20EE00E721DC /* SquadUpAustin.xcdatamodel */ = {isa = PBXFileReference; lastKnownFileType = wrapper.xcdatamodel; path = SquadUpAustin.xcdatamodel; sourceTree = "<group>"; };
 		14961D47253A20F200E721DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -70,8 +76,11 @@
 				14CB34F2253E5EDA002BAE9B /* GoogleService-Info.plist */,
 				14961D3B253A20EE00E721DC /* AppDelegate.swift */,
 				14961D3D253A20EE00E721DC /* SceneDelegate.swift */,
-				14961D3F253A20EE00E721DC /* ViewController.swift */,
+				14961D3F253A20EE00E721DC /* MainViewController.swift */,
 				14961D41253A20EE00E721DC /* Main.storyboard */,
+				145CE925253F9075007C77C2 /* LoginViewController.swift */,
+				145CE928253F918C007C77C2 /* RegisterViewController.swift */,
+				145CE92B253F9199007C77C2 /* WelcomeViewController.swift */,
 				14961D47253A20F200E721DC /* Assets.xcassets */,
 				14961D49253A20F200E721DC /* LaunchScreen.storyboard */,
 				14961D4C253A20F200E721DC /* Info.plist */,
@@ -86,7 +95,6 @@
 				1164F026CD38579E93434CD7 /* Pods-SquadUpAustin.debug.xcconfig */,
 				DC5CAE87BC019E1B8F946552 /* Pods-SquadUpAustin.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -127,7 +135,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 1170;
-				LastUpgradeCheck = 1170;
+				LastUpgradeCheck = 1200;
 				ORGANIZATIONNAME = "Group 4";
 				TargetAttributes = {
 					14961D37253A20EE00E721DC = {
@@ -214,10 +222,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				14961D40253A20EE00E721DC /* ViewController.swift in Sources */,
+				14961D40253A20EE00E721DC /* MainViewController.swift in Sources */,
 				14961D46253A20EE00E721DC /* SquadUpAustin.xcdatamodeld in Sources */,
 				14961D3C253A20EE00E721DC /* AppDelegate.swift in Sources */,
+				145CE929253F918C007C77C2 /* RegisterViewController.swift in Sources */,
+				145CE926253F9075007C77C2 /* LoginViewController.swift in Sources */,
 				14961D3E253A20EE00E721DC /* SceneDelegate.swift in Sources */,
+				145CE92C253F9199007C77C2 /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -269,6 +280,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
@@ -329,6 +341,7 @@
 				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
 				CLANG_WARN_STRICT_PROTOTYPES = YES;
 				CLANG_WARN_SUSPICIOUS_MOVE = YES;
