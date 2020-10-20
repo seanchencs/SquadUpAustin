@@ -18,7 +18,7 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Main View Controller" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="3" baselineAdjustment="alignBaselines" adjustsFontForContentSizeCategory="YES" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hzG-OV-Uxo">
-                                <rect key="frame" x="5" y="5" width="404" height="798"/>
+                                <rect key="frame" x="5" y="61" width="404" height="742"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="80"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -39,7 +39,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="142" y="129"/>
+            <point key="canvasLocation" x="1050.7246376811595" y="128.57142857142856"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="IHm-i4-R4l">
@@ -130,7 +130,7 @@
                     <connections>
                         <outlet property="emailField" destination="Ldz-t7-wva" id="us7-F9-GJU"/>
                         <outlet property="passwordField" destination="EiS-ga-IDs" id="5Pm-6h-lq8"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="LoginToMainSegue" id="Fb1-8P-MVb"/>
+                        <segue destination="2N3-cs-8fV" kind="show" identifier="LoginToMainSegue" id="Fb1-8P-MVb"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zm5-di-bj2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -190,12 +190,31 @@
                         <outlet property="confirmPasswordField" destination="OeK-Qt-lj9" id="ZJa-u0-XOG"/>
                         <outlet property="emailField" destination="sTE-Ek-u3a" id="Y0h-6b-wgl"/>
                         <outlet property="passwordField" destination="9Um-RJ-UGR" id="4Xf-jE-ywz"/>
-                        <segue destination="BYZ-38-t0r" kind="show" identifier="RegisterToMainSegue" id="Joc-WF-hwr"/>
+                        <segue destination="2N3-cs-8fV" kind="show" identifier="RegisterToMainSegue" id="Joc-WF-hwr"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dDD-Js-gBG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="-1126.0869565217392" y="-132.58928571428572"/>
+        </scene>
+        <!--Navigation Controller-->
+        <scene sceneID="nTK-uE-bJm">
+            <objects>
+                <navigationController automaticallyAdjustsScrollViewInsets="NO" id="2N3-cs-8fV" sceneMemberID="viewController">
+                    <toolbarItems/>
+                    <navigationItem key="navigationItem" id="Cv3-TF-Kwc"/>
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hQH-pK-mbB">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
+                        <autoresizingMask key="autoresizingMask"/>
+                    </navigationBar>
+                    <nil name="viewControllers"/>
+                    <connections>
+                        <segue destination="BYZ-38-t0r" kind="relationship" relationship="rootViewController" id="ulv-3n-t2j"/>
+                    </connections>
+                </navigationController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XCe-rM-Ffu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="140.57971014492756" y="128.57142857142856"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
