@@ -1,0 +1,36 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>CLIENT_ID</key>
+	<string>128864971044-8lkj9kuun63ig621htevs85pm023gvlo.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.128864971044-8lkj9kuun63ig621htevs85pm023gvlo</string>
+	<key>API_KEY</key>
+	<string>AIzaSyAlVVXBmUbpe2ZLUEjCAoy0rbVSM1fV4fo</string>
+	<key>GCM_SENDER_ID</key>
+	<string>128864971044</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>group4.SquadUpAustin</string>
+	<key>PROJECT_ID</key>
+	<string>squadupaustin</string>
+	<key>STORAGE_BUCKET</key>
+	<string>squadupaustin.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<false></false>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false></false>
+	<key>IS_APPINVITE_ENABLED</key>
+	<true></true>
+	<key>IS_GCM_ENABLED</key>
+	<true></true>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true></true>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:128864971044:ios:8f2958f18d34eecc55ebb1</string>
+	<key>DATABASE_URL</key>
+	<string>https://squadupaustin.firebaseio.com</string>
+</dict>
+</plist>
