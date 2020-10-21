@@ -18,6 +18,8 @@
 		14961D48253A20F200E721DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14961D47253A20F200E721DC /* Assets.xcassets */; };
 		14961D4B253A20F200E721DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14961D49253A20F200E721DC /* LaunchScreen.storyboard */; };
 		14CB34F3253E5EDA002BAE9B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14CB34F2253E5EDA002BAE9B /* GoogleService-Info.plist */; };
+		500198D02540E7FC0040D3BB /* CreateGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500198CF2540E7FC0040D3BB /* CreateGameViewController.swift */; };
+		500198D22540E9190040D3BB /* SelectGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500198D12540E9190040D3BB /* SelectGameViewController.swift */; };
 		687E0BD5FF8F5FB7FD16E55E /* Pods_SquadUpAustin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 532FEADF36F442A8757CA8DE /* Pods_SquadUpAustin.framework */; };
 /* End PBXBuildFile section */
 
@@ -36,6 +38,8 @@
 		14961D4A253A20F200E721DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14961D4C253A20F200E721DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14CB34F2253E5EDA002BAE9B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		500198CF2540E7FC0040D3BB /* CreateGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameViewController.swift; sourceTree = "<group>"; };
+		500198D12540E9190040D3BB /* SelectGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGameViewController.swift; sourceTree = "<group>"; };
 		532FEADF36F442A8757CA8DE /* Pods_SquadUpAustin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SquadUpAustin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		DC5CAE87BC019E1B8F946552 /* Pods-SquadUpAustin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SquadUpAustin.release.xcconfig"; path = "Target Support Files/Pods-SquadUpAustin/Pods-SquadUpAustin.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -77,6 +81,8 @@
 				14961D3B253A20EE00E721DC /* AppDelegate.swift */,
 				14961D3D253A20EE00E721DC /* SceneDelegate.swift */,
 				14961D3F253A20EE00E721DC /* MainViewController.swift */,
+				500198D12540E9190040D3BB /* SelectGameViewController.swift */,
+				500198CF2540E7FC0040D3BB /* CreateGameViewController.swift */,
 				145CE925253F9075007C77C2 /* LoginViewController.swift */,
 				145CE928253F918C007C77C2 /* RegisterViewController.swift */,
 				145CE92B253F9199007C77C2 /* WelcomeViewController.swift */,
@@ -226,8 +232,10 @@
 				14961D46253A20EE00E721DC /* SquadUpAustin.xcdatamodeld in Sources */,
 				14961D3C253A20EE00E721DC /* AppDelegate.swift in Sources */,
 				145CE929253F918C007C77C2 /* RegisterViewController.swift in Sources */,
+				500198D22540E9190040D3BB /* SelectGameViewController.swift in Sources */,
 				145CE926253F9075007C77C2 /* LoginViewController.swift in Sources */,
 				14961D3E253A20EE00E721DC /* SceneDelegate.swift in Sources */,
+				500198D02540E7FC0040D3BB /* CreateGameViewController.swift in Sources */,
 				145CE92C253F9199007C77C2 /* WelcomeViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -377,6 +385,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SquadUpAustin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -395,6 +404,7 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CODE_SIGN_STYLE = Automatic;
 				INFOPLIST_FILE = SquadUpAustin/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",

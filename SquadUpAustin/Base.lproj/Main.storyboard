@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="Z8o-m9-40b">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="15702" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" useSafeAreas="YES" colorMatched="YES" initialViewController="2N3-cs-8fV">
     <device id="retina6_1" orientation="portrait" appearance="light"/>
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="15704"/>
@@ -15,38 +15,108 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="098-MT-owk">
-                                <rect key="frame" x="20" y="88" width="374" height="688"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" fixedFrame="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="-1" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="peH-8C-PJ0">
+                                <rect key="frame" x="20" y="88" width="374" height="710"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                                <prototypes>
+                                    <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellIdentifier" id="ujE-U7-HOu">
+                                        <rect key="frame" x="0.0" y="28" width="374" height="44"/>
+                                        <autoresizingMask key="autoresizingMask"/>
+                                        <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" insetsLayoutMarginsFromSafeArea="NO" tableViewCell="ujE-U7-HOu" id="zXK-g3-X2Q">
+                                            <rect key="frame" x="0.0" y="0.0" width="374" height="44"/>
+                                            <autoresizingMask key="autoresizingMask"/>
+                                        </tableViewCellContentView>
+                                        <connections>
+                                            <segue destination="Yoh-Be-QEB" kind="show" identifier="selectGameSegue" id="XXH-gE-zc0"/>
+                                        </connections>
+                                    </tableViewCell>
+                                </prototypes>
                             </tableView>
-                            <stackView opaque="NO" contentMode="scaleToFill" fixedFrame="YES" spacing="85" translatesAutoresizingMaskIntoConstraints="NO" id="okv-ZI-NTc">
-                                <rect key="frame" x="20" y="803" width="374" height="22"/>
-                                <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1mC-aQ-OfP" userLabel="upcomingGamesBtn">
-                                        <rect key="frame" x="0.0" y="0.0" width="75" height="22"/>
-                                        <state key="normal" title="Button" image="list.bullet" catalog="system"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iuL-52-VfA" userLabel="createAGameBtn">
-                                        <rect key="frame" x="160" y="0.0" width="72" height="22"/>
-                                        <state key="normal" title="Button" image="plus" catalog="system"/>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vvf-ns-cqT" userLabel="profileBtn">
-                                        <rect key="frame" x="317" y="0.0" width="57" height="22"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="12"/>
-                                        <state key="normal" title="Profile" image="person.circle" catalog="system"/>
-                                    </button>
-                                </subviews>
-                            </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fcg-cG-T9k" userLabel="createAGameBtn">
+                                <rect key="frame" x="198" y="810" width="18" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="plus" catalog="system">
+                                    <attributedString key="attributedTitle"/>
+                                </state>
+                                <connections>
+                                    <segue destination="hiZ-uh-s1M" kind="presentation" identifier="createGameSegue" id="0Mc-jM-gR0"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qgp-Wp-kXM" userLabel="profileBtn">
+                                <rect key="frame" x="376" y="810" width="18" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="person.fill" catalog="system">
+                                    <attributedString key="attributedTitle"/>
+                                </state>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="azQ-Xf-7Ed" userLabel="mainPageBtn">
+                                <rect key="frame" x="20" y="810" width="21" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" image="list.bullet" catalog="system">
+                                    <attributedString key="attributedTitle"/>
+                                </state>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
-                    <navigationItem key="navigationItem" title="Upcoming Games" id="3aS-7X-Nls"/>
+                    <navigationItem key="navigationItem" title="Upcoming Games" id="3aS-7X-Nls">
+                        <barButtonItem key="rightBarButtonItem" style="plain" id="9TY-Yh-54T">
+                            <button key="customView" opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" id="fwA-iu-gG3">
+                                <rect key="frame" x="320" y="11" width="74" height="22"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Button" image="magnifyingglass.circle" catalog="system"/>
+                            </button>
+                        </barButtonItem>
+                    </navigationItem>
+                    <connections>
+                        <outlet property="tableView" destination="peH-8C-PJ0" id="OeA-Qb-nde"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1050.7246376811595" y="128.57142857142856"/>
+        </scene>
+        <!--Create Game View Controller-->
+        <scene sceneID="etv-mW-OFs">
+            <objects>
+                <viewController id="hiZ-uh-s1M" customClass="CreateGameViewController" customModule="SquadUpAustin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="2vh-ZD-l4r">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Create A Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="w6K-aa-0qX">
+                                <rect key="frame" x="149" y="72" width="116" height="21"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="aXe-9d-gS8"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="r5i-io-262" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2159" y="-197"/>
+        </scene>
+        <!--View Controller-->
+        <scene sceneID="cCJ-Gi-Dt4">
+            <objects>
+                <viewController id="Yoh-Be-QEB" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="e1v-3S-JUQ">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
+                        <viewLayoutGuide key="safeArea" id="DGi-n3-U0B"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="FzX-ty-wWz"/>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="QvK-Mb-k6e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2158" y="512"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="IHm-i4-R4l">
@@ -226,7 +296,8 @@
     </scenes>
     <resources>
         <image name="list.bullet" catalog="system" width="64" height="44"/>
-        <image name="person.circle" catalog="system" width="64" height="60"/>
+        <image name="magnifyingglass.circle" catalog="system" width="64" height="60"/>
+        <image name="person.fill" catalog="system" width="64" height="60"/>
         <image name="plus" catalog="system" width="64" height="56"/>
     </resources>
     <inferredMetricsTieBreakers>
