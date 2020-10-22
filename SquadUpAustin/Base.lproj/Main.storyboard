@@ -385,7 +385,11 @@
                     </view>
                     <connections>
                         <outlet property="ProfileImage" destination="pFQ-VR-Cwz" id="IsI-mG-L0j"/>
+                        <outlet property="favoriteSportLabel" destination="T6s-uw-FKl" id="LUe-yN-li1"/>
+                        <outlet property="hometownLabel" destination="Af5-Ud-ejd" id="JjU-Nv-N1l"/>
+                        <outlet property="majorLabel" destination="xTE-IM-WzY" id="rQE-gp-hot"/>
                         <outlet property="settingsButton" destination="QBY-sw-GAz" id="4wC-Pd-gth"/>
+                        <outlet property="usernameLabel" destination="Rb7-nV-LQP" id="iUA-dd-MHQ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ASd-YP-SQ9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
