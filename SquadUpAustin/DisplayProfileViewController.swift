@@ -21,7 +21,7 @@ class DisplayProfileViewController: UIViewController {
     @IBOutlet weak var favoriteSportLabel: UILabel!
     
     
-    
+    var delegate: UIViewController!
     let settingsIdentifier = "EditSettingsIdentifier"
     
     let currentUser = Auth.auth().currentUser!

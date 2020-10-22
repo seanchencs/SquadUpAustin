@@ -105,10 +105,10 @@
             </objects>
             <point key="canvasLocation" x="2159" y="-197"/>
         </scene>
-        <!--View Controller-->
+        <!--Select Game View Controller-->
         <scene sceneID="cCJ-Gi-Dt4">
             <objects>
-                <viewController id="Yoh-Be-QEB" sceneMemberID="viewController">
+                <viewController id="Yoh-Be-QEB" customClass="SelectGameViewController" customModule="SquadUpAustin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e1v-3S-JUQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>

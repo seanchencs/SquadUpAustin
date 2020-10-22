@@ -20,6 +20,7 @@
 		14CB34F3253E5EDA002BAE9B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14CB34F2253E5EDA002BAE9B /* GoogleService-Info.plist */; };
 		500198D02540E7FC0040D3BB /* CreateGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500198CF2540E7FC0040D3BB /* CreateGameViewController.swift */; };
 		500198D22540E9190040D3BB /* SelectGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500198D12540E9190040D3BB /* SelectGameViewController.swift */; };
+		504A8DA42542421B00BC4CA1 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504A8DA32542421B00BC4CA1 /* Game.swift */; };
 		687E0BD5FF8F5FB7FD16E55E /* Pods_SquadUpAustin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 532FEADF36F442A8757CA8DE /* Pods_SquadUpAustin.framework */; };
 		A77C0E9D254226630033946D /* DeleteProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77C0E9C254226630033946D /* DeleteProfileViewController.swift */; };
 		A77C0E9F254232C30033946D /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77C0E9E254232C30033946D /* Users.swift */; };
@@ -44,6 +45,7 @@
 		14CB34F2253E5EDA002BAE9B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		500198CF2540E7FC0040D3BB /* CreateGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameViewController.swift; sourceTree = "<group>"; };
 		500198D12540E9190040D3BB /* SelectGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGameViewController.swift; sourceTree = "<group>"; };
+		504A8DA32542421B00BC4CA1 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
 		532FEADF36F442A8757CA8DE /* Pods_SquadUpAustin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SquadUpAustin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A77C0E9C254226630033946D /* DeleteProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteProfileViewController.swift; sourceTree = "<group>"; };
 		A77C0E9E254232C30033946D /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
@@ -89,6 +91,7 @@
 				14961D3B253A20EE00E721DC /* AppDelegate.swift */,
 				14961D3D253A20EE00E721DC /* SceneDelegate.swift */,
 				A77C0E9E254232C30033946D /* Users.swift */,
+				504A8DA32542421B00BC4CA1 /* Game.swift */,
 				14961D3F253A20EE00E721DC /* MainViewController.swift */,
 				500198D12540E9190040D3BB /* SelectGameViewController.swift */,
 				500198CF2540E7FC0040D3BB /* CreateGameViewController.swift */,
@@ -249,6 +252,7 @@
 				145CE926253F9075007C77C2 /* LoginViewController.swift in Sources */,
 				14961D3E253A20EE00E721DC /* SceneDelegate.swift in Sources */,
 				500198D02540E7FC0040D3BB /* CreateGameViewController.swift in Sources */,
+				504A8DA42542421B00BC4CA1 /* Game.swift in Sources */,
 				A77C0E9F254232C30033946D /* Users.swift in Sources */,
 				A77C0E9D254226630033946D /* DeleteProfileViewController.swift in Sources */,
 				145CE92C253F9199007C77C2 /* WelcomeViewController.swift in Sources */,
