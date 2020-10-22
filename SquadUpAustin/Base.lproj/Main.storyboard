@@ -509,17 +509,22 @@
                     </view>
                     <navigationItem key="navigationItem" id="sZE-pB-Zp4"/>
                     <connections>
+                        <outlet property="editFavSportTextField" destination="8UG-Ju-G5I" id="gpP-Im-cax"/>
+                        <outlet property="editHometownTextField" destination="KoE-Fc-7Ze" id="YC7-MX-VnD"/>
+                        <outlet property="editMajorTextField" destination="Ohq-cf-nQi" id="7uX-PI-OZG"/>
+                        <outlet property="editPasswordTextField" destination="uhj-gt-Tpc" id="DSa-tG-Cgh"/>
                         <outlet property="editProfileImage" destination="DrY-O2-ZzU" id="OJP-tY-dAk"/>
+                        <outlet property="editUsernameTextField" destination="sxD-eh-pYg" id="alS-bO-yhH"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CL3-Hw-Mf1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1050.7246376811595" y="1630.5803571428571"/>
         </scene>
-        <!--View Controller-->
+        <!--Delete Profile View Controller-->
         <scene sceneID="QYM-an-DtD">
             <objects>
-                <viewController id="GRD-CQ-Kjo" sceneMemberID="viewController">
+                <viewController id="GRD-CQ-Kjo" customClass="DeleteProfileViewController" customModule="SquadUpAustin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="tCi-EE-pIt">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -574,6 +579,9 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <viewLayoutGuide key="safeArea" id="CpK-xk-gaM"/>
                     </view>
+                    <connections>
+                        <outlet property="confirmPasswordTextField" destination="YOA-FX-JU6" id="OVX-Nr-cEh"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yvz-0e-kLi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>

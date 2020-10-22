@@ -12,11 +12,18 @@ class EditProfileViewController: UIViewController {
 
     @IBOutlet weak var editProfileImage: UIImageView!
     
+    @IBOutlet weak var editUsernameTextField: UITextField!
+    @IBOutlet weak var editMajorTextField: UITextField!
+    @IBOutlet weak var editHometownTextField: UITextField!
+    @IBOutlet weak var editFavSportTextField: UITextField!
+    @IBOutlet weak var editPasswordTextField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
         circleProfilePicture()
+        textFieldSetup()
     }
     
     //Setup the circular profile picture.
@@ -28,5 +35,13 @@ class EditProfileViewController: UIViewController {
     }
 
     @IBAction func deleteAccount(_ sender: Any) {
+    }
+    
+    func textFieldSetup() {
+        editUsernameTextField.placeholder = "current username"
+        editMajorTextField.placeholder = "current major"
+        editHometownTextField.placeholder = "current hometown"
+        editFavSportTextField.placeholder = "current sport"
+        editPasswordTextField.placeholder = "enter new password"
     }
 }

@@ -8,5 +8,6 @@ target 'SquadUpAustin' do
   # Pods for SquadUpAustin
   pod 'Firebase/Analytics'
   pod 'Firebase/Auth'
+  pod 'Firebase/Firestore'
 
 end
