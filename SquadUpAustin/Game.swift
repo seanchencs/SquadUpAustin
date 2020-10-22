@@ -14,14 +14,22 @@ struct Game {
     var sport: String
     var location: String
     var time: String
-    var gameID: String
+    var gameOwner: String
+    var date: String
+    var players: [String]
+    var numplayers: Int
+    var equipmentCheck: Bool
 
-    var dictionary: [String: Any] {
+    var dictionary: NSMutableDictionary {
         return [
             "sport": sport,
             "location": location,
             "time": time,
-            "gameID": gameID
+            "userID1": gameOwner,
+            "date": date,
+            2: numplayers,
+            ["user1", "user2"]: players,
+            false: equipmentCheck
         ]
     }
 }
