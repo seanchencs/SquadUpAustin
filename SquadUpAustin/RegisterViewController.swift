@@ -28,6 +28,21 @@ class RegisterViewController: UIViewController {
             Auth.auth().createUser(withEmail: emailField.text!, password: passwordField.text!, completion: {user, error in
                 if error == nil {
                     //successful registration
+                    
+                    //Add user to database and default their profile settings
+                    let collection = Firestore.firestore().collection("users")
+                    
+                    let user = User(
+                        username: self.emailField.text!,
+                        favoriteSport: "noFavoriteSport :(",
+                        hometown: "noHometown :(",
+                        major: "noMajor :(",
+                        profilePicture: "noProfilePicture",
+                        userUid: Auth.auth().currentUser!.uid)
+                    collection.document(Auth.auth().currentUser!.uid).setData(user.dictionary)
+                    
+                    
+                    //Send to main page.
                     self.performSegue(withIdentifier: "RegisterToMainSegue", sender: nil)
                 } else {
                     //unsuccessful registration

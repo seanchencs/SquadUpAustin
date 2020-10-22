@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Firebase
 
 class DisplayProfileViewController: UIViewController {
 
@@ -15,6 +16,8 @@ class DisplayProfileViewController: UIViewController {
     
     
     let settingsIdentifier = "EditSettingsIdentifier"
+    
+    let currentUser = Auth.auth().currentUser!
     
     
     override func viewDidLoad() {
@@ -38,6 +41,10 @@ class DisplayProfileViewController: UIViewController {
         settingsButton.setImage(UIImage(named: "SettingIcon"), for: .normal)
         settingsButton.setTitle("", for: .normal)
         settingsButton.setTitleColor(UIColor.black, for: .normal)
+    }
+    
+    func populateProfileSettings() {
+        
     }
     
     @IBAction func settingButtonPressed(_ sender: Any) {
