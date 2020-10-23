@@ -1,5 +1,5 @@
 //
-//  ViewController.swift
+//  MainViewController.swift
 //  SquadUpAustin
 //
 //  Created by Sean Chen on 10/16/20.
@@ -38,8 +38,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        print(fetchedGames)
-        print(fetchedGames.count)
         tableView.reloadData()
     }
     

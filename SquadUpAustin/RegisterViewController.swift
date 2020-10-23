@@ -12,6 +12,7 @@ import FirebaseFirestore
 
 class RegisterViewController: UIViewController {
     
+    @IBOutlet weak var displayNameField: UITextField!
     @IBOutlet weak var emailField: UITextField!
     @IBOutlet weak var passwordField: UITextField!
     @IBOutlet weak var confirmPasswordField: UITextField!
@@ -41,6 +42,9 @@ class RegisterViewController: UIViewController {
                         userUid: Auth.auth().currentUser!.uid)
                     collection.document(Auth.auth().currentUser!.uid).setData(user.dictionary)
                     
+                    let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
+                    changeRequest?.displayName = self.displayNameField.text
+                    changeRequest?.commitChanges(completion: nil)
                     
                     //Send to main page.
                     self.performSegue(withIdentifier: "RegisterToMainSegue", sender: nil)

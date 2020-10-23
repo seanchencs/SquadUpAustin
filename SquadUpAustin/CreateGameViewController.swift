@@ -7,6 +7,8 @@
 //
 
 import UIKit
+import Firebase
+import FirebaseAuth
 
 class CreateGameViewController: UIViewController {
     
@@ -24,6 +26,11 @@ class CreateGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createDatePicker()
+        
+        if Auth.auth().currentUser != nil {
+            createdGame.gameOwner = (Auth.auth().currentUser?.displayName) ?? "null"
+            createdGame.players.append(Auth.auth().currentUser?.displayName ?? "null")
+        }
     }
     
     func createDatePicker() {

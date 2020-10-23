@@ -13,6 +13,7 @@ class SelectGameViewController: UIViewController {
     var delegate: MainViewController!
     var index = Int()
 
+    @IBOutlet weak var ownerLabel: UILabel!
     @IBOutlet weak var sportLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
@@ -23,6 +24,7 @@ class SelectGameViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         let selectedGame = delegate.fetchedGames[index]
+        ownerLabel.text = "\(selectedGame.gameOwner)'s \(selectedGame.sport) Game"
         sportLabel.text = selectedGame.sport
         locationLabel.text = selectedGame.location
         timeLabel.text = selectedGame.time
