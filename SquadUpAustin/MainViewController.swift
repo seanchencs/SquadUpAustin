@@ -26,6 +26,13 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
+    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
+        if editingStyle == .delete {
+            fetchedGames.remove(at: indexPath.row)
+            tableView.reloadData()
+        }
+    }
+    
     func createMessage(game: Game) -> String {
         return "\(game.sport) @ \(game.location) at \(game.time)"
     }

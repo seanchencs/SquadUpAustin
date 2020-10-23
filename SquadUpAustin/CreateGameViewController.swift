@@ -109,11 +109,27 @@ class CreateGameViewController: UIViewController {
     }
     
     @IBAction func createPressed(_ sender: Any) {
-        let delegateVC = delegate as! MainViewController
-        delegateVC.fetchedGames.append(createdGame)
-        delegateVC.tableView.reloadData()
-        delegateVC.viewWillAppear(true)
-        self.dismiss(animated: true, completion: nil)
+        if checkEmpty(){
+            let delegateVC = delegate as! MainViewController
+            delegateVC.fetchedGames.append(createdGame)
+            delegateVC.tableView.reloadData()
+            delegateVC.viewWillAppear(true)
+            self.dismiss(animated: true, completion: nil)
+        }
+    }
+    
+    func checkEmpty() -> Bool{
+        if (createdGame.time == "null" ||
+                createdGame.location == "null" ||
+                createdGame.sport == "null") {
+            let controller = UIAlertController(title: "You missed something!",
+            message: "Please fill out all fields",
+            preferredStyle: .alert)
+            controller.addAction(UIAlertAction(title: "OK", style: .default))
+            present(controller, animated: true, completion: nil)
+            return false
+        }
+        return true
     }
     
     @IBAction func cancelPressed(_ sender: Any) {
