@@ -18,7 +18,7 @@
 		14961D48253A20F200E721DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14961D47253A20F200E721DC /* Assets.xcassets */; };
 		14961D4B253A20F200E721DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14961D49253A20F200E721DC /* LaunchScreen.storyboard */; };
 		14CB34F3253E5EDA002BAE9B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14CB34F2253E5EDA002BAE9B /* GoogleService-Info.plist */; };
-		14F09A15254289590053CB31 /* README.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14F09A14254289590053CB31 /* README.pdf */; };
+		14F09A1825428CAB0053CB31 /* README.pdf in Resources */ = {isa = PBXBuildFile; fileRef = 14F09A1725428CAB0053CB31 /* README.pdf */; };
 		500198D02540E7FC0040D3BB /* CreateGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500198CF2540E7FC0040D3BB /* CreateGameViewController.swift */; };
 		500198D22540E9190040D3BB /* SelectGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500198D12540E9190040D3BB /* SelectGameViewController.swift */; };
 		504A8DA42542421B00BC4CA1 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504A8DA32542421B00BC4CA1 /* Game.swift */; };
@@ -44,7 +44,7 @@
 		14961D4A253A20F200E721DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14961D4C253A20F200E721DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14CB34F2253E5EDA002BAE9B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
-		14F09A14254289590053CB31 /* README.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; path = README.pdf; sourceTree = "<group>"; };
+		14F09A1725428CAB0053CB31 /* README.pdf */ = {isa = PBXFileReference; lastKnownFileType = image.pdf; name = README.pdf; path = ../../../../Downloads/README.pdf; sourceTree = "<group>"; };
 		500198CF2540E7FC0040D3BB /* CreateGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameViewController.swift; sourceTree = "<group>"; };
 		500198D12540E9190040D3BB /* SelectGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGameViewController.swift; sourceTree = "<group>"; };
 		504A8DA32542421B00BC4CA1 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -71,7 +71,7 @@
 		14961D2F253A20EE00E721DC = {
 			isa = PBXGroup;
 			children = (
-				14F09A14254289590053CB31 /* README.pdf */,
+				14F09A1725428CAB0053CB31 /* README.pdf */,
 				14961D3A253A20EE00E721DC /* SquadUpAustin */,
 				14961D39253A20EE00E721DC /* Products */,
 				9C695E3E79826C526DF72549 /* Pods */,
@@ -192,9 +192,9 @@
 			files = (
 				14961D4B253A20F200E721DC /* LaunchScreen.storyboard in Resources */,
 				14CB34F3253E5EDA002BAE9B /* GoogleService-Info.plist in Resources */,
+				14F09A1825428CAB0053CB31 /* README.pdf in Resources */,
 				14961D48253A20F200E721DC /* Assets.xcassets in Resources */,
 				14961D43253A20EE00E721DC /* Main.storyboard in Resources */,
-				14F09A15254289590053CB31 /* README.pdf in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
