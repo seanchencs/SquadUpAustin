@@ -26,7 +26,7 @@ class CreateGameViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         createDatePicker()
-        
+        //fill in current user
         if Auth.auth().currentUser != nil {
             createdGame.gameOwner = (Auth.auth().currentUser?.displayName) ?? "null"
             createdGame.players.append(Auth.auth().currentUser?.displayName ?? "null")

@@ -32,7 +32,6 @@ class RegisterViewController: UIViewController {
                     
                     //Add user to database and default their profile settings
                     let collection = Firestore.firestore().collection("users")
-                    
                     let user = User(
                         username: self.emailField.text!,
                         favoriteSport: "noFavoriteSport :(",
@@ -42,6 +41,7 @@ class RegisterViewController: UIViewController {
                         userUid: Auth.auth().currentUser!.uid)
                     collection.document(Auth.auth().currentUser!.uid).setData(user.dictionary)
                     
+                    //Add Display Name
                     let changeRequest = Auth.auth().currentUser?.createProfileChangeRequest()
                     changeRequest?.displayName = self.displayNameField.text
                     changeRequest?.commitChanges(completion: nil)
@@ -56,6 +56,7 @@ class RegisterViewController: UIViewController {
                 }
             })
         } else {
+            //Passwords don't match
             let alert = UIAlertController(title: "Error", message: "Passwords do not match", preferredStyle: UIAlertController.Style.alert)
             alert.addAction(UIAlertAction(title: "OK", style: UIAlertAction.Style.default, handler: nil))
             self.present(alert, animated: true, completion: nil)
