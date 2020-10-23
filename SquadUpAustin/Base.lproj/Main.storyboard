@@ -104,34 +104,67 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Choose a time..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="RVh-AR-RFO">
-                                        <rect key="frame" x="0.0" y="25" width="374" height="169.5"/>
+                                        <rect key="frame" x="0.0" y="25" width="374" height="142.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
                                         <textInputTraits key="textInputTraits"/>
                                     </textField>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Wkx-L6-iAT">
-                                        <rect key="frame" x="0.0" y="194.5" width="374" height="169.5"/>
+                                        <rect key="frame" x="0.0" y="167.5" width="374" height="142"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Choose a location"/>
+                                        <connections>
+                                            <action selector="chooseLocationPressed:" destination="hiZ-uh-s1M" eventType="touchUpInside" id="AoG-G4-q9o"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8e-U2-4wY">
-                                        <rect key="frame" x="0.0" y="364" width="374" height="169.5"/>
+                                        <rect key="frame" x="0.0" y="309.5" width="374" height="142.5"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                         <state key="normal" title="Choose a sport"/>
+                                        <connections>
+                                            <action selector="chooseASportPressed:" destination="hiZ-uh-s1M" eventType="touchUpInside" id="cS5-aA-UEa"/>
+                                        </connections>
                                     </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h0t-6C-krC">
+                                        <rect key="frame" x="0.0" y="452" width="374" height="130"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Will you be providing equipment?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5A-U6-Mv0">
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="130"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="E9K-1y-8GB">
+                                                <rect key="frame" x="187" y="0.0" width="187" height="131"/>
+                                                <segments>
+                                                    <segment title="" image="checkmark" catalog="system"/>
+                                                    <segment title="" image="xmark" catalog="system"/>
+                                                </segments>
+                                                <connections>
+                                                    <action selector="equipmentProvidedChanged:" destination="hiZ-uh-s1M" eventType="valueChanged" id="A4B-uD-RiK"/>
+                                                </connections>
+                                            </segmentedControl>
+                                        </subviews>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="25O-uQ-Gcx">
-                                        <rect key="frame" x="0.0" y="533.5" width="374" height="274.5"/>
+                                        <rect key="frame" x="0.0" y="582" width="374" height="226"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDT-6F-g2e">
-                                                <rect key="frame" x="0.0" y="0.0" width="187" height="274.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="226"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Create"/>
+                                                <connections>
+                                                    <action selector="createPressed:" destination="hiZ-uh-s1M" eventType="touchUpInside" id="71E-FT-Smi"/>
+                                                </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emY-5P-A5r">
-                                                <rect key="frame" x="187" y="0.0" width="187" height="274.5"/>
+                                                <rect key="frame" x="187" y="0.0" width="187" height="226"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Cancel">
                                                     <color key="titleColor" systemColor="systemRedColor"/>
                                                 </state>
+                                                <connections>
+                                                    <action selector="cancelPressed:" destination="hiZ-uh-s1M" eventType="touchUpInside" id="Ehx-0H-UTB"/>
+                                                </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
@@ -149,6 +182,9 @@
                     </view>
                     <connections>
                         <outlet property="chooseADateField" destination="RVh-AR-RFO" id="DdK-52-ds8"/>
+                        <outlet property="chooseALocationButton" destination="Wkx-L6-iAT" id="up0-e4-qbu"/>
+                        <outlet property="chooseASportButton" destination="y8e-U2-4wY" id="WWK-BC-1wb"/>
+                        <outlet property="equipmentProvided" destination="E9K-1y-8GB" id="wPY-bx-L8t"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r5i-io-262" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
@@ -656,10 +692,12 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="SplashScreenLogo" width="300" height="91"/>
+        <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="magnifyingglass.circle" catalog="system" width="128" height="121"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="xmark" catalog="system" width="128" height="113"/>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
