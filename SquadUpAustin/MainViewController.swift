@@ -13,31 +13,33 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     @IBOutlet weak var tableView: UITableView!
     
-    //var fetchedGames: [NSManagedObject]!
+    var fetchedGames = [Game]()
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return 0 //fetchedGames.count
+        return fetchedGames.count //fetchedGames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath as IndexPath)
         let row = indexPath.row
-        cell.textLabel?.numberOfLines = 0
-        cell.textLabel?.text = "Test" //createMessage(game: fetchedGames[row])
+        cell.textLabel?.text = createMessage(game: fetchedGames[row])
         return cell
     }
     
-    func createMessage(game: NSManagedObject) -> String {
-        let message = "test"
-        return message
+    func createMessage(game: Game) -> String {
+        return "\(game.sport) @ \(game.location) at \(game.time)"
     }
     
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
+        tableView.delegate = self
+        tableView.dataSource = self
     }
     
     override func viewWillAppear(_ animated: Bool) {
+        print(fetchedGames)
+        print(fetchedGames.count)
         tableView.reloadData()
     }
     
@@ -50,6 +52,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             let nextVC = segue.destination as? SelectGameViewController
             {
                 nextVC.delegate = self
+                let i = tableView.indexPathForSelectedRow?.row
+                nextVC.index = i!
         } else if segue.identifier == "ProfileIdentifier",
             let nextVC = segue.destination as? DisplayProfileViewController
             {

@@ -41,6 +41,7 @@ class CreateGameViewController: UIViewController {
         formatter.dateStyle = .medium
         formatter.timeStyle = .short
         chooseADateField.text = formatter.string(from: datePicker.date)
+        createdGame.time = chooseADateField.text!
         self.view.endEditing(true)
     }
 
@@ -101,7 +102,11 @@ class CreateGameViewController: UIViewController {
     }
     
     @IBAction func createPressed(_ sender: Any) {
-        
+        let delegateVC = delegate as! MainViewController
+        delegateVC.fetchedGames.append(createdGame)
+        delegateVC.tableView.reloadData()
+        delegateVC.viewWillAppear(true)
+        self.dismiss(animated: true, completion: nil)
     }
     
     @IBAction func cancelPressed(_ sender: Any) {

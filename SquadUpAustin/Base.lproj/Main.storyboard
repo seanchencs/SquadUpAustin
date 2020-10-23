@@ -4,6 +4,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="17125"/>
+        <capability name="Image references" minToolsVersion="12.0"/>
         <capability name="Safe area layout guides" minToolsVersion="9.0"/>
         <capability name="System colors in document resources" minToolsVersion="11.0"/>
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
@@ -145,11 +146,11 @@
                                             </segmentedControl>
                                         </subviews>
                                     </stackView>
-                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="25O-uQ-Gcx">
+                                    <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="25O-uQ-Gcx">
                                         <rect key="frame" x="0.0" y="582" width="374" height="226"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDT-6F-g2e">
-                                                <rect key="frame" x="0.0" y="0.0" width="187" height="226"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="184" height="226"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Create"/>
                                                 <connections>
@@ -157,7 +158,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emY-5P-A5r">
-                                                <rect key="frame" x="187" y="0.0" width="187" height="226"/>
+                                                <rect key="frame" x="184" y="0.0" width="190" height="226"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Cancel">
                                                     <color key="titleColor" systemColor="systemRedColor"/>
@@ -180,6 +181,7 @@
                             <constraint firstItem="5lc-Vi-ILc" firstAttribute="bottom" secondItem="aXe-9d-gS8" secondAttribute="bottom" constant="20" id="lvx-ag-tdM"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="zU4-ZC-9Pm"/>
                     <connections>
                         <outlet property="chooseADateField" destination="RVh-AR-RFO" id="DdK-52-ds8"/>
                         <outlet property="chooseALocationButton" destination="Wkx-L6-iAT" id="up0-e4-qbu"/>
@@ -198,14 +200,112 @@
                     <view key="view" contentMode="scaleToFill" id="e1v-3S-JUQ">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="oKR-2p-QwV">
+                                <rect key="frame" x="20" y="108" width="374" height="734"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gKY-9q-U5R">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="114"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mN6-eL-e94">
+                                                <rect key="frame" x="0.0" y="1" width="40" height="111.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="HCd-BS-w75"/>
+                                                </constraints>
+                                                <imageReference key="image" image="sportscourt" catalog="system" renderingMode="original"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sport" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OzS-Mw-eGa">
+                                                <rect key="frame" x="60" y="0.0" width="314" height="114"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="US6-kK-Y55">
+                                        <rect key="frame" x="0.0" y="114" width="374" height="114"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="npv-Qu-HrD">
+                                                <rect key="frame" x="0.0" y="-0.5" width="40" height="114.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="wPS-bK-7T6"/>
+                                                </constraints>
+                                                <imageReference key="image" image="mappin.and.ellipse" catalog="system" renderingMode="original"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQH-PY-Na3">
+                                                <rect key="frame" x="60" y="0.0" width="314" height="114"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fOT-Yz-a29">
+                                        <rect key="frame" x="0.0" y="228" width="374" height="114"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h9x-Rz-JqC">
+                                                <rect key="frame" x="0.0" y="1.5" width="40" height="113"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="aSe-1x-wjH"/>
+                                                </constraints>
+                                                <imageReference key="image" image="calendar.badge.clock" catalog="system" renderingMode="original"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFd-4s-2zc">
+                                                <rect key="frame" x="60" y="0.0" width="314" height="114"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cmm-Wq-hNk">
+                                        <rect key="frame" x="0.0" y="342" width="374" height="114"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8gF-bO-jUh">
+                                                <rect key="frame" x="0.0" y="1.5" width="40" height="111.5"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="OIw-jq-6a4"/>
+                                                </constraints>
+                                                <imageReference key="image" image="person" catalog="system" renderingMode="original"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Participants" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6n-ib-01D">
+                                                <rect key="frame" x="60" y="0.0" width="314" height="114"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" text="[Chat goes here]" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="C6H-a9-gCV">
+                                        <rect key="frame" x="0.0" y="456" width="374" height="278"/>
+                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                                        <color key="textColor" systemColor="labelColor"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                    </textView>
+                                </subviews>
+                            </stackView>
+                        </subviews>
                         <viewLayoutGuide key="safeArea" id="DGi-n3-U0B"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="DGi-n3-U0B" firstAttribute="trailing" secondItem="oKR-2p-QwV" secondAttribute="trailing" constant="20" id="B3M-gL-KDX"/>
+                            <constraint firstItem="oKR-2p-QwV" firstAttribute="leading" secondItem="DGi-n3-U0B" secondAttribute="leading" constant="20" id="NkA-sE-4AN"/>
+                            <constraint firstItem="DGi-n3-U0B" firstAttribute="bottom" secondItem="oKR-2p-QwV" secondAttribute="bottom" constant="20" id="pzs-2u-f6z"/>
+                            <constraint firstItem="oKR-2p-QwV" firstAttribute="top" secondItem="DGi-n3-U0B" secondAttribute="top" constant="20" id="sM1-8j-5LP"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="FzX-ty-wWz"/>
+                    <connections>
+                        <outlet property="locationLabel" destination="aQH-PY-Na3" id="Uuv-qM-ZI4"/>
+                        <outlet property="participantsLabel" destination="s6n-ib-01D" id="Mes-hi-co3"/>
+                        <outlet property="sportLabel" destination="OzS-Mw-eGa" id="1Iu-4d-hHw"/>
+                        <outlet property="timeLabel" destination="wFd-4s-2zc" id="HNS-jp-su0"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QvK-Mb-k6e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2158" y="512"/>
+            <point key="canvasLocation" x="2157.971014492754" y="511.60714285714283"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="IHm-i4-R4l">
@@ -692,12 +792,19 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="SplashScreenLogo" width="300" height="91"/>
+        <image name="calendar.badge.clock" catalog="system" width="128" height="108"/>
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="list.bullet" catalog="system" width="128" height="88"/>
         <image name="magnifyingglass.circle" catalog="system" width="128" height="121"/>
+        <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
+        <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="plus" catalog="system" width="128" height="113"/>
+        <image name="sportscourt" catalog="system" width="128" height="84"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
+        <systemColor name="labelColor">
+            <color white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
+        </systemColor>
         <systemColor name="systemBackgroundColor">
             <color white="1" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
         </systemColor>
