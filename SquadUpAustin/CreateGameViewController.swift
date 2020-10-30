@@ -17,7 +17,7 @@ class CreateGameViewController: UIViewController {
     var delegate: UIViewController!
 
     @IBOutlet weak var chooseADateField: UITextField!
-    let datePicker = UIDatePicker()
+    let datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/3))
     
     @IBOutlet weak var chooseALocationButton: UIButton!
     @IBOutlet weak var chooseASportButton: UIButton!
