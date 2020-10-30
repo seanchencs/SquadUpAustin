@@ -11,18 +11,24 @@ import CoreData
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
+    //MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
     
     var fetchedGames = [Game]()
     
+    //MARK: TableView Functions
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         return fetchedGames.count //fetchedGames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath as IndexPath)
+        let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath as IndexPath) as! GameTableViewCell
         let row = indexPath.row
-        cell.textLabel?.text = createMessage(game: fetchedGames[row])
+        let game = fetchedGames[row]
+        cell.gameNameLabel.text = game.gameOwner
+        cell.timeLabel.text = game.time
+        cell.locationLabel.text = game.location
+        cell.sportLabel.text = game.sport
         return cell
     }
     
@@ -33,10 +39,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    func createMessage(game: Game) -> String {
-        return "\(game.sport) @ \(game.location) at \(game.time)"
-    }
-    
+    //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
@@ -48,6 +51,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         tableView.reloadData()
     }
     
+    //MARK: Segue
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "createGameSegue",
             let nextVC = segue.destination as? CreateGameViewController

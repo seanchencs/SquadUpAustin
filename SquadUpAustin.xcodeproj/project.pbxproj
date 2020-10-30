@@ -17,6 +17,7 @@
 		14961D46253A20EE00E721DC /* SquadUpAustin.xcdatamodeld in Sources */ = {isa = PBXBuildFile; fileRef = 14961D44253A20EE00E721DC /* SquadUpAustin.xcdatamodeld */; };
 		14961D48253A20F200E721DC /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 14961D47253A20F200E721DC /* Assets.xcassets */; };
 		14961D4B253A20F200E721DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14961D49253A20F200E721DC /* LaunchScreen.storyboard */; };
+		14BDB210254CC34F0090A0D0 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BDB20F254CC34F0090A0D0 /* GameTableViewCell.swift */; };
 		14CB34F3253E5EDA002BAE9B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14CB34F2253E5EDA002BAE9B /* GoogleService-Info.plist */; };
 		500198D02540E7FC0040D3BB /* CreateGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500198CF2540E7FC0040D3BB /* CreateGameViewController.swift */; };
 		500198D22540E9190040D3BB /* SelectGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500198D12540E9190040D3BB /* SelectGameViewController.swift */; };
@@ -42,6 +43,7 @@
 		14961D47253A20F200E721DC /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		14961D4A253A20F200E721DC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		14961D4C253A20F200E721DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		14BDB20F254CC34F0090A0D0 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 		14CB34F2253E5EDA002BAE9B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		500198CF2540E7FC0040D3BB /* CreateGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameViewController.swift; sourceTree = "<group>"; };
 		500198D12540E9190040D3BB /* SelectGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGameViewController.swift; sourceTree = "<group>"; };
@@ -93,6 +95,7 @@
 				A77C0E9E254232C30033946D /* Users.swift */,
 				504A8DA32542421B00BC4CA1 /* Game.swift */,
 				14961D3F253A20EE00E721DC /* MainViewController.swift */,
+				14BDB20F254CC34F0090A0D0 /* GameTableViewCell.swift */,
 				500198D12540E9190040D3BB /* SelectGameViewController.swift */,
 				500198CF2540E7FC0040D3BB /* CreateGameViewController.swift */,
 				145CE925253F9075007C77C2 /* LoginViewController.swift */,
@@ -248,6 +251,7 @@
 				14961D46253A20EE00E721DC /* SquadUpAustin.xcdatamodeld in Sources */,
 				14961D3C253A20EE00E721DC /* AppDelegate.swift in Sources */,
 				145CE929253F918C007C77C2 /* RegisterViewController.swift in Sources */,
+				14BDB210254CC34F0090A0D0 /* GameTableViewCell.swift in Sources */,
 				500198D22540E9190040D3BB /* SelectGameViewController.swift in Sources */,
 				145CE926253F9075007C77C2 /* LoginViewController.swift in Sources */,
 				14961D3E253A20EE00E721DC /* SceneDelegate.swift in Sources */,
