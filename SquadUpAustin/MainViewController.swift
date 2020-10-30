@@ -8,17 +8,19 @@
 
 import UIKit
 import CoreData
+import Firebase
 
 class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
     
+    let db = Firestore.firestore()
     var fetchedGames = [Game]()
     
     //MARK: TableView Functions
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fetchedGames.count //fetchedGames.count
+        return fetchedGames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
@@ -39,6 +41,35 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    //MARK: Firestore
+    func storeGame(game:Game) {
+        //TODO
+        var ref: DocumentReference? = nil
+        ref = db.collection("games").addDocument(data: game.getDictionary()) { err in
+            if let err = err {
+                print("Error adding document: \(err)")
+            } else {
+                print("Document added with ID: \(ref!.documentID)")
+            }
+        }
+    }
+    
+    func fetchGames() {
+        db.collection("games").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                self.fetchedGames.removeAll()
+                for document in querySnapshot!.documents {
+                    let data = document.data()
+                    let newGame = Game(sport: data["sport"] as! String, location: data["location"] as! String, time: data["time"] as! String, gameOwner: data["gameOwner"] as! String, players: (data["players"] as! String).components(separatedBy: ","), equipmentCheck: data["equipment"] as! Bool)
+                    self.fetchedGames.append(newGame)
+                }
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -48,7 +79,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        tableView.reloadData()
+        //Firebase fetch
+        fetchGames()
     }
     
     //MARK: Segue

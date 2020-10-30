@@ -12,7 +12,7 @@ import FirebaseAuth
 
 class CreateGameViewController: UIViewController {
     
-    var createdGame = Game(sport: "null", location: "null", time: "null", gameOwner: "null", date: "null", players: [], numplayers: 0, equipmentCheck: true)
+    var createdGame = Game(sport: "null", location: "null", time: "null", gameOwner: "null", players: [], equipmentCheck: true)
     
     var delegate: UIViewController!
 
@@ -111,7 +111,8 @@ class CreateGameViewController: UIViewController {
     @IBAction func createPressed(_ sender: Any) {
         if checkEmpty(){
             let delegateVC = delegate as! MainViewController
-            delegateVC.fetchedGames.append(createdGame)
+            delegateVC.storeGame(game: createdGame) //Firebase store
+            //delegateVC.fetchedGames.append(createdGame)
             delegateVC.tableView.reloadData()
             delegateVC.viewWillAppear(true)
             self.dismiss(animated: true, completion: nil)

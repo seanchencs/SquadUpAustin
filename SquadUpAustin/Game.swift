@@ -15,21 +15,18 @@ struct Game {
     var location: String
     var time: String
     var gameOwner: String
-    var date: String
     var players: [String]
-    var numplayers: Int
     var equipmentCheck: Bool
-
-    var dictionary: NSMutableDictionary {
-        return [
+    
+    func getDictionary() -> [String: Any]{
+        let output = [
             "sport": sport,
             "location": location,
             "time": time,
-            "userID1": gameOwner,
-            "date": date,
-            2: numplayers,
-            ["user1", "user2"]: players,
-            false: equipmentCheck
-        ]
+            "gameOwner": gameOwner,
+            "players": players.joined(separator: ", "),
+            "equipment": equipmentCheck
+        ] as [String : Any]
+        return output
     }
 }
