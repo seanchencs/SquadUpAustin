@@ -9,7 +9,7 @@
 import UIKit
 import Firebase
 
-struct Game {
+struct Game: Equatable{
 
     var sport: String
     var location: String
@@ -28,5 +28,14 @@ struct Game {
             "equipment": equipmentCheck
         ] as [String : Any]
         return output
+    }
+    
+    static func ==(lhs: Game, rhs: Game) -> Bool {
+        return (lhs.sport == rhs.sport &&
+                    lhs.location == rhs.location &&
+                    lhs.time == rhs.time &&
+                    lhs.gameOwner == rhs.gameOwner &&
+                    lhs.players == rhs.players &&
+                    lhs.equipmentCheck == rhs.equipmentCheck)
     }
 }

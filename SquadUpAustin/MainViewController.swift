@@ -36,14 +36,12 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
         if editingStyle == .delete {
-            fetchedGames.remove(at: indexPath.row)
-            tableView.reloadData()
+            deleteGame(game: fetchedGames[indexPath.row])
         }
     }
     
     //MARK: Firestore
     func storeGame(game:Game) {
-        //TODO
         var ref: DocumentReference? = nil
         ref = db.collection("games").addDocument(data: game.getDictionary()) { err in
             if let err = err {
@@ -54,6 +52,33 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
+    func deleteGame(game:Game) {
+        db.collection("games").getDocuments() { (querySnapshot, err) in
+            if let err = err {
+                print("Error getting documents: \(err)")
+            } else {
+                self.fetchedGames.removeAll()
+                for document in querySnapshot!.documents {
+                    let data = document.data()
+                    let newGame = Game(sport: data["sport"] as! String, location: data["location"] as! String, time: data["time"] as! String, gameOwner: data["gameOwner"] as! String, players: (data["players"] as! String).components(separatedBy: ","), equipmentCheck: data["equipment"] as! Bool)
+                    if newGame == game {
+                        self.db.collection("games").document(document.documentID).delete() { err in
+                            if let err = err {
+                                print("Error removing document: \(err)")
+                            } else {
+                                print("Document successfully removed!")
+                            }
+                        }
+                    } else {
+                        self.fetchedGames.append(newGame)
+                    }
+                }
+                self.tableView.reloadData()
+            }
+        }
+    }
+    
+    //fetches all games from firestore and updates tableView
     func fetchGames() {
         db.collection("games").getDocuments() { (querySnapshot, err) in
             if let err = err {
