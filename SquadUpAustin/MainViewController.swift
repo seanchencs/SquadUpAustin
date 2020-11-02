@@ -126,20 +126,21 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
     }
     
-    // Updates a given game with Firestore version
-    func updateGame(game: inout Game){
-        var newGame: Game?
-        let gameRef = db.collection("games").document(game.id!)
-        gameRef.getDocument { (document, error) in
-            if let document = document, document.exists {
-                let data = document.data()!
-                newGame = Game(id: document.documentID, sport: data["sport"] as! String, location: data["location"] as! String, time: data["time"] as! String, gameOwner: data["gameOwner"] as! String, players: (data["players"] as! String).components(separatedBy: ","), equipmentCheck: data["equipment"] as! Bool)
-            } else {
-                print("Document does not exist")
-            }
-        }
-        game = newGame!
-    }
+    // BROKEN Updates a given game with Firestore version
+//    func updateGame(game: inout Game){
+//        var newGame: Game?
+//        let gameRef = db.collection("games").document(game.id!)
+//        gameRef.getDocument { (document, error) in
+//            if let document = document, document.exists {
+//                print("DOCUMENT")
+//                let data = document.data()!
+//                newGame = Game(id: document.documentID, sport: data["sport"] as! String, location: data["location"] as! String, time: data["time"] as! String, gameOwner: data["gameOwner"] as! String, players: (data["players"] as! String).components(separatedBy: ","), equipmentCheck: data["equipment"] as! Bool)
+//            } else {
+//                print("Document does not exist")
+//            }
+//            game = newGame!
+//        }
+//    }
     
     // Completely replaces fetchedGames and filteredGames with Firestore
     func fetchGames() {
@@ -202,7 +203,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             {
                 nextVC.delegate = self
                 var selectedGame = filteredGames[tableView.indexPathForSelectedRow!.row]
-                updateGame(game: &selectedGame)
+                //updateGame(game: &selectedGame)
                 nextVC.selectedGame = selectedGame
         } else if segue.identifier == "ProfileIdentifier",
             let nextVC = segue.destination as? DisplayProfileViewController
