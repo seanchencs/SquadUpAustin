@@ -150,7 +150,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1050.7246376811595" y="128.57142857142856"/>
+            <point key="canvasLocation" x="1960.8695652173915" y="128.57142857142856"/>
         </scene>
         <!--Create Game View Controller-->
         <scene sceneID="etv-mW-OFs">
@@ -316,7 +316,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="r5i-io-262" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2157.971014492754" y="-197.54464285714286"/>
+            <point key="canvasLocation" x="3068.115942028986" y="-197.54464285714286"/>
         </scene>
         <!--Select Game View Controller-->
         <scene sceneID="cCJ-Gi-Dt4">
@@ -445,7 +445,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="QvK-Mb-k6e" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2157.971014492754" y="511.60714285714283"/>
+            <point key="canvasLocation" x="3068.115942028986" y="511.60714285714283"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="IHm-i4-R4l">
@@ -494,10 +494,11 @@
                             <constraint firstItem="zQ3-6s-1CC" firstAttribute="top" secondItem="7Af-Ik-hZ4" secondAttribute="top" constant="178" id="zXv-3y-Ew8"/>
                         </constraints>
                     </view>
+                    <navigationItem key="navigationItem" id="XIj-i1-B9B"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AGz-cO-aax" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1894" y="129"/>
+            <point key="canvasLocation" x="-984.05797101449286" y="128.57142857142856"/>
         </scene>
         <!--Login View Controller-->
         <scene sceneID="loc-WA-a6X">
@@ -566,13 +567,24 @@
                                     <constraint firstAttribute="height" constant="400" id="f6a-Id-aJg"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ki0-Bd-EOd">
+                                <rect key="frame" x="20" y="44" width="34" height="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" systemColor="systemOrangeColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Z8o-m9-40b" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="naq-ey-R0v"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="bab-oj-Kud"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Ki0-Bd-EOd" firstAttribute="top" secondItem="bab-oj-Kud" secondAttribute="top" id="2m5-bq-91u"/>
                             <constraint firstItem="7cr-WF-HPn" firstAttribute="centerX" secondItem="E5C-9h-J5v" secondAttribute="centerX" id="F0t-py-lgx"/>
                             <constraint firstItem="7cr-WF-HPn" firstAttribute="leading" secondItem="bab-oj-Kud" secondAttribute="leading" constant="25" id="GTF-oa-AYk"/>
                             <constraint firstItem="bab-oj-Kud" firstAttribute="trailing" secondItem="7cr-WF-HPn" secondAttribute="trailing" constant="25" id="WoU-ba-TfD"/>
+                            <constraint firstItem="Ki0-Bd-EOd" firstAttribute="leading" secondItem="bab-oj-Kud" secondAttribute="leading" constant="20" id="rCR-ZU-leg"/>
                             <constraint firstItem="7cr-WF-HPn" firstAttribute="centerY" secondItem="E5C-9h-J5v" secondAttribute="centerY" id="zdL-Hp-erD"/>
                         </constraints>
                     </view>
@@ -585,7 +597,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zm5-di-bj2" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1126" y="534"/>
+            <point key="canvasLocation" x="-215.94202898550725" y="533.70535714285711"/>
         </scene>
         <!--Register View Controller-->
         <scene sceneID="rtz-wO-4ax">
@@ -688,6 +700,15 @@
                                     <constraint firstAttribute="height" constant="500" id="wgI-tf-za1"/>
                                 </constraints>
                             </stackView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="qfG-2o-Pbd">
+                                <rect key="frame" x="20" y="44" width="34" height="30"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" systemColor="systemOrangeColor"/>
+                                </state>
+                                <connections>
+                                    <segue destination="Z8o-m9-40b" kind="presentation" animates="NO" modalPresentationStyle="fullScreen" id="7r8-Vc-RFb"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="G8v-44-5P2"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -696,6 +717,8 @@
                             <constraint firstItem="WCk-zm-AO8" firstAttribute="leading" secondItem="G8v-44-5P2" secondAttribute="leading" constant="25" id="BZW-sn-Y4G"/>
                             <constraint firstItem="WCk-zm-AO8" firstAttribute="centerY" secondItem="iTf-tV-0tK" secondAttribute="centerY" id="G8D-RS-QXW"/>
                             <constraint firstItem="WCk-zm-AO8" firstAttribute="centerX" secondItem="iTf-tV-0tK" secondAttribute="centerX" id="Ihr-QK-4yQ"/>
+                            <constraint firstItem="qfG-2o-Pbd" firstAttribute="leading" secondItem="G8v-44-5P2" secondAttribute="leading" constant="20" id="UBa-PQ-SiJ"/>
+                            <constraint firstItem="qfG-2o-Pbd" firstAttribute="top" secondItem="G8v-44-5P2" secondAttribute="top" id="pCg-mj-Qe2"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="WMi-fp-TgK"/>
@@ -709,7 +732,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dDD-Js-gBG" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-1126.0869565217392" y="-132.58928571428572"/>
+            <point key="canvasLocation" x="-215.94202898550725" y="-132.58928571428572"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="nTK-uE-bJm">
@@ -728,7 +751,7 @@
                 </navigationController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XCe-rM-Ffu" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="140.57971014492756" y="128.57142857142856"/>
+            <point key="canvasLocation" x="1050.7246376811595" y="128.57142857142856"/>
         </scene>
         <!--Display Profile View Controller-->
         <scene sceneID="NlN-q8-0By">
@@ -797,6 +820,9 @@
                                 <state key="normal" title="Logout">
                                     <color key="titleColor" systemColor="systemOrangeColor"/>
                                 </state>
+                                <connections>
+                                    <segue destination="4X4-Qn-PQX" kind="show" id="D5J-gN-JcU"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QBY-sw-GAz">
                                 <rect key="frame" x="321" y="52" width="40" height="40"/>
@@ -1030,6 +1056,8 @@
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Joc-WF-hwr"/>
+        <segue reference="rn3-AV-lRk"/>
+        <segue reference="naq-ey-R0v"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="SplashScreenLogo" width="300" height="91"/>

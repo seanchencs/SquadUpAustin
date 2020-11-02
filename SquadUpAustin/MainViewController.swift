@@ -34,14 +34,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         return cell
     }
     
-//    func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCell.EditingStyle, forRowAt indexPath: IndexPath) {
-//        if editingStyle == .delete {
-//            deleteGame(game: fetchedGames[indexPath.row])
-//        }
-//    }
-    
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
-     
+        
         let rsvp = UIContextualAction(style: .normal, title: "RSVP") { (action, view, completion) in
             //TODO: rsvp
             completion(true)
@@ -53,8 +47,14 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             completion(true)
         }
         
-        //TODO: restrict delete to owner
-        let config = UISwipeActionsConfiguration(actions: [rsvp, delete])
+        //Delete if isOwner, show RSVP otherwise
+        var isOwner = false
+        if Auth.auth().currentUser != nil {
+            if Auth.auth().currentUser?.displayName == self.fetchedGames[indexPath.row].gameOwner {
+                isOwner = true
+            }
+        }
+        let config = isOwner ? UISwipeActionsConfiguration(actions: [delete]) : UISwipeActionsConfiguration(actions: [rsvp])
         config.performsFirstActionWithFullSwipe = false
         return config
     }
