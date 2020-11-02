@@ -37,7 +37,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     func tableView(_ tableView: UITableView, trailingSwipeActionsConfigurationForRowAt indexPath: IndexPath) -> UISwipeActionsConfiguration? {
         
         let rsvp = UIContextualAction(style: .normal, title: "RSVP") { (action, view, completion) in
-            //TODO: rsvp
+            if Auth.auth().currentUser != nil {
+                self.rsvpGame(displayName: ((Auth.auth().currentUser?.displayName) ?? Auth.auth().currentUser?.email?.components(separatedBy: "@")[0])!, game: &self.fetchedGames[indexPath.row])
+                tableView.reloadData()
+            }
             completion(true)
         }
         rsvp.backgroundColor = UIColor.systemGreen
@@ -47,7 +50,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             completion(true)
         }
         
-        //Delete if isOwner, show RSVP otherwise
+        //show delete if isOwner, show RSVP otherwise
         var isOwner = false
         if Auth.auth().currentUser != nil {
             if Auth.auth().currentUser?.displayName == self.fetchedGames[indexPath.row].gameOwner {
@@ -60,7 +63,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     //MARK: Firestore
-    func storeGame(game:Game) {
+    func storeGame(game: inout Game) {
         var ref: DocumentReference? = nil
         ref = db.collection("games").addDocument(data: game.getDictionary()) { err in
             if let err = err {
@@ -69,6 +72,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                 print("Document added with ID: \(ref!.documentID)")
             }
         }
+        game.id = ref!.documentID
     }
     
     func deleteGame(game:Game) {
@@ -79,8 +83,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.fetchedGames.removeAll()
                 for document in querySnapshot!.documents {
                     let data = document.data()
-                    let newGame = Game(sport: data["sport"] as! String, location: data["location"] as! String, time: data["time"] as! String, gameOwner: data["gameOwner"] as! String, players: (data["players"] as! String).components(separatedBy: ","), equipmentCheck: data["equipment"] as! Bool)
-                    if newGame == game {
+                    if document.documentID == game.id {
                         self.db.collection("games").document(document.documentID).delete() { err in
                             if let err = err {
                                 print("Error removing document: \(err)")
@@ -89,12 +92,20 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                             }
                         }
                     } else {
+                        let newGame = Game(id: document.documentID, sport: data["sport"] as! String, location: data["location"] as! String, time: data["time"] as! String, gameOwner: data["gameOwner"] as! String, players: (data["players"] as! String).components(separatedBy: ","), equipmentCheck: data["equipment"] as! Bool)
                         self.fetchedGames.append(newGame)
                     }
                 }
                 self.tableView.reloadData()
             }
         }
+    }
+    
+    /// RSVPs  user for game
+    func rsvpGame(displayName: String, game: inout Game) {
+        game.players.append(displayName)
+        let gameRef = db.collection("games").document(game.id!)
+        gameRef.setData(game.getDictionary())
     }
     
     //fetches all games from firestore and updates tableView
@@ -106,7 +117,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                 self.fetchedGames.removeAll()
                 for document in querySnapshot!.documents {
                     let data = document.data()
-                    let newGame = Game(sport: data["sport"] as! String, location: data["location"] as! String, time: data["time"] as! String, gameOwner: data["gameOwner"] as! String, players: (data["players"] as! String).components(separatedBy: ","), equipmentCheck: data["equipment"] as! Bool)
+                    let newGame = Game(id: document.documentID, sport: data["sport"] as! String, location: data["location"] as! String, time: data["time"] as! String, gameOwner: data["gameOwner"] as! String, players: (data["players"] as! String).components(separatedBy: ","), equipmentCheck: data["equipment"] as! Bool)
                     self.fetchedGames.append(newGame)
                 }
                 self.tableView.reloadData()

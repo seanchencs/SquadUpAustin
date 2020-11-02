@@ -11,6 +11,7 @@ import Firebase
 
 struct Game: Equatable{
 
+    var id: String?
     var sport: String
     var location: String
     var time: String
