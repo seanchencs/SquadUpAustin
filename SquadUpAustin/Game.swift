@@ -31,6 +31,13 @@ struct Game: Equatable{
         return output
     }
     
+    func getDate() -> Date {
+        let formatter = DateFormatter()
+        formatter.dateStyle = .medium
+        formatter.timeStyle = .short
+        return formatter.date(from: time)!
+    }
+    
     static func ==(lhs: Game, rhs: Game) -> Bool {
         return (lhs.sport == rhs.sport &&
                     lhs.location == rhs.location &&

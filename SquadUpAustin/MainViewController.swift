@@ -16,17 +16,21 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var tableView: UITableView!
     
     let db = Firestore.firestore()
-    var fetchedGames = [Game]()
+    var fetchedGames = [Game]() // All fetched games
+    var filteredGames = [Game]() // Filtered subset of fetchedGames
+    
+    //Filter Options - modified by FilterViewController
+    var sortBy = "Time"
     
     //MARK: TableView Functions
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return fetchedGames.count
+        return filteredGames.count
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath as IndexPath) as! GameTableViewCell
         let row = indexPath.row
-        let game = fetchedGames[row]
+        let game = filteredGames[row]
         cell.gameNameLabel.text = "\(game.gameOwner)'s \(game.sport) Game"
         cell.timeLabel.text = game.time
         cell.locationLabel.text = game.location
@@ -39,7 +43,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let rsvp = UIContextualAction(style: .normal, title: "RSVP") { (action, view, completion) in
             if Auth.auth().currentUser != nil {
-                self.rsvpGame(displayName: ((Auth.auth().currentUser?.displayName) ?? Auth.auth().currentUser?.email?.components(separatedBy: "@")[0])!, game: &self.fetchedGames[indexPath.row])
+                self.rsvpGame(displayName: ((Auth.auth().currentUser?.displayName) ?? Auth.auth().currentUser?.email?.components(separatedBy: "@")[0])!, game: &self.filteredGames[indexPath.row])
                 tableView.reloadData()
             }
             completion(true)
@@ -48,16 +52,15 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
      
         let cancel = UIContextualAction(style: .destructive, title: "Cancel") { (action, view, completion) in
             if Auth.auth().currentUser != nil {
-                self.unRSVP(displayName: ((Auth.auth().currentUser?.displayName) ?? Auth.auth().currentUser?.email?.components(separatedBy: "@")[0])!, game: &self.fetchedGames[indexPath.row])
+                self.unRSVP(displayName: ((Auth.auth().currentUser?.displayName) ?? Auth.auth().currentUser?.email?.components(separatedBy: "@")[0])!, game: &self.filteredGames[indexPath.row])
                 tableView.reloadData()
             }
             completion(true)
         }
         
         let delete = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
-            self.deleteGame(game: self.fetchedGames[indexPath.row])
-            self.fetchedGames.remove(at: indexPath.row)
-            self.tableView.reloadData()
+            self.deleteGame(game: self.filteredGames[indexPath.row])
+            self.fetchGames()
             completion(true)
         }
         
@@ -65,10 +68,10 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         var isOwner = false
         var RSVPed = false
         if Auth.auth().currentUser != nil {
-            if Auth.auth().currentUser?.displayName == self.fetchedGames[indexPath.row].gameOwner {
+            if Auth.auth().currentUser?.displayName == self.filteredGames[indexPath.row].gameOwner {
                 isOwner = true
             }
-            if self.fetchedGames[indexPath.row].players.firstIndex(of: ((Auth.auth().currentUser?.displayName) ?? Auth.auth().currentUser?.email?.components(separatedBy: "@")[0])!) != nil {
+            if self.filteredGames[indexPath.row].players.firstIndex(of: ((Auth.auth().currentUser?.displayName) ?? Auth.auth().currentUser?.email?.components(separatedBy: "@")[0])!) != nil {
                 RSVPed = true
             }
         }
@@ -149,8 +152,26 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
                     let newGame = Game(id: document.documentID, sport: data["sport"] as! String, location: data["location"] as! String, time: data["time"] as! String, gameOwner: data["gameOwner"] as! String, players: (data["players"] as! String).components(separatedBy: ","), equipmentCheck: data["equipment"] as! Bool)
                     self.fetchedGames.append(newGame)
                 }
+                self.filterGames()
                 self.tableView.reloadData()
             }
+        }
+    }
+    
+    //MARK: Filter
+    
+    /// Apply filter and sort to filteredGames
+    func filterGames() {
+        filteredGames = fetchedGames
+        switch sortBy {
+        case "Time":
+            filteredGames.sort(by: { $0.getDate() < $1.getDate()})
+        case "Sport":
+            filteredGames.sort(by: { $0.sport > $1.sport})
+        case "Participants":
+            filteredGames.sort(by: { $0.players.count > $1.players.count})
+        default:
+            break
         }
     }
     
@@ -183,6 +204,8 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             let nextVC = segue.destination as? DisplayProfileViewController
             {
                 nextVC.delegate = self
+        } else if segue.identifier == "filterSegue", let nextVC = segue.destination as? FilterViewController {
+            nextVC.delegateVC = self
         }
     }
 }

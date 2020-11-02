@@ -10,6 +10,7 @@
 		145CE926253F9075007C77C2 /* LoginViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145CE925253F9075007C77C2 /* LoginViewController.swift */; };
 		145CE929253F918C007C77C2 /* RegisterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145CE928253F918C007C77C2 /* RegisterViewController.swift */; };
 		145CE92C253F9199007C77C2 /* WelcomeViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 145CE92B253F9199007C77C2 /* WelcomeViewController.swift */; };
+		146C0E192550A602001E4F27 /* FilterViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 146C0E182550A602001E4F27 /* FilterViewController.swift */; };
 		14961D3C253A20EE00E721DC /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14961D3B253A20EE00E721DC /* AppDelegate.swift */; };
 		14961D3E253A20EE00E721DC /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14961D3D253A20EE00E721DC /* SceneDelegate.swift */; };
 		14961D40253A20EE00E721DC /* MainViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14961D3F253A20EE00E721DC /* MainViewController.swift */; };
@@ -34,6 +35,7 @@
 		145CE925253F9075007C77C2 /* LoginViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewController.swift; sourceTree = "<group>"; };
 		145CE928253F918C007C77C2 /* RegisterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegisterViewController.swift; sourceTree = "<group>"; };
 		145CE92B253F9199007C77C2 /* WelcomeViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WelcomeViewController.swift; sourceTree = "<group>"; };
+		146C0E182550A602001E4F27 /* FilterViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FilterViewController.swift; sourceTree = "<group>"; };
 		14961D38253A20EE00E721DC /* SquadUpAustin.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SquadUpAustin.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		14961D3B253A20EE00E721DC /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		14961D3D253A20EE00E721DC /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				14961D49253A20F200E721DC /* LaunchScreen.storyboard */,
 				14961D4C253A20F200E721DC /* Info.plist */,
 				14961D44253A20EE00E721DC /* SquadUpAustin.xcdatamodeld */,
+				146C0E182550A602001E4F27 /* FilterViewController.swift */,
 			);
 			path = SquadUpAustin;
 			sourceTree = "<group>";
@@ -256,6 +259,7 @@
 				145CE926253F9075007C77C2 /* LoginViewController.swift in Sources */,
 				14961D3E253A20EE00E721DC /* SceneDelegate.swift in Sources */,
 				500198D02540E7FC0040D3BB /* CreateGameViewController.swift in Sources */,
+				146C0E192550A602001E4F27 /* FilterViewController.swift in Sources */,
 				504A8DA42542421B00BC4CA1 /* Game.swift in Sources */,
 				A77C0E9F254232C30033946D /* Users.swift in Sources */,
 				A77C0E9D254226630033946D /* DeleteProfileViewController.swift in Sources */,
