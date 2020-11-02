@@ -141,7 +141,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         game = newGame!
     }
     
-    // Completely replaces fetchedGames with Firestore
+    // Completely replaces fetchedGames and filteredGames with Firestore
     func fetchGames() {
         db.collection("games").getDocuments() { (querySnapshot, err) in
             if let err = err {
@@ -160,7 +160,6 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     //MARK: Filter
-    
     /// Apply filter and sort to filteredGames
     func filterGames() {
         filteredGames = fetchedGames
@@ -202,8 +201,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
             let nextVC = segue.destination as? SelectGameViewController
             {
                 nextVC.delegate = self
-                let i = tableView.indexPathForSelectedRow?.row
-                nextVC.index = i!
+                var selectedGame = filteredGames[tableView.indexPathForSelectedRow!.row]
+                updateGame(game: &selectedGame)
+                nextVC.selectedGame = selectedGame
         } else if segue.identifier == "ProfileIdentifier",
             let nextVC = segue.destination as? DisplayProfileViewController
             {
