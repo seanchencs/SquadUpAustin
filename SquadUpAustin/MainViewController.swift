@@ -21,6 +21,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     //Filter Options - modified by FilterViewController
     var sortBy = "Time"
+    var excludedSports = [String]()
     
     //MARK: TableView Functions
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -163,6 +164,9 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
     /// Apply filter and sort to filteredGames
     func filterGames() {
         filteredGames = fetchedGames
+        //filter
+        filteredGames = filteredGames.filter({ !excludedSports.contains($0.sport) })
+        //sort
         switch sortBy {
         case "Time":
             filteredGames.sort(by: { $0.getDate() < $1.getDate()})

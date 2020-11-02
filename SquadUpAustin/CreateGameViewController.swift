@@ -77,13 +77,10 @@ class CreateGameViewController: UIViewController {
         let controller = UIAlertController(title: "Sport",
                                            message: "Choose a sport:",
                                            preferredStyle: .actionSheet)
-        controller.addAction(UIAlertAction(title: "Soccer",
-                                           style:.default,
-                                           handler: addSport(alert:)))
         controller.addAction(UIAlertAction(title: "Basketball",
                                            style:.default,
                                            handler: addSport(alert:)))
-        controller.addAction(UIAlertAction(title: "Volleyball",
+        controller.addAction(UIAlertAction(title: "Soccer",
                                            style:.default,
                                            handler: addSport(alert:)))
         controller.addAction(UIAlertAction(title: "Tennis",
@@ -92,7 +89,11 @@ class CreateGameViewController: UIViewController {
         controller.addAction(UIAlertAction(title: "Ultimate Frisbee",
                                            style:.default,
                                            handler: addSport(alert:)))
+        controller.addAction(UIAlertAction(title: "Volleyball",
+                                           style:.default,
+                                           handler: addSport(alert:)))
         present(controller, animated: true, completion: nil)
+
     }
     
     func addSport(alert:UIAlertAction!) {
