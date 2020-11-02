@@ -25,7 +25,7 @@ struct Game: Equatable{
             "location": location,
             "time": time,
             "gameOwner": gameOwner,
-            "players": players.joined(separator: ", "),
+            "players": players.joined(separator: ","),
             "equipment": equipmentCheck
         ] as [String : Any]
         return output

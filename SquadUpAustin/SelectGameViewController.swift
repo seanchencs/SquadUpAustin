@@ -28,10 +28,7 @@ class SelectGameViewController: UIViewController {
         sportLabel.text = selectedGame.sport
         locationLabel.text = selectedGame.location
         timeLabel.text = selectedGame.time
-        participantsLabel.text = ""
-        for participant in selectedGame.players {
-            participantsLabel.text?.append(participant)
-        }
+        participantsLabel.text = selectedGame.players.joined(separator: ", ")
     }
 
     /*

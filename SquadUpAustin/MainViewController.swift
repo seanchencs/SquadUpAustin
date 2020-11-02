@@ -46,19 +46,32 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         }
         rsvp.backgroundColor = UIColor.systemGreen
      
+        let cancel = UIContextualAction(style: .destructive, title: "Cancel") { (action, view, completion) in
+            if Auth.auth().currentUser != nil {
+                self.unRSVP(displayName: ((Auth.auth().currentUser?.displayName) ?? Auth.auth().currentUser?.email?.components(separatedBy: "@")[0])!, game: &self.fetchedGames[indexPath.row])
+                tableView.reloadData()
+            }
+            completion(true)
+        }
+        
         let delete = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
             self.deleteGame(game: self.fetchedGames[indexPath.row])
             completion(true)
         }
         
-        //show delete if isOwner, show RSVP otherwise
+        //figure out what options to show
         var isOwner = false
+        var RSVPed = false
         if Auth.auth().currentUser != nil {
             if Auth.auth().currentUser?.displayName == self.fetchedGames[indexPath.row].gameOwner {
                 isOwner = true
             }
+            if self.fetchedGames[indexPath.row].players.firstIndex(of: ((Auth.auth().currentUser?.displayName) ?? Auth.auth().currentUser?.email?.components(separatedBy: "@")[0])!) != nil {
+                RSVPed = true
+            }
         }
-        let config = isOwner ? UISwipeActionsConfiguration(actions: [delete]) : UISwipeActionsConfiguration(actions: [rsvp])
+        
+        let config = isOwner ? UISwipeActionsConfiguration(actions: [delete]) : (RSVPed ? UISwipeActionsConfiguration(actions: [cancel]) : UISwipeActionsConfiguration(actions: [rsvp]))
         config.performsFirstActionWithFullSwipe = false
         return config
     }
@@ -107,6 +120,18 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         game.players.append(displayName)
         let gameRef = db.collection("games").document(game.id!)
         gameRef.setData(game.getDictionary())
+    }
+    
+    /// UnRSVP user for game
+    func unRSVP(displayName: String, game: inout Game) {
+        let index = game.players.firstIndex(of: displayName) ?? -1
+        print(game.players)
+        if index != -1 {
+            print(displayName)
+            game.players.remove(at: index)
+            let gameRef = db.collection("games").document(game.id!)
+            gameRef.setData(game.getDictionary())
+        }
     }
     
     //fetches all games from firestore and updates tableView
