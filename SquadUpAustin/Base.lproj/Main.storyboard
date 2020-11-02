@@ -48,8 +48,8 @@
                                     <imageReference key="image" image="magnifyingglass" catalog="system" renderingMode="template"/>
                                 </state>
                             </button>
-                            <tableView clipsSubviews="YES" contentMode="scaleToFill" misplaced="YES" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="peH-8C-PJ0">
-                                <rect key="frame" x="5" y="90" width="404" height="737"/>
+                            <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="peH-8C-PJ0">
+                                <rect key="frame" x="5" y="93" width="404" height="737"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellIdentifier" rowHeight="125" id="ujE-U7-HOu" customClass="GameTableViewCell" customModule="SquadUpAustin" customModuleProvider="target">
@@ -101,12 +101,29 @@
                                                     <nil key="textColor"/>
                                                     <nil key="highlightedColor"/>
                                                 </label>
+                                                <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Player#" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ETH-cf-Ylj">
+                                                    <rect key="frame" x="337" y="94" width="57" height="21"/>
+                                                    <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                    <nil key="textColor"/>
+                                                    <nil key="highlightedColor"/>
+                                                </label>
+                                                <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="LCg-pS-HQv">
+                                                    <rect key="frame" x="312" y="94.5" width="25" height="19.5"/>
+                                                    <color key="tintColor" systemColor="labelColor"/>
+                                                    <constraints>
+                                                        <constraint firstAttribute="width" constant="25" id="2js-dM-Alu"/>
+                                                        <constraint firstAttribute="height" constant="25" id="ybe-o2-dJi"/>
+                                                    </constraints>
+                                                    <imageReference key="image" image="person" catalog="system" symbolScale="small" renderingMode="template"/>
+                                                </imageView>
                                             </subviews>
                                             <constraints>
                                                 <constraint firstItem="vMw-8r-216" firstAttribute="leading" secondItem="0OG-DC-ZOl" secondAttribute="trailing" constant="10" id="3bi-vp-lis"/>
+                                                <constraint firstItem="ETH-cf-Ylj" firstAttribute="leading" secondItem="LCg-pS-HQv" secondAttribute="trailing" id="6af-E0-QlK"/>
                                                 <constraint firstItem="0OG-DC-ZOl" firstAttribute="leading" secondItem="zXK-g3-X2Q" secondAttribute="leadingMargin" id="8Xq-fr-9bZ"/>
                                                 <constraint firstItem="2PE-yV-MGw" firstAttribute="top" secondItem="zXK-g3-X2Q" secondAttribute="topMargin" id="9h8-Vf-mJL"/>
                                                 <constraint firstItem="Vgk-AR-tkr" firstAttribute="top" secondItem="zXK-g3-X2Q" secondAttribute="topMargin" id="FWa-VB-kF5"/>
+                                                <constraint firstItem="LCg-pS-HQv" firstAttribute="centerY" secondItem="ETH-cf-Ylj" secondAttribute="centerY" id="HYG-id-C2x"/>
                                                 <constraint firstItem="1NK-4j-ajj" firstAttribute="leading" secondItem="zXK-g3-X2Q" secondAttribute="leadingMargin" id="IWN-xN-rOh"/>
                                                 <constraint firstItem="Vgk-AR-tkr" firstAttribute="leading" secondItem="zXK-g3-X2Q" secondAttribute="leadingMargin" id="KyA-c1-s3E"/>
                                                 <constraint firstItem="0OG-DC-ZOl" firstAttribute="top" secondItem="1NK-4j-ajj" secondAttribute="bottom" constant="10" id="P8e-y1-dH4"/>
@@ -115,11 +132,14 @@
                                                 <constraint firstItem="vMw-8r-216" firstAttribute="centerY" secondItem="0OG-DC-ZOl" secondAttribute="centerY" id="ahz-6J-LXX"/>
                                                 <constraint firstItem="OtA-80-04Y" firstAttribute="centerY" secondItem="1NK-4j-ajj" secondAttribute="centerY" id="iTQ-pI-1AU"/>
                                                 <constraint firstItem="2PE-yV-MGw" firstAttribute="trailing" secondItem="zXK-g3-X2Q" secondAttribute="trailingMargin" id="r2H-2o-x8Z"/>
+                                                <constraint firstAttribute="bottom" secondItem="ETH-cf-Ylj" secondAttribute="bottom" constant="10" id="uj7-XV-dF9"/>
+                                                <constraint firstAttribute="trailing" secondItem="ETH-cf-Ylj" secondAttribute="trailing" constant="10" id="zRN-cz-CNA"/>
                                             </constraints>
                                         </tableViewCellContentView>
                                         <connections>
                                             <outlet property="gameNameLabel" destination="Vgk-AR-tkr" id="wKq-KQ-I63"/>
                                             <outlet property="locationLabel" destination="vMw-8r-216" id="0M0-ra-Mga"/>
+                                            <outlet property="playerCountLabel" destination="ETH-cf-Ylj" id="3BA-8a-vX4"/>
                                             <outlet property="sportLabel" destination="2PE-yV-MGw" id="P2p-Pc-mwh"/>
                                             <outlet property="timeLabel" destination="OtA-80-04Y" id="oR2-K0-TXs"/>
                                             <segue destination="Yoh-Be-QEB" kind="show" identifier="selectGameSegue" id="XXH-gE-zc0"/>

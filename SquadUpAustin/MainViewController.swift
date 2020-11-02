@@ -31,6 +31,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         cell.timeLabel.text = game.time
         cell.locationLabel.text = game.location
         cell.sportLabel.text = game.sport
+        cell.playerCountLabel.text = String(game.players.count)
         return cell
     }
     
