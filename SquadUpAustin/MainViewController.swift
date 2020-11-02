@@ -27,7 +27,7 @@ class MainViewController: UIViewController, UITableViewDelegate, UITableViewData
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath as IndexPath) as! GameTableViewCell
         let row = indexPath.row
         let game = fetchedGames[row]
-        cell.gameNameLabel.text = game.gameOwner
+        cell.gameNameLabel.text = "\(game.gameOwner)'s \(game.sport) Game"
         cell.timeLabel.text = game.time
         cell.locationLabel.text = game.location
         cell.sportLabel.text = game.sport
