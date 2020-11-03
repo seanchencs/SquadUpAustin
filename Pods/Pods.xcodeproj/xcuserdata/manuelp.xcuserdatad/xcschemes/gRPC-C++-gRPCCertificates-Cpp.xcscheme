@@ -17,7 +17,7 @@
                BlueprintIdentifier = "3B8CAC3956E59F928387D0C6310E3B37"
                BuildableName = "gRPCCertificates-Cpp.bundle"
                BlueprintName = "gRPC-C++-gRPCCertificates-Cpp"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               ReferencedContainer = "container:../../../../../u/manuelp/Desktop/SquadUpAustin/Pods/Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

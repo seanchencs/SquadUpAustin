@@ -17,7 +17,7 @@
                BlueprintIdentifier = "2BBF7206D7FAC92C82A042A99C4A98F8"
                BuildableName = "FBLPromises.framework"
                BlueprintName = "PromisesObjC"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               ReferencedContainer = "container:../../../../../u/manuelp/Desktop/SquadUpAustin/Pods/Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>

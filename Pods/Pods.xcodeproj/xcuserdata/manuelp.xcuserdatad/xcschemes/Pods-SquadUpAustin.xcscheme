@@ -17,7 +17,7 @@
                BlueprintIdentifier = "95AF72AC6CC93E13AC6B2643A1FE098D"
                BuildableName = "Pods_SquadUpAustin.framework"
                BlueprintName = "Pods-SquadUpAustin"
-               ReferencedContainer = "container:Pods.xcodeproj">
+               ReferencedContainer = "container:../../../../../u/manuelp/Desktop/SquadUpAustin/Pods/Pods.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
       </BuildActionEntries>
