@@ -19,6 +19,11 @@ class DeleteProfileViewController: UIViewController {
         confirmPasswordTextField.placeholder = "Confirm with Password"
     }
     
+    @IBAction func cancelDeleteButton(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
+    }
+    
 
     /*
     // MARK: - Navigation

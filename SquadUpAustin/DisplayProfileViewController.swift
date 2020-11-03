@@ -35,7 +35,6 @@ class DisplayProfileViewController: UIViewController {
         circleProfilePicture()
         setupSettingsButton()
         populateProfileSettings()
-        
     }
     
     //Setup the circular profile picture.
@@ -63,7 +62,8 @@ class DisplayProfileViewController: UIViewController {
                 //populate the user information.
                 print("hometown: \(userData["hometown"] ?? "error")")
                 
-                self.usernameLabel.text = (userData["username"] as! String)
+//                self.usernameLabel.text = (userData["username"] as! String)
+                self.usernameLabel.text = self.currentUser.displayName
                 self.majorLabel.text = (userData["major"] as! String)
                 self.hometownLabel.text = (userData["hometown"] as! String)
                 self.favoriteSportLabel.text = (userData["favoriteSport"] as! String)

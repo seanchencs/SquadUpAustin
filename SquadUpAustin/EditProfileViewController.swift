@@ -37,6 +37,12 @@ class EditProfileViewController: UIViewController {
     @IBAction func deleteAccount(_ sender: Any) {
     }
     
+    @IBAction func editProfileCancelButton(_ sender: Any) {
+        navigationController?.popViewController(animated: true)
+        dismiss(animated: true, completion: nil)
+    }
+    
+    
     func textFieldSetup() {
         editUsernameTextField.placeholder = "current username"
         editMajorTextField.placeholder = "current major"
