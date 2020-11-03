@@ -1124,6 +1124,9 @@
                                 <rect key="frame" x="190" y="597" width="34" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="Save"/>
+                                <connections>
+                                    <action selector="editProfileSaveButton:" destination="z0U-sI-SHw" eventType="touchUpInside" id="T2i-LD-Tjj"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lqe-bS-jha">
                                 <rect key="frame" x="183" y="652" width="48" height="30"/>

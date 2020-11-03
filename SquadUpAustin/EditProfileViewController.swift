@@ -68,4 +68,36 @@ class EditProfileViewController: UIViewController {
             }
         }
     }
+    
+    @IBAction func editProfileSaveButton(_ sender: Any) {
+        var newUsername: String
+        var newFavoriteSport: String
+        var newHometown: String
+        var newMajor: String
+        
+        var newPassword: String
+        
+        newUsername = (!(editUsernameTextField.text!.isEmpty) ? editUsernameTextField.text : editUsernameTextField.placeholder)!
+        
+        newFavoriteSport = (!(editFavSportTextField.text!.isEmpty) ? editFavSportTextField.text : editFavSportTextField.placeholder)!
+        
+        newHometown = (!(editHometownTextField.text!.isEmpty) ? editHometownTextField.text : editHometownTextField.placeholder)!
+        
+        newMajor = (!(editMajorTextField.text!.isEmpty) ? editMajorTextField.text : editMajorTextField.placeholder)!
+        
+        let curUser = collectionOfUsers.document(currentUser.uid)
+            curUser.updateData([
+            "favoriteSport": newFavoriteSport,
+            "hometown": newHometown,
+            "major": newMajor
+        ]){ err in
+            if let err = err {
+                print("Error updating document: \(err)")
+            } else {
+                print("Document successfully updated")
+                self.textFieldSetup()
+            }
+        }
+    }
+    
 }
