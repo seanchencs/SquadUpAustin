@@ -8,6 +8,9 @@
 
 import UIKit
 
+import FirebaseAuth
+import FirebaseFirestore
+
 class EditProfileViewController: UIViewController {
 
     @IBOutlet weak var editProfileImage: UIImageView!
@@ -17,6 +20,9 @@ class EditProfileViewController: UIViewController {
     @IBOutlet weak var editHometownTextField: UITextField!
     @IBOutlet weak var editFavSportTextField: UITextField!
     @IBOutlet weak var editPasswordTextField: UITextField!
+    
+    let currentUser = Auth.auth().currentUser!
+    let collectionOfUsers = Firestore.firestore().collection("users")
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -44,10 +50,22 @@ class EditProfileViewController: UIViewController {
     
     
     func textFieldSetup() {
-        editUsernameTextField.placeholder = "current username"
-        editMajorTextField.placeholder = "current major"
-        editHometownTextField.placeholder = "current hometown"
-        editFavSportTextField.placeholder = "current sport"
-        editPasswordTextField.placeholder = "enter new password"
+        
+        let curUser = collectionOfUsers.document(currentUser.uid)
+        
+        curUser.getDocument { (document, error) in
+            if let document = document, document.exists {
+                //let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                let userData = document.data()!
+                
+                self.editUsernameTextField.placeholder = self.currentUser.displayName
+                self.editMajorTextField.placeholder = (userData["major"] as! String)
+                self.editHometownTextField.placeholder = (userData["hometown"] as! String)
+                self.editFavSportTextField.placeholder = (userData["favoriteSport"] as! String)
+                self.editPasswordTextField.placeholder = "enter new password"
+            } else {
+                print("User does not exist")
+            }
+        }
     }
 }
