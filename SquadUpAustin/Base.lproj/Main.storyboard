@@ -976,7 +976,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="major" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xTE-IM-WzY">
-                                <rect key="frame" x="209" y="328" width="78" height="21"/>
+                                <rect key="frame" x="209" y="328" width="185" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -1004,7 +1004,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="hometown" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Af5-Ud-ejd">
-                                <rect key="frame" x="209" y="357" width="118" height="21"/>
+                                <rect key="frame" x="209" y="357" width="185" height="21"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
@@ -1052,7 +1052,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ASd-YP-SQ9" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1051" y="891"/>
+            <point key="canvasLocation" x="1050.7246376811595" y="890.625"/>
         </scene>
         <!--Edit Profile View Controller-->
         <scene sceneID="U2i-3i-kUM">
@@ -1183,6 +1183,7 @@
                         <outlet property="editPasswordTextField" destination="uhj-gt-Tpc" id="DSa-tG-Cgh"/>
                         <outlet property="editProfileImage" destination="DrY-O2-ZzU" id="OJP-tY-dAk"/>
                         <outlet property="editUsernameTextField" destination="sxD-eh-pYg" id="alS-bO-yhH"/>
+                        <outlet property="usernameLabel" destination="4M2-3M-aUd" id="xXk-8P-oLo"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CL3-Hw-Mf1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

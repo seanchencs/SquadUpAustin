@@ -34,5 +34,12 @@ class DeleteProfileViewController: UIViewController {
         // Pass the selected object to the new view controller.
     }
     */
+    
+    // code to enable tapping on the background to remove software keyboard
+        
+        override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true)
+        }
+        
 
 }
