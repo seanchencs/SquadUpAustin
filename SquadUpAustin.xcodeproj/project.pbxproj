@@ -20,6 +20,7 @@
 		14961D4B253A20F200E721DC /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 14961D49253A20F200E721DC /* LaunchScreen.storyboard */; };
 		14BDB210254CC34F0090A0D0 /* GameTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14BDB20F254CC34F0090A0D0 /* GameTableViewCell.swift */; };
 		14CB34F3253E5EDA002BAE9B /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = 14CB34F2253E5EDA002BAE9B /* GoogleService-Info.plist */; };
+		14EAEA97255336F0009A8417 /* ChooseDateViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 14EAEA96255336F0009A8417 /* ChooseDateViewController.swift */; };
 		500198D02540E7FC0040D3BB /* CreateGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500198CF2540E7FC0040D3BB /* CreateGameViewController.swift */; };
 		500198D22540E9190040D3BB /* SelectGameViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 500198D12540E9190040D3BB /* SelectGameViewController.swift */; };
 		504A8DA42542421B00BC4CA1 /* Game.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504A8DA32542421B00BC4CA1 /* Game.swift */; };
@@ -47,6 +48,7 @@
 		14961D4C253A20F200E721DC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		14BDB20F254CC34F0090A0D0 /* GameTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GameTableViewCell.swift; sourceTree = "<group>"; };
 		14CB34F2253E5EDA002BAE9B /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		14EAEA96255336F0009A8417 /* ChooseDateViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ChooseDateViewController.swift; sourceTree = "<group>"; };
 		500198CF2540E7FC0040D3BB /* CreateGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CreateGameViewController.swift; sourceTree = "<group>"; };
 		500198D12540E9190040D3BB /* SelectGameViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectGameViewController.swift; sourceTree = "<group>"; };
 		504A8DA32542421B00BC4CA1 /* Game.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Game.swift; sourceTree = "<group>"; };
@@ -107,6 +109,7 @@
 				A7CB50AE254146D100E33B63 /* EditProfileViewController.swift */,
 				A77C0E9C254226630033946D /* DeleteProfileViewController.swift */,
 				14961D41253A20EE00E721DC /* Main.storyboard */,
+				14EAEA96255336F0009A8417 /* ChooseDateViewController.swift */,
 				14961D47253A20F200E721DC /* Assets.xcassets */,
 				14961D49253A20F200E721DC /* LaunchScreen.storyboard */,
 				14961D4C253A20F200E721DC /* Info.plist */,
@@ -256,6 +259,7 @@
 				145CE929253F918C007C77C2 /* RegisterViewController.swift in Sources */,
 				14BDB210254CC34F0090A0D0 /* GameTableViewCell.swift in Sources */,
 				500198D22540E9190040D3BB /* SelectGameViewController.swift in Sources */,
+				14EAEA97255336F0009A8417 /* ChooseDateViewController.swift in Sources */,
 				145CE926253F9075007C77C2 /* LoginViewController.swift in Sources */,
 				14961D3E253A20EE00E721DC /* SceneDelegate.swift in Sources */,
 				500198D02540E7FC0040D3BB /* CreateGameViewController.swift in Sources */,

@@ -15,41 +15,18 @@ class CreateGameViewController: UIViewController {
     var createdGame = Game(id: "null", sport: "null", location: "null", time: "null", gameOwner: "null", players: [], equipmentCheck: true)
     
     var delegate: UIViewController!
-
-    @IBOutlet weak var chooseADateField: UITextField!
-    let datePicker = UIDatePicker(frame: CGRect(x: 0, y: 0, width: UIScreen.main.bounds.width, height: UIScreen.main.bounds.height/3))
-    
+    @IBOutlet weak var chooseATimeButton: UIButton!
     @IBOutlet weak var chooseALocationButton: UIButton!
     @IBOutlet weak var chooseASportButton: UIButton!
     @IBOutlet weak var equipmentProvided: UISegmentedControl!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        createDatePicker()
         //fill in current user
         if Auth.auth().currentUser != nil {
             createdGame.gameOwner = (Auth.auth().currentUser?.displayName) ?? "null"
             createdGame.players.append(Auth.auth().currentUser?.displayName ?? "null")
         }
-    }
-    
-    func createDatePicker() {
-        let toolbar = UIToolbar()
-        toolbar.sizeToFit()
-        datePicker.sizeToFit()
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: nil, action: #selector(datePickerDonePressed))
-        toolbar.setItems([doneButton], animated: true)
-        chooseADateField.inputAccessoryView = toolbar
-        chooseADateField.inputView = datePicker
-    }
-    
-    @objc func datePickerDonePressed() {
-        let formatter = DateFormatter()
-        formatter.dateStyle = .medium
-        formatter.timeStyle = .short
-        chooseADateField.text = formatter.string(from: datePicker.date)
-        createdGame.time = chooseADateField.text!
-        self.view.endEditing(true)
     }
 
     @IBAction func chooseLocationPressed(_ sender: Any) {
@@ -136,5 +113,13 @@ class CreateGameViewController: UIViewController {
     
     @IBAction func cancelPressed(_ sender: Any) {
         self.dismiss(animated: true, completion: nil)
+    }
+    
+    //MARK: Segue
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "chooseDateSegue",
+           let destinationVC = segue.destination as? ChooseDateViewController {
+            destinationVC.delegateVC = self
+        }
     }
 }
