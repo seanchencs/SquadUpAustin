@@ -42,12 +42,31 @@ class SelectGameViewController: UIViewController {
                 RSVPed = true
             }
         }
-        rsvpButton.setTitle(!isOwner ? (RSVPed ? "Cancel RSVP" : "RSVP"): "Delete", for: .normal)
-        rsvpButton.setTitleColor(!isOwner ? (RSVPed ? UIColor.systemRed : UIColor.systemGreen): UIColor.systemRed, for: .normal)
+        checkRSVP(isCreator: isOwner, isRSVP: RSVPed)
     }
     
     @IBAction func rsvpButtonPressed(_ sender: Any) {
+        if rsvpButton.titleLabel?.text == "RSVP" {
+            let otherVC = delegate as! JoinGame
+            otherVC.rsvp(g: selectedGame)
+            
+            //ADD UPDATE TO PARTICIPANTS
+            
+            checkRSVP(isCreator: false, isRSVP: true)
+        } else if rsvpButton.titleLabel?.text == "Cancel RSVP" {
+            let otherVC = delegate as! JoinGame
+            otherVC.leaveGame(g: selectedGame)
+            
+            //ADD UPDATE TO PARTICIPANTS
+            
+            checkRSVP(isCreator: false, isRSVP: false)
+        }
         
+    }
+    
+    func checkRSVP(isCreator: Bool, isRSVP: Bool) {
+        rsvpButton.setTitle(!isCreator ? (isRSVP ? "Cancel RSVP" : "RSVP"): "Delete", for: .normal)
+        rsvpButton.setTitleColor(!isCreator ? (isRSVP ? UIColor.systemRed : UIColor.systemGreen): UIColor.systemRed, for: .normal)
     }
     /*
     // MARK: - Navigation

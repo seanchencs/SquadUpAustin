@@ -37,6 +37,10 @@ class DisplayProfileViewController: UIViewController {
         populateProfileSettings()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        populateProfileSettings()
+    }
+    
     //Setup the circular profile picture.
     func circleProfilePicture() {
         ProfileImage?.layer.cornerRadius = (ProfileImage?.frame.size.width ?? 0.0) / 2

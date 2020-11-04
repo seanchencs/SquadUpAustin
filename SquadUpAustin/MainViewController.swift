@@ -10,7 +10,28 @@ import UIKit
 import CoreData
 import Firebase
 
-class MainViewController: UIViewController, UITableViewDelegate, UITableViewDataSource {
+protocol JoinGame {
+    func rsvp(g: Game)
+    func leaveGame(g: Game)
+}
+
+class MainViewController: UIViewController, JoinGame, UITableViewDelegate, UITableViewDataSource {
+    
+    func rsvp(g: Game) {
+        var givenGame = g
+        if Auth.auth().currentUser != nil {
+            self.rsvpGame(displayName: ((Auth.auth().currentUser?.displayName) ?? Auth.auth().currentUser?.email?.components(separatedBy: "@")[0])!, game: &givenGame)
+            tableView.reloadData()
+        }
+    }
+    
+    func leaveGame(g: Game) {
+        var givenGame = g
+        if Auth.auth().currentUser != nil {
+            self.unRSVP(displayName: ((Auth.auth().currentUser?.displayName) ?? Auth.auth().currentUser?.email?.components(separatedBy: "@")[0])!, game: &givenGame)
+            tableView.reloadData()
+        }
+    }
     
     //MARK: Outlets
     @IBOutlet weak var tableView: UITableView!
