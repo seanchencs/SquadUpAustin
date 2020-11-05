@@ -9,10 +9,13 @@
 import UIKit
 import FirebaseAuth
 import FirebaseFirestore
+import FirebaseUI
+import Photos
+import FirebaseStorage
 
 class DisplayProfileViewController: UIViewController {
 
-    @IBOutlet weak var ProfileImage: UIImageView!
+    @IBOutlet weak var profileImage: UIImageView!
     @IBOutlet weak var settingsButton: UIButton!
     
     @IBOutlet weak var usernameLabel: UILabel!
@@ -32,6 +35,7 @@ class DisplayProfileViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        SDImageCache.shared.clearDisk(onCompletion: nil)
         circleProfilePicture()
         setupSettingsButton()
         populateProfileSettings()
@@ -43,10 +47,20 @@ class DisplayProfileViewController: UIViewController {
     
     //Setup the circular profile picture.
     func circleProfilePicture() {
-        ProfileImage?.layer.cornerRadius = (ProfileImage?.frame.size.width ?? 0.0) / 2
-        ProfileImage?.clipsToBounds = true
-        ProfileImage?.layer.borderWidth = 4.0
-        ProfileImage?.layer.borderColor = UIColor.black.cgColor
+        
+        profileImage?.layer.cornerRadius = (profileImage?.frame.size.width ?? 0.0) / 2
+        profileImage?.clipsToBounds = true
+        profileImage?.layer.borderWidth = 4.0
+        profileImage?.layer.borderColor = UIColor.black.cgColor
+        
+        //populate with image from storage
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let photoRef = storageRef.child(currentUser.uid)
+
+        profileImage.sd_setImage(with: photoRef)
+        
+        SDImageCache.shared.clearDisk(onCompletion: nil)
     }
     
     func setupSettingsButton(){

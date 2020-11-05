@@ -12,6 +12,7 @@ import FirebaseAuth
 import FirebaseFirestore
 import Photos
 import FirebaseStorage
+import FirebaseUI
 
 class EditProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
@@ -36,6 +37,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+        SDImageCache.shared.clearDisk(onCompletion: nil)
+        
         circleProfilePicture()
         setupImageButton()
         textFieldSetup()
@@ -50,6 +53,16 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         editProfileImage?.clipsToBounds = true
         editProfileImage?.layer.borderWidth = 4.0
         editProfileImage?.layer.borderColor = UIColor.black.cgColor
+        
+        
+        //populate with image from storage
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let photoRef = storageRef.child(currentUser.uid)
+
+        editProfileImage.sd_setImage(with: photoRef)
+        
+        SDImageCache.shared.clearDisk(onCompletion: nil)
     }
     
     //Setup edit image button.
@@ -61,8 +74,6 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         editImageButton.layer.borderWidth = 0.75
         editImageButton.layer.borderColor = UIColor.gray.cgColor
         editImageButton.contentEdgeInsets = UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0)
-        
-        
     }
 
     @IBAction func deleteAccount(_ sender: Any) {
@@ -247,7 +258,6 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
 
         alert.addAction(UIAlertAction(title: "Camera Roll", style: .default, handler: { [self] (_) in
             //Open up camera roll and select and image and save it.
-            print("User click Edit button")
             picker.allowsEditing = false
             picker.sourceType = .photoLibrary
             present(picker, animated: true, completion: nil)
@@ -257,9 +267,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
             print("User click Dismiss button")
         }))
 
-        self.present(alert, animated: true, completion: {
-            print("completion block")
-        })
+        self.present(alert, animated: true, completion: nil)
     }
     
     //Check if we have access.
@@ -301,20 +309,22 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     func uploadImageToFirebaseStorage(imageUrl: URL) {
         let storage = Storage.storage()
         
-        let data = Data()
-        
         let storageRef = storage.reference()
         
         let localImage = imageUrl
         
         let photoRef = storageRef.child(currentUser.uid)
-    
-        let uploadTask = photoRef.putFile(from: localImage, metadata: nil) { (metadeta, err) in
-            guard let metadeta = metadeta else {
-                print(err?.localizedDescription)
+        
+        photoRef.putFile(from: localImage, metadata: nil) { (metadeta, err) in
+            guard metadeta != nil else {
+                print(err?.localizedDescription ?? "Error uploading photo")
                 return
             }
-            print("Photo uploaded")
+            //Update ui for new photo.
+            SDImageCache.shared.clearDisk(onCompletion: nil)
+            self.editProfileImage.sd_setImage(with: photoRef)
+            SDImageCache.shared.clearDisk(onCompletion: nil)
+            
         }
     }
     
