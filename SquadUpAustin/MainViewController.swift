@@ -17,6 +17,7 @@ protocol JoinGame {
 
 class MainViewController: UIViewController, JoinGame, UITableViewDelegate, UITableViewDataSource {
     
+    //MARK: Join Game Protocol
     func rsvp(g: Game) {
         var givenGame = g
         if Auth.auth().currentUser != nil {

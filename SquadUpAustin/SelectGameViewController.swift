@@ -25,13 +25,15 @@ class SelectGameViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        // Do any additional setup after loading the view.
+        
+        //set up values based on selected game
         ownerLabel.text = "\(selectedGame.gameOwner)'s \(selectedGame.sport) Game"
         sportLabel.text = selectedGame.sport
         locationLabel.text = selectedGame.location
         timeLabel.text = selectedGame.time
         participantsLabel.text = selectedGame.players.joined(separator: ", ")
         
+        //set up RSVP/Cancel/Delete Button
         var isOwner = false
         var RSVPed = false
         if Auth.auth().currentUser != nil {
@@ -68,14 +70,5 @@ class SelectGameViewController: UIViewController {
         rsvpButton.setTitle(!isCreator ? (isRSVP ? "Cancel RSVP" : "RSVP"): "Delete", for: .normal)
         rsvpButton.setTitleColor(!isCreator ? (isRSVP ? UIColor.systemRed : UIColor.systemGreen): UIColor.systemRed, for: .normal)
     }
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destination.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

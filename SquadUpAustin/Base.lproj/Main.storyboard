@@ -680,20 +680,12 @@
                                     <constraint firstAttribute="height" constant="400" id="Guf-bM-t0x"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Chat will go here" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="XO3-JL-R1B">
-                                <rect key="frame" x="143.5" y="641.5" width="127" height="20.5"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="DGi-n3-U0B"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="DGi-n3-U0B" firstAttribute="trailing" secondItem="oKR-2p-QwV" secondAttribute="trailing" constant="20" id="B3M-gL-KDX"/>
-                            <constraint firstItem="XO3-JL-R1B" firstAttribute="centerX" secondItem="e1v-3S-JUQ" secondAttribute="centerX" id="JwH-Ak-J2b"/>
                             <constraint firstItem="oKR-2p-QwV" firstAttribute="leading" secondItem="DGi-n3-U0B" secondAttribute="leading" constant="20" id="NkA-sE-4AN"/>
-                            <constraint firstItem="DGi-n3-U0B" firstAttribute="bottom" secondItem="XO3-JL-R1B" secondAttribute="bottom" constant="200" id="apC-cn-rH7"/>
                             <constraint firstItem="oKR-2p-QwV" firstAttribute="top" secondItem="DGi-n3-U0B" secondAttribute="top" constant="20" id="sM1-8j-5LP"/>
                         </constraints>
                     </view>
@@ -1419,7 +1411,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="FH1-8C-WBQ"/>
         <segue reference="Fb1-8P-MVb"/>
         <segue reference="D5J-gN-JcU"/>
         <segue reference="naq-ey-R0v"/>
