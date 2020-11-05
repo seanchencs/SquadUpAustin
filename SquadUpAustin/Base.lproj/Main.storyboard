@@ -764,7 +764,7 @@
         <!--Login View Controller-->
         <scene sceneID="loc-WA-a6X">
             <objects>
-                <viewController id="4X4-Qn-PQX" customClass="LoginViewController" customModule="SquadUpAustin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="4X4-Qn-PQX" customClass="LoginViewController" customModule="SquadUpAustin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="E5C-9h-J5v">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -817,6 +817,9 @@
                                         <state key="normal" title="Forgot password?">
                                             <color key="titleColor" systemColor="systemOrangeColor"/>
                                         </state>
+                                        <connections>
+                                            <segue destination="2ws-6b-1u2" kind="show" identifier="ForgotPasswordSegueIdentifier" id="8gs-Ib-A0O"/>
+                                        </connections>
                                     </button>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XdB-xh-NHY">
                                         <rect key="frame" x="0.0" y="290" width="364" height="110"/>
@@ -1339,11 +1342,72 @@
             </objects>
             <point key="canvasLocation" x="215.94202898550725" y="1630.5803571428571"/>
         </scene>
+        <!--Forgot Password View Controller-->
+        <scene sceneID="uUd-Et-xCt">
+            <objects>
+                <viewController modalPresentationStyle="fullScreen" id="2ws-6b-1u2" customClass="ForgotPasswordViewController" customModule="SquadUpAustin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="XyE-w8-pfO">
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gjg-Ox-jYT">
+                                <rect key="frame" x="20" y="44" width="34" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Back">
+                                    <color key="titleColor" systemColor="systemOrangeColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="backButton:" destination="2ws-6b-1u2" eventType="touchUpInside" id="u1O-Ed-CDT"/>
+                                </connections>
+                            </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Oh no! You have forgotten your password." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="4" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="blc-jA-pSn">
+                                <rect key="frame" x="21" y="209" width="342" height="69"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="24"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Enter the email to the account you want to reset your password." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ik-QZ-fGn">
+                                <rect key="frame" x="20" y="348" width="374" height="77"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                            <textField opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Ee-cA-TiR">
+                                <rect key="frame" x="21" y="420" width="373" height="34"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                <textInputTraits key="textInputTraits"/>
+                            </textField>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pgq-Jm-tLt">
+                                <rect key="frame" x="156" y="514" width="102" height="30"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <state key="normal" title="Send reset link">
+                                    <color key="titleColor" systemColor="systemOrangeColor"/>
+                                </state>
+                                <connections>
+                                    <action selector="resetPasswordButton:" destination="2ws-6b-1u2" eventType="touchUpInside" id="ykU-3t-qNX"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <viewLayoutGuide key="safeArea" id="cpe-Fx-HtI"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                    <navigationItem key="navigationItem" id="VY0-bt-3pQ"/>
+                    <connections>
+                        <outlet property="enterEmailTextField" destination="2Ee-cA-TiR" id="89p-hb-Q1q"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="LaI-Mm-Vox" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-797.10144927536237" y="1328.5714285714284"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Fb1-8P-MVb"/>
         <segue reference="D5J-gN-JcU"/>
-        <segue reference="zKR-5K-niR"/>
+        <segue reference="naq-ey-R0v"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="SplashScreenLogo" width="300" height="91"/>

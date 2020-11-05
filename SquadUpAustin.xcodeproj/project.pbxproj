@@ -27,6 +27,7 @@
 		687E0BD5FF8F5FB7FD16E55E /* Pods_SquadUpAustin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 532FEADF36F442A8757CA8DE /* Pods_SquadUpAustin.framework */; };
 		A77C0E9D254226630033946D /* DeleteProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77C0E9C254226630033946D /* DeleteProfileViewController.swift */; };
 		A77C0E9F254232C30033946D /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77C0E9E254232C30033946D /* Users.swift */; };
+		A7C8FF752553AFB400622543 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C8FF742553AFB400622543 /* ForgotPasswordViewController.swift */; };
 		A7CB50AD2541338B00E33B63 /* DisplayProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB50AC2541338B00E33B63 /* DisplayProfileViewController.swift */; };
 		A7CB50AF254146D100E33B63 /* EditProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7CB50AE254146D100E33B63 /* EditProfileViewController.swift */; };
 /* End PBXBuildFile section */
@@ -55,6 +56,7 @@
 		532FEADF36F442A8757CA8DE /* Pods_SquadUpAustin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SquadUpAustin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A77C0E9C254226630033946D /* DeleteProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteProfileViewController.swift; sourceTree = "<group>"; };
 		A77C0E9E254232C30033946D /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
+		A7C8FF742553AFB400622543 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
 		A7CB50AC2541338B00E33B63 /* DisplayProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DisplayProfileViewController.swift; sourceTree = "<group>"; };
 		A7CB50AE254146D100E33B63 /* EditProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditProfileViewController.swift; sourceTree = "<group>"; };
 		DC5CAE87BC019E1B8F946552 /* Pods-SquadUpAustin.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SquadUpAustin.release.xcconfig"; path = "Target Support Files/Pods-SquadUpAustin/Pods-SquadUpAustin.release.xcconfig"; sourceTree = "<group>"; };
@@ -109,6 +111,7 @@
 				A7CB50AE254146D100E33B63 /* EditProfileViewController.swift */,
 				A77C0E9C254226630033946D /* DeleteProfileViewController.swift */,
 				14961D41253A20EE00E721DC /* Main.storyboard */,
+				A7C8FF742553AFB400622543 /* ForgotPasswordViewController.swift */,
 				14EAEA96255336F0009A8417 /* ChooseDateViewController.swift */,
 				14961D47253A20F200E721DC /* Assets.xcassets */,
 				14961D49253A20F200E721DC /* LaunchScreen.storyboard */,
@@ -266,6 +269,7 @@
 				146C0E192550A602001E4F27 /* FilterViewController.swift in Sources */,
 				504A8DA42542421B00BC4CA1 /* Game.swift in Sources */,
 				A77C0E9F254232C30033946D /* Users.swift in Sources */,
+				A7C8FF752553AFB400622543 /* ForgotPasswordViewController.swift in Sources */,
 				A77C0E9D254226630033946D /* DeleteProfileViewController.swift in Sources */,
 				145CE92C253F9199007C77C2 /* WelcomeViewController.swift in Sources */,
 				A7CB50AD2541338B00E33B63 /* DisplayProfileViewController.swift in Sources */,
