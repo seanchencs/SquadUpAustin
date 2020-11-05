@@ -23,6 +23,7 @@ class EditProfileViewController: UIViewController {
     
     @IBOutlet weak var usernameLabel: UILabel!
     
+    @IBOutlet weak var editImageButton: UIButton!
     
     let currentUser = Auth.auth().currentUser!
     let collectionOfUsers = Firestore.firestore().collection("users")
@@ -32,6 +33,7 @@ class EditProfileViewController: UIViewController {
 
         // Do any additional setup after loading the view.
         circleProfilePicture()
+        setupImageButton()
         textFieldSetup()
     }
     
@@ -41,6 +43,13 @@ class EditProfileViewController: UIViewController {
         editProfileImage?.clipsToBounds = true
         editProfileImage?.layer.borderWidth = 4.0
         editProfileImage?.layer.borderColor = UIColor.black.cgColor
+    }
+    
+    //Setup edit image button.
+    func setupImageButton(){
+        editImageButton.setImage(UIImage(named: "ImageIcon"), for: .normal)
+        editImageButton.setTitle("Change Picture", for: .normal)
+        
     }
 
     @IBAction func deleteAccount(_ sender: Any) {
