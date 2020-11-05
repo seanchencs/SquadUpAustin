@@ -13,7 +13,7 @@ class GameTableViewCell: UITableViewCell {
     @IBOutlet weak var gameNameLabel: UILabel!
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
-    @IBOutlet weak var sportLabel: UILabel!
     @IBOutlet weak var playerCountLabel: UILabel!
+    @IBOutlet weak var sportImage: UIImageView!
     
 }

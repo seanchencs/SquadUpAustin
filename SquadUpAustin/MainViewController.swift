@@ -33,7 +33,7 @@ class MainViewController: UIViewController, JoinGame, UITableViewDelegate, UITab
         }
     }
     
-    //MARK: Outlets
+    //MARK: Variables
     @IBOutlet weak var tableView: UITableView!
     
     let db = Firestore.firestore()
@@ -56,8 +56,8 @@ class MainViewController: UIViewController, JoinGame, UITableViewDelegate, UITab
         cell.gameNameLabel.text = "\(game.gameOwner)'s \(game.sport) Game"
         cell.timeLabel.text = game.time
         cell.locationLabel.text = game.location
-        cell.sportLabel.text = game.sport
         cell.playerCountLabel.text = String(game.players.count)
+        cell.sportImage.image = UIImage(named: game.sport)
         return cell
     }
     
@@ -146,22 +146,6 @@ class MainViewController: UIViewController, JoinGame, UITableViewDelegate, UITab
             gameRef.setData(game.getDictionary())
         }
     }
-    
-    // BROKEN Updates a given game with Firestore version
-//    func updateGame(game: inout Game){
-//        var newGame: Game?
-//        let gameRef = db.collection("games").document(game.id!)
-//        gameRef.getDocument { (document, error) in
-//            if let document = document, document.exists {
-//                print("DOCUMENT")
-//                let data = document.data()!
-//                newGame = Game(id: document.documentID, sport: data["sport"] as! String, location: data["location"] as! String, time: data["time"] as! String, gameOwner: data["gameOwner"] as! String, players: (data["players"] as! String).components(separatedBy: ","), equipmentCheck: data["equipment"] as! Bool)
-//            } else {
-//                print("Document does not exist")
-//            }
-//            game = newGame!
-//        }
-//    }
     
     // Completely replaces fetchedGames and filteredGames with Firestore
     func fetchGames() {
