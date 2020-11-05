@@ -166,7 +166,7 @@ class MainViewController: UIViewController, JoinGame, UITableViewDelegate, UITab
         }
     }
     
-    //MARK: Filter
+    //MARK: Filter and Sort
     /// Apply filter and sort to filteredGames
     func filterGames() {
         filteredGames = fetchedGames

@@ -216,6 +216,7 @@
                                                     <segment title="Time"/>
                                                     <segment title="Sport"/>
                                                     <segment title="Participants"/>
+                                                    <segment title="Location"/>
                                                 </segments>
                                                 <connections>
                                                     <action selector="sortChanged:" destination="anx-7Q-Gqv" eventType="valueChanged" id="yXC-zx-zLu"/>

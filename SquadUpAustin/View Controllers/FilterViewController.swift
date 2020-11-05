@@ -44,6 +44,10 @@ class FilterViewController: UIViewController {
     }
     
     @IBAction func sortChanged(_ sender: Any) {
+        if sortSegmentedControl.titleForSegment(at: sortSegmentedControl.selectedSegmentIndex)! == "Location" {
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.locationManager!.requestWhenInUseAuthorization()
+        }
         delegateVC?.sortBy = sortSegmentedControl.titleForSegment(at: sortSegmentedControl.selectedSegmentIndex)!
     }
     

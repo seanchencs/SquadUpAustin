@@ -2,6 +2,8 @@
 <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
 <plist version="1.0">
 <dict>
+	<key>NSLocationWhenInUseUsageDescription</key>
+	<string>Used for determing proximity to events</string>
 	<key>NSPhotoLibraryUsageDescription</key>
 	<string>Warning. This app may use your images from library.</string>
 	<key>NSCameraUsageDescription</key>

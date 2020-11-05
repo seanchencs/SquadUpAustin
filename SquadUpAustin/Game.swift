@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import CoreLocation
 
 struct Game: Equatable{
 
@@ -36,6 +37,20 @@ struct Game: Equatable{
         formatter.dateStyle = .medium
         formatter.timeStyle = .short
         return formatter.date(from: time)!
+    }
+    
+    func getLocation() -> CLLocation {
+        switch location {
+        case "Gregory Gym":
+            return CLLocation(latitude: 30.284240, longitude: -97.736832)
+        case "Recreational Sports Center":
+            return CLLocation(latitude: 30.281460, longitude: -97.732853)
+        case "Wright-Whitaker Sports Complex":
+            return CLLocation(latitude: 30.314945, longitude: -97.726627)
+        default:
+            print("Location not found")
+            return CLLocation(latitude: 0, longitude: 0)
+        }
     }
     
     static func ==(lhs: Game, rhs: Game) -> Bool {
