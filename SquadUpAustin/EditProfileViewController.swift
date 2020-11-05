@@ -10,8 +10,10 @@ import UIKit
 
 import FirebaseAuth
 import FirebaseFirestore
+import Photos
+import FirebaseStorage
 
-class EditProfileViewController: UIViewController {
+class EditProfileViewController: UIViewController, UIImagePickerControllerDelegate, UINavigationControllerDelegate {
 
     @IBOutlet weak var editProfileImage: UIImageView!
     
@@ -25,6 +27,8 @@ class EditProfileViewController: UIViewController {
     
     @IBOutlet weak var editImageButton: UIButton!
     
+    let picker = UIImagePickerController()
+    
     let currentUser = Auth.auth().currentUser!
     let collectionOfUsers = Firestore.firestore().collection("users")
     
@@ -35,6 +39,9 @@ class EditProfileViewController: UIViewController {
         circleProfilePicture()
         setupImageButton()
         textFieldSetup()
+        
+        picker.delegate = self
+        checkPermissionForPhotoLibrary()
     }
     
     //Setup the circular profile picture.
@@ -230,6 +237,7 @@ class EditProfileViewController: UIViewController {
 
     }
     
+    //Change profile picture code
     @IBAction func changeImagePressed(_ sender: Any) {
         let alert = UIAlertController(title: "Change image", message: "Please select where to get the new image from.", preferredStyle: .actionSheet)
         alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (_) in
@@ -237,9 +245,12 @@ class EditProfileViewController: UIViewController {
             print("User click Approve button")
         }))
 
-        alert.addAction(UIAlertAction(title: "Camera Roll", style: .default, handler: { (_) in
+        alert.addAction(UIAlertAction(title: "Camera Roll", style: .default, handler: { [self] (_) in
             //Open up camera roll and select and image and save it.
             print("User click Edit button")
+            picker.allowsEditing = false
+            picker.sourceType = .photoLibrary
+            present(picker, animated: true, completion: nil)
         }))
             
         alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
@@ -249,6 +260,62 @@ class EditProfileViewController: UIViewController {
         self.present(alert, animated: true, completion: {
             print("completion block")
         })
+    }
+    
+    //Check if we have access.
+    func checkPermissionForPhotoLibrary() {
+        if PHPhotoLibrary.authorizationStatus() != PHAuthorizationStatus.authorized {
+            PHPhotoLibrary.requestAuthorization({
+                (status:PHAuthorizationStatus) -> Void in
+                ()
+            })
+        }
+        
+        if PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.authorized {
+            print("we have access")
+        }
+        else {
+            PHPhotoLibrary.requestAuthorization(requestPhotoLibraryAuthirizationHandler)
+        }
+        
+    }
+    
+    func requestPhotoLibraryAuthirizationHandler(status: PHAuthorizationStatus) {
+        if PHPhotoLibrary.authorizationStatus() == PHAuthorizationStatus.authorized {
+            print("we have access")
+        }
+        else {
+            //no access to photos
+        }
+    }
+    
+    func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
+        if let url = info[UIImagePickerController.InfoKey.imageURL] as? URL {
+            print(url)
+            uploadImageToFirebaseStorage(imageUrl: url)
+        }
+        
+        picker.dismiss(animated: true, completion: nil)
+    }
+    
+    func uploadImageToFirebaseStorage(imageUrl: URL) {
+        let storage = Storage.storage()
+        
+        let data = Data()
+        
+        let storageRef = storage.reference()
+        
+        let localImage = imageUrl
+        
+        let photoRef = storageRef.child(currentUser.uid)
+    
+        let uploadTask = photoRef.putFile(from: localImage, metadata: nil) { (metadeta, err) in
+            guard let metadeta = metadeta else {
+                print(err?.localizedDescription)
+                return
+            }
+            print("Photo uploaded")
+        }
     }
     
     
