@@ -711,7 +711,7 @@
         <!--Welcome View Controller-->
         <scene sceneID="IHm-i4-R4l">
             <objects>
-                <viewController id="Z8o-m9-40b" customClass="WelcomeViewController" customModule="SquadUpAustin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="Z8o-m9-40b" customClass="WelcomeViewController" customModule="SquadUpAustin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="Ja1-Xj-vab">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -1254,7 +1254,7 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="CL3-Hw-Mf1" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1050.7246376811595" y="1630.5803571428571"/>
+            <point key="canvasLocation" x="1017" y="1658"/>
         </scene>
         <!--Delete Profile View Controller-->
         <scene sceneID="QYM-an-DtD">
@@ -1290,6 +1290,10 @@
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="tintColor" systemColor="systemRedColor"/>
                                 <state key="normal" title="Delete Account"/>
+                                <connections>
+                                    <action selector="deleteAccountButton:" destination="GRD-CQ-Kjo" eventType="touchUpInside" id="wDO-Um-QQu"/>
+                                    <segue destination="Z8o-m9-40b" kind="show" identifier="DeleteAccountSegueIdentifier" id="zKR-5K-niR"/>
+                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="i6I-hW-T5E">
                                 <rect key="frame" x="183" y="740" width="48" height="30"/>
@@ -1323,13 +1327,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="yvz-0e-kLi" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1831.8840579710147" y="1640.625"/>
+            <point key="canvasLocation" x="216" y="1631"/>
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
         <segue reference="Fb1-8P-MVb"/>
-        <segue reference="D5J-gN-JcU"/>
-        <segue reference="naq-ey-R0v"/>
+        <segue reference="rn3-AV-lRk"/>
+        <segue reference="zKR-5K-niR"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="SplashScreenLogo" width="300" height="91"/>

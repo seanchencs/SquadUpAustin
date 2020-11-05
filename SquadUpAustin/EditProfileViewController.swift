@@ -97,7 +97,7 @@ class EditProfileViewController: UIViewController {
             "major": newMajor
         ]){ err in
             if let err = err {
-                print("Error updating document: \(err)")
+                //print("Error updating document: \(err)")
                 //send a alert to ensure user they succesfully updated their information.
                 let controller = UIAlertController(title: "Profile Not Updated!",
                                                    message: "Your information has Not been succesfully updated.",
@@ -108,7 +108,7 @@ class EditProfileViewController: UIViewController {
                                                    handler: nil))
                 self.present(controller, animated: true, completion: nil)
             } else {
-                print("Document successfully updated")
+                //print("Document successfully updated")
                 
                 //update placeholder text to new inputs
                 self.editUsernameTextField.placeholder = newUsername
