@@ -1082,6 +1082,7 @@
                                     <color key="titleColor" systemColor="systemOrangeColor"/>
                                 </state>
                                 <connections>
+                                    <action selector="LogoutButton:" destination="fJN-9O-H15" eventType="touchUpInside" id="hXb-ZM-AKM"/>
                                     <segue destination="4X4-Qn-PQX" kind="presentation" modalPresentationStyle="fullScreen" id="D5J-gN-JcU"/>
                                 </connections>
                             </button>

@@ -80,6 +80,23 @@ class DisplayProfileViewController: UIViewController {
     @IBAction func settingButtonPressed(_ sender: Any) {
         
     }
+    
+    @IBAction func LogoutButton(_ sender: Any) {
+        let firebaseAuth = Auth.auth()
+        do {
+          try firebaseAuth.signOut()
+        } catch let signOutError as NSError {
+            let controller = UIAlertController(title: "Could not log you out!",
+                                               message: "There was an error loggin you out.",
+                                               preferredStyle: .alert)
+            
+            controller.addAction(UIAlertAction(title: "OK",
+                                               style: .default,
+                                               handler: nil))
+            self.present(controller, animated: true, completion: nil)
+        }
+    }
+    
 }
 
 
