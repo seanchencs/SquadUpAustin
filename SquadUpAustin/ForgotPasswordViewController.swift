@@ -48,8 +48,7 @@ class ForgotPasswordViewController: UIViewController {
                 else {
                     //sent email
                     let controller = UIAlertController(title: "Email sent",
-                                                       message: "Please wait a few moments fo
-                                                       r the email to reach you.",
+                                                       message: "Please wait a few moments for the email to reach you.",
                                                        preferredStyle: .alert)
                     
                     controller.addAction(UIAlertAction(title: "OK",
