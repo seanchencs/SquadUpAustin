@@ -49,6 +49,12 @@ class EditProfileViewController: UIViewController {
     func setupImageButton(){
         editImageButton.setImage(UIImage(named: "ImageIcon"), for: .normal)
         editImageButton.setTitle("Change Picture", for: .normal)
+        editImageButton.backgroundColor = .clear
+        editImageButton.layer.cornerRadius = 5
+        editImageButton.layer.borderWidth = 0.75
+        editImageButton.layer.borderColor = UIColor.gray.cgColor
+        editImageButton.contentEdgeInsets = UIEdgeInsets(top: 8.0, left: 8.0, bottom: 8.0, right: 8.0)
+        
         
     }
 
@@ -223,6 +229,11 @@ class EditProfileViewController: UIViewController {
         }
 
     }
+    
+    @IBAction func changeImagePressed(_ sender: Any) {
+        
+    }
+    
     
     // code to enable tapping on the background to remove software keyboard
         
