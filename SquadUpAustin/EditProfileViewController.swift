@@ -111,7 +111,7 @@ class EditProfileViewController: UIViewController {
             "hometown": newHometown,
             "major": newMajor
         ]){ err in
-            if let err = err {
+                if err != nil {
                 //print("Error updating document: \(err)")
                 //send a alert to ensure user they succesfully updated their information.
                 let controller = UIAlertController(title: "Profile Not Updated!",
@@ -167,7 +167,7 @@ class EditProfileViewController: UIViewController {
 
                                                             let credential = EmailAuthProvider.credential(withEmail: currentUser.email!, password: enteredText!)
                                                             currentUser.reauthenticate(with: credential) { (result, error) in
-                                                               if let err = error {
+                                                                if error != nil {
                                                                   //..read error message
                                                                 //send a alert to ensure user they succesfully updated their information.
                                                                 let controller = UIAlertController(title: "Password Not Updated",
@@ -181,7 +181,7 @@ class EditProfileViewController: UIViewController {
                                                                } else {
                                                                     //.. go on
                                                                     currentUser.updatePassword(to: newPassword) { (error) in
-                                                                        if let err = error {
+                                                                        if error != nil {
                                                                             print("error updating password")
                                                                             let controller = UIAlertController(title: "Password update fail",
                                                                                                                message: "Oops something happened when trying to save your new password.",
@@ -231,7 +231,24 @@ class EditProfileViewController: UIViewController {
     }
     
     @IBAction func changeImagePressed(_ sender: Any) {
-        
+        let alert = UIAlertController(title: "Change image", message: "Please select where to get the new image from.", preferredStyle: .actionSheet)
+        alert.addAction(UIAlertAction(title: "Camera", style: .default, handler: { (_) in
+            //open up camera and take the picture and save it.
+            print("User click Approve button")
+        }))
+
+        alert.addAction(UIAlertAction(title: "Camera Roll", style: .default, handler: { (_) in
+            //Open up camera roll and select and image and save it.
+            print("User click Edit button")
+        }))
+            
+        alert.addAction(UIAlertAction(title: "Cancel", style: .cancel, handler: { (_) in
+            print("User click Dismiss button")
+        }))
+
+        self.present(alert, animated: true, completion: {
+            print("completion block")
+        })
     }
     
     
