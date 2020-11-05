@@ -208,6 +208,7 @@ class EditProfileViewController: UIViewController {
                                                        handler: nil))
                     
                     self.present(controller, animated: true, completion: nil)
+                    
                 }
             }
         }
