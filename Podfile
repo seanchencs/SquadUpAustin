@@ -11,5 +11,6 @@ target 'SquadUpAustin' do
   pod 'Firebase/Firestore'
   pod 'FirebaseFirestoreSwift'
   pod 'Firebase/Storage'
+  pod 'FirebaseUI/Storage'
 
 end
