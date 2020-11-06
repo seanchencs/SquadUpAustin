@@ -588,16 +588,16 @@
                                 <rect key="frame" x="20" y="108" width="374" height="400"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner's Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGc-Pk-VGq">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="66.5"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="57"/>
                                         <fontDescription key="fontDescription" type="system" weight="heavy" pointSize="24"/>
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="gKY-9q-U5R">
-                                        <rect key="frame" x="0.0" y="66.5" width="374" height="67"/>
+                                        <rect key="frame" x="0.0" y="57" width="374" height="57.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="mN6-eL-e94">
-                                                <rect key="frame" x="0.0" y="1" width="40" height="64.5"/>
+                                                <rect key="frame" x="0.0" y="1" width="40" height="55"/>
                                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="HCd-BS-w75"/>
@@ -605,7 +605,7 @@
                                                 <imageReference key="image" image="sportscourt" catalog="system" renderingMode="template"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Sport" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="OzS-Mw-eGa">
-                                                <rect key="frame" x="60" y="0.0" width="314" height="67"/>
+                                                <rect key="frame" x="60" y="0.0" width="314" height="57.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -613,10 +613,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="US6-kK-Y55">
-                                        <rect key="frame" x="0.0" y="133.5" width="374" height="66.5"/>
+                                        <rect key="frame" x="0.0" y="114.5" width="374" height="57"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="npv-Qu-HrD">
-                                                <rect key="frame" x="0.0" y="-0.5" width="40" height="67"/>
+                                                <rect key="frame" x="0.0" y="-0.5" width="40" height="57.5"/>
                                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="wPS-bK-7T6"/>
@@ -624,7 +624,7 @@
                                                 <imageReference key="image" image="mappin.and.ellipse" catalog="system" renderingMode="template"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Location" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="aQH-PY-Na3">
-                                                <rect key="frame" x="60" y="0.0" width="314" height="66.5"/>
+                                                <rect key="frame" x="60" y="0.0" width="314" height="57"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -632,10 +632,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="fOT-Yz-a29">
-                                        <rect key="frame" x="0.0" y="200" width="374" height="66.5"/>
+                                        <rect key="frame" x="0.0" y="171.5" width="374" height="57"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="h9x-Rz-JqC">
-                                                <rect key="frame" x="0.0" y="1.5" width="40" height="65.5"/>
+                                                <rect key="frame" x="0.0" y="1.5" width="40" height="56"/>
                                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="aSe-1x-wjH"/>
@@ -643,7 +643,7 @@
                                                 <imageReference key="image" image="calendar.badge.clock" catalog="system" renderingMode="template"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Time" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wFd-4s-2zc">
-                                                <rect key="frame" x="60" y="0.0" width="314" height="66.5"/>
+                                                <rect key="frame" x="60" y="0.0" width="314" height="57"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -651,10 +651,10 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cmm-Wq-hNk">
-                                        <rect key="frame" x="0.0" y="266.5" width="374" height="67"/>
+                                        <rect key="frame" x="0.0" y="228.5" width="374" height="57"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="8gF-bO-jUh">
-                                                <rect key="frame" x="0.0" y="1.5" width="40" height="64.5"/>
+                                                <rect key="frame" x="0.0" y="1.5" width="40" height="54.5"/>
                                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="OIw-jq-6a4"/>
@@ -662,7 +662,25 @@
                                                 <imageReference key="image" image="person" catalog="system" renderingMode="template"/>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Participants" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="s6n-ib-01D">
-                                                <rect key="frame" x="60" y="0.0" width="314" height="67"/>
+                                                <rect key="frame" x="60" y="0.0" width="314" height="57"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="cJU-mQ-8tz">
+                                        <rect key="frame" x="0.0" y="285.5" width="374" height="57.5"/>
+                                        <subviews>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="archivebox.circle" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="zYb-q0-erP">
+                                                <rect key="frame" x="0.0" y="0.5" width="40" height="56.5"/>
+                                                <color key="tintColor" systemColor="systemOrangeColor"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="40" id="Tqy-XE-xT8"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Equipment" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="kZs-n1-fnF">
+                                                <rect key="frame" x="60" y="0.0" width="314" height="57.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
@@ -670,7 +688,7 @@
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sUZ-3N-zcZ">
-                                        <rect key="frame" x="0.0" y="333.5" width="374" height="66.5"/>
+                                        <rect key="frame" x="0.0" y="343" width="374" height="57"/>
                                         <state key="normal" title="RSVP"/>
                                         <connections>
                                             <action selector="rsvpButtonPressed:" destination="Yoh-Be-QEB" eventType="touchUpInside" id="t8u-Et-uEd"/>
@@ -692,6 +710,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="FzX-ty-wWz"/>
                     <connections>
+                        <outlet property="equipmentLabel" destination="kZs-n1-fnF" id="6Te-xX-xdJ"/>
                         <outlet property="locationLabel" destination="aQH-PY-Na3" id="Uuv-qM-ZI4"/>
                         <outlet property="ownerLabel" destination="WGc-Pk-VGq" id="F65-T0-dQj"/>
                         <outlet property="participantsLabel" destination="s6n-ib-01D" id="Mes-hi-co3"/>
@@ -1418,6 +1437,7 @@
     </inferredMetricsTieBreakers>
     <resources>
         <image name="SplashScreenLogo" width="300" height="91"/>
+        <image name="archivebox.circle" catalog="system" width="128" height="121"/>
         <image name="calendar.badge.clock" catalog="system" width="128" height="108"/>
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="clock" catalog="system" width="128" height="121"/>

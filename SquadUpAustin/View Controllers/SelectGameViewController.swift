@@ -16,6 +16,7 @@ class SelectGameViewController: UIViewController {
     var delegate: MainViewController!
     var selectedGame: Game!
 
+    @IBOutlet weak var equipmentLabel: UILabel!
     @IBOutlet weak var ownerLabel: UILabel!
     @IBOutlet weak var sportLabel: UILabel!
     @IBOutlet weak var locationLabel: UILabel!
@@ -32,7 +33,11 @@ class SelectGameViewController: UIViewController {
         locationLabel.text = selectedGame.location
         timeLabel.text = selectedGame.time
         participantsLabel.text = selectedGame.players.joined(separator: ", ")
-        
+        if selectedGame.equipmentCheck {
+            equipmentLabel.text = "Equipment will be provided"
+        } else {
+            equipmentLabel.text = "Equipment will not be provided"
+        }
         //set up RSVP/Cancel/Delete Button
         var isOwner = false
         var RSVPed = false
@@ -50,20 +55,15 @@ class SelectGameViewController: UIViewController {
     @IBAction func rsvpButtonPressed(_ sender: Any) {
         if rsvpButton.titleLabel?.text == "RSVP" {
             let otherVC = delegate as! JoinGame
-            otherVC.rsvp(g: selectedGame)
-            
-            //ADD UPDATE TO PARTICIPANTS
-            
+            let temp = otherVC.rsvp(g: selectedGame)
+            participantsLabel.text = temp.players.joined(separator: ", ")
             checkRSVP(isCreator: false, isRSVP: true)
         } else if rsvpButton.titleLabel?.text == "Cancel RSVP" {
             let otherVC = delegate as! JoinGame
-            otherVC.leaveGame(g: selectedGame)
-            
-            //ADD UPDATE TO PARTICIPANTS
-            
+            let temp = otherVC.leaveGame(g: selectedGame)
+            participantsLabel.text = temp.players.joined(separator: ", ")
             checkRSVP(isCreator: false, isRSVP: false)
         }
-        
     }
     
     func checkRSVP(isCreator: Bool, isRSVP: Bool) {

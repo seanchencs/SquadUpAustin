@@ -11,27 +11,29 @@ import CoreData
 import Firebase
 
 protocol JoinGame {
-    func rsvp(g: Game)
-    func leaveGame(g: Game)
+    func rsvp(g: Game) -> Game
+    func leaveGame(g: Game) -> Game
 }
 
 class MainViewController: UIViewController, JoinGame, UITableViewDelegate, UITableViewDataSource {
     
     //MARK: Join Game Protocol
-    func rsvp(g: Game) {
+    func rsvp(g: Game) -> Game {
         var givenGame = g
         if Auth.auth().currentUser != nil {
             self.rsvpGame(displayName: ((Auth.auth().currentUser?.displayName) ?? Auth.auth().currentUser?.email?.components(separatedBy: "@")[0])!, game: &givenGame)
             tableView.reloadData()
         }
+        return givenGame
     }
     
-    func leaveGame(g: Game) {
+    func leaveGame(g: Game) -> Game{
         var givenGame = g
         if Auth.auth().currentUser != nil {
             self.unRSVP(displayName: ((Auth.auth().currentUser?.displayName) ?? Auth.auth().currentUser?.email?.components(separatedBy: "@")[0])!, game: &givenGame)
             tableView.reloadData()
         }
+        return givenGame
     }
     
     //MARK: Variables
