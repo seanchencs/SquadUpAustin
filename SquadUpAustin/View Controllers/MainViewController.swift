@@ -180,6 +180,10 @@ class MainViewController: UIViewController, JoinGame, UITableViewDelegate, UITab
             filteredGames.sort(by: { $0.sport > $1.sport})
         case "Participants":
             filteredGames.sort(by: { $0.players.count > $1.players.count})
+        case "Location":
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            let userLocation = appDelegate.locationManager!.location!
+            filteredGames.sort(by: {userLocation.distance(from: $0.getLocation()) > userLocation.distance(from: $1.getLocation())} )
         default:
             break
         }

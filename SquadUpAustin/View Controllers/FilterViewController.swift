@@ -44,6 +44,7 @@ class FilterViewController: UIViewController {
     }
     
     @IBAction func sortChanged(_ sender: Any) {
+        //request location permission
         if sortSegmentedControl.titleForSegment(at: sortSegmentedControl.selectedSegmentIndex)! == "Location" {
             let appDelegate = UIApplication.shared.delegate as! AppDelegate
             appDelegate.locationManager!.requestWhenInUseAuthorization()
