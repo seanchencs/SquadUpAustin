@@ -10,6 +10,7 @@ import UIKit
 import CoreData
 import Firebase
 
+/// add or remove current user from a game
 protocol JoinGame {
     func rsvp(g: Game) -> Game
     func leaveGame(g: Game) -> Game
@@ -17,27 +18,10 @@ protocol JoinGame {
 
 class MainViewController: UIViewController, JoinGame, UITableViewDelegate, UITableViewDataSource {
     
-    //MARK: Join Game Protocol
-    func rsvp(g: Game) -> Game {
-        var givenGame = g
-        if Auth.auth().currentUser != nil {
-            self.rsvpGame(displayName: ((Auth.auth().currentUser?.displayName) ?? Auth.auth().currentUser?.email?.components(separatedBy: "@")[0])!, game: &givenGame)
-            tableView.reloadData()
-        }
-        return givenGame
-    }
-    
-    func leaveGame(g: Game) -> Game{
-        var givenGame = g
-        if Auth.auth().currentUser != nil {
-            self.unRSVP(displayName: ((Auth.auth().currentUser?.displayName) ?? Auth.auth().currentUser?.email?.components(separatedBy: "@")[0])!, game: &givenGame)
-            tableView.reloadData()
-        }
-        return givenGame
-    }
-    
     //MARK: Variables
     @IBOutlet weak var tableView: UITableView!
+    
+    let refreshControl = UIRefreshControl()
     
     let db = Firestore.firestore()
     var fetchedGames = [Game]() // All fetched games
@@ -106,6 +90,10 @@ class MainViewController: UIViewController, JoinGame, UITableViewDelegate, UITab
         return config
     }
     
+    @objc private func refreshTable(_ sender: Any) {
+        fetchGames()
+    }
+    
     //MARK: Firestore
     /// Store a given game in Firestore
     func storeGame(game: inout Game) {
@@ -150,7 +138,7 @@ class MainViewController: UIViewController, JoinGame, UITableViewDelegate, UITab
         }
     }
     
-    // Completely replaces fetchedGames and filteredGames with Firestore
+    // Clean refresh and refilter of games from Firestore
     func fetchGames() {
         db.collection("games").getDocuments() { (querySnapshot, err) in
             if let err = err {
@@ -164,6 +152,7 @@ class MainViewController: UIViewController, JoinGame, UITableViewDelegate, UITab
                 }
                 self.filterGames()
                 self.tableView.reloadData()
+                self.refreshControl.endRefreshing()
             }
         }
     }
@@ -191,12 +180,39 @@ class MainViewController: UIViewController, JoinGame, UITableViewDelegate, UITab
         }
     }
     
+    //MARK: Join Game Protocol
+    func rsvp(g: Game) -> Game {
+        var givenGame = g
+        if Auth.auth().currentUser != nil {
+            self.rsvpGame(displayName: ((Auth.auth().currentUser?.displayName) ?? Auth.auth().currentUser?.email?.components(separatedBy: "@")[0])!, game: &givenGame)
+            tableView.reloadData()
+        }
+        return givenGame
+    }
+    
+    func leaveGame(g: Game) -> Game{
+        var givenGame = g
+        if Auth.auth().currentUser != nil {
+            self.unRSVP(displayName: ((Auth.auth().currentUser?.displayName) ?? Auth.auth().currentUser?.email?.components(separatedBy: "@")[0])!, game: &givenGame)
+            tableView.reloadData()
+        }
+        return givenGame
+    }
+    
     //MARK: Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         // Do any additional setup after loading the view.
         tableView.delegate = self
         tableView.dataSource = self
+        
+        //pull refresh
+        if #available(iOS 10.0, *) {
+            tableView.refreshControl = refreshControl
+        } else {
+            tableView.addSubview(refreshControl)
+        }
+        refreshControl.addTarget(self, action: #selector(refreshTable(_:)), for: .valueChanged)
     }
     
     override func viewWillAppear(_ animated: Bool) {

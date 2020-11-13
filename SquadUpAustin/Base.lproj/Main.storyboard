@@ -15,11 +15,11 @@
             <objects>
                 <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="SquadUpAustin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fcg-cG-T9k" userLabel="createAGameBtn">
-                                <rect key="frame" x="198" y="835" width="18" height="22"/>
+                                <rect key="frame" x="198" y="781" width="18" height="22"/>
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle"/>
@@ -30,7 +30,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qgp-Wp-kXM" userLabel="profileBtn">
-                                <rect key="frame" x="371" y="835" width="18" height="22"/>
+                                <rect key="frame" x="371" y="781" width="18" height="22"/>
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle"/>
@@ -41,7 +41,7 @@
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="azQ-Xf-7Ed" userLabel="mainPageBtn">
-                                <rect key="frame" x="25" y="835" width="20" height="22"/>
+                                <rect key="frame" x="25" y="781" width="20" height="22"/>
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle"/>
@@ -52,7 +52,7 @@
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="peH-8C-PJ0">
-                                <rect key="frame" x="5" y="93" width="404" height="737"/>
+                                <rect key="frame" x="5" y="61" width="404" height="715"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellIdentifier" rowHeight="125" id="ujE-U7-HOu" customClass="GameTableViewCell" customModule="SquadUpAustin" customModuleProvider="target">
@@ -581,11 +581,11 @@
             <objects>
                 <viewController id="Yoh-Be-QEB" customClass="SelectGameViewController" customModule="SquadUpAustin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="e1v-3S-JUQ">
-                        <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="oKR-2p-QwV">
-                                <rect key="frame" x="20" y="108" width="374" height="400"/>
+                                <rect key="frame" x="20" y="76" width="374" height="400"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Owner's Game" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="WGc-Pk-VGq">
                                         <rect key="frame" x="0.0" y="0.0" width="374" height="57"/>
@@ -771,6 +771,9 @@
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="XIj-i1-B9B"/>
+                    <connections>
+                        <segue destination="2N3-cs-8fV" kind="showDetail" identifier="alreadyLoggedInSegue" id="hXF-8W-Z63"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AGz-cO-aax" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
@@ -1026,7 +1029,7 @@
                     <toolbarItems/>
                     <navigationItem key="navigationItem" id="Cv3-TF-Kwc"/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" id="hQH-pK-mbB">
-                        <rect key="frame" x="0.0" y="44" width="414" height="44"/>
+                        <rect key="frame" x="0.0" y="0.0" width="414" height="56"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
                     <nil name="viewControllers"/>
@@ -1431,7 +1434,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Fb1-8P-MVb"/>
+        <segue reference="hXF-8W-Z63"/>
         <segue reference="rn3-AV-lRk"/>
         <segue reference="naq-ey-R0v"/>
     </inferredMetricsTieBreakers>
