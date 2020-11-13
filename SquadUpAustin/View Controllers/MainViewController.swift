@@ -213,6 +213,8 @@ class MainViewController: UIViewController, JoinGame, UITableViewDelegate, UITab
             tableView.addSubview(refreshControl)
         }
         refreshControl.addTarget(self, action: #selector(refreshTable(_:)), for: .valueChanged)
+        refreshControl.tintColor = UIColor.systemOrange
+        refreshControl.attributedTitle = NSAttributedString(string: "Fetching Games...", attributes: [NSAttributedString.Key.foregroundColor: UIColor.systemOrange])
     }
     
     override func viewWillAppear(_ animated: Bool) {
