@@ -70,5 +70,13 @@ class SelectGameViewController: UIViewController {
         rsvpButton.setTitle(!isCreator ? (isRSVP ? "Cancel RSVP" : "RSVP"): "Delete", for: .normal)
         rsvpButton.setTitleColor(!isCreator ? (isRSVP ? UIColor.systemRed : UIColor.systemGreen): UIColor.systemRed, for: .normal)
     }
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        if segue.identifier == "participantSegue",
+            let nextVC = segue.destination as? ParticipantsViewController
+            {
+                nextVC.delegate = self
+                nextVC.game = selectedGame
+            }
+    }
 }
