@@ -13,7 +13,7 @@
         <!--Upcoming Games-->
         <scene sceneID="tne-QT-ifu">
             <objects>
-                <viewController id="BYZ-38-t0r" customClass="MainViewController" customModule="SquadUpAustin" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController modalPresentationStyle="fullScreen" id="BYZ-38-t0r" customClass="MainViewController" customModule="SquadUpAustin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="8bC-Xf-vdC">
                         <rect key="frame" x="0.0" y="0.0" width="414" height="842"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
@@ -772,7 +772,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="XIj-i1-B9B"/>
                     <connections>
-                        <segue destination="2N3-cs-8fV" kind="showDetail" identifier="alreadyLoggedInSegue" id="hXF-8W-Z63"/>
+                        <segue destination="2N3-cs-8fV" kind="show" identifier="alreadyLoggedInSegue" id="hXF-8W-Z63"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="AGz-cO-aax" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
