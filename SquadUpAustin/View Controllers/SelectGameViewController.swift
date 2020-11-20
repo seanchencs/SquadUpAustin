@@ -58,16 +58,14 @@ class SelectGameViewController: UIViewController {
     func setUpChat() {
         db.collection("games").document(selectedGame.id!).collection("chat")
             .addSnapshotListener { querySnapshot, error in
-                guard let documents = querySnapshot?.documents else {
-                    print("Error fetching documents: \(error!)")
+                guard let snapshot = querySnapshot else {
+                    print("Error fetching snapshots: \(error!)")
                     return
                 }
-                self.chatView.text = ""
-                let messages = documents.map({ $0["message"]! })
-                let from = documents.map({ $0["from"]! })
-                print("\(messages) \(from)")
-                for i in stride(from: messages.count-1, through: 0, by: -1) {
-                    self.chatView.text?.append("\(from[i]): \(messages[i])\n")
+                snapshot.documentChanges.forEach { diff in
+                    if (diff.type == .added) {
+                        self.chatView.text.append("\(diff.document.data()["from"]!): \(diff.document.data()["message"]!)\n")
+                    }
                 }
             }
     }
@@ -78,6 +76,7 @@ class SelectGameViewController: UIViewController {
     
     @IBAction func enterPressed(_ sender: Any) {
         sendMessage(message: self.chatField.text!)
+        self.chatField.text = ""
     }
     
     
