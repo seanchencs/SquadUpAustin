@@ -13,6 +13,7 @@ import FirebaseAuth
 
 class SelectGameViewController: UIViewController {
     
+    let db = Firestore.firestore()
     var delegate: MainViewController!
     var selectedGame: Game!
 
@@ -24,6 +25,9 @@ class SelectGameViewController: UIViewController {
     @IBOutlet weak var participantsLabel: UILabel!
     @IBOutlet weak var rsvpButton: UIButton!
     
+    @IBOutlet weak var chatView: UITextView!
+    @IBOutlet weak var chatField: UITextField!
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -33,11 +37,8 @@ class SelectGameViewController: UIViewController {
         locationLabel.text = selectedGame.location
         timeLabel.text = selectedGame.time
         participantsLabel.text = selectedGame.players.joined(separator: ", ")
-        if selectedGame.equipmentCheck {
-            equipmentLabel.text = "Equipment will be provided"
-        } else {
-            equipmentLabel.text = "Equipment will not be provided"
-        }
+        equipmentLabel.text = selectedGame.equipmentCheck ? "Equipment will be provided" : "Equipment will not be provided"
+        
         //set up RSVP/Cancel/Delete Button
         var isOwner = false
         var RSVPed = false
@@ -50,7 +51,35 @@ class SelectGameViewController: UIViewController {
             }
         }
         checkRSVP(isCreator: isOwner, isRSVP: RSVPed)
+        
+        setUpChat()
     }
+    
+    func setUpChat() {
+        db.collection("games").document(selectedGame.id!).collection("chat")
+            .addSnapshotListener { querySnapshot, error in
+                guard let documents = querySnapshot?.documents else {
+                    print("Error fetching documents: \(error!)")
+                    return
+                }
+                self.chatView.text = ""
+                let messages = documents.map({ $0["message"]! })
+                let from = documents.map({ $0["from"]! })
+                print("\(messages) \(from)")
+                for i in stride(from: messages.count-1, through: 0, by: -1) {
+                    self.chatView.text?.append("\(from[i]): \(messages[i])\n")
+                }
+            }
+    }
+    
+    func sendMessage(message: String) {
+        db.collection("games").document(selectedGame.id!).collection("chat").addDocument(data: ["from": Auth.auth().currentUser!.displayName!, "message": message])
+    }
+    
+    @IBAction func enterPressed(_ sender: Any) {
+        sendMessage(message: self.chatField.text!)
+    }
+    
     
     @IBAction func rsvpButtonPressed(_ sender: Any) {
         if rsvpButton.titleLabel?.text == "RSVP" {
