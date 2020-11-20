@@ -659,7 +659,10 @@
                                                     <constraint firstAttribute="width" constant="40" id="JmC-k8-dd5"/>
                                                 </constraints>
                                                 <color key="tintColor" systemColor="systemOrangeColor"/>
-                                                <state key="normal" image="person" catalog="system"/>
+                                                <state key="normal">
+                                                    <imageReference key="image" image="person.fill.checkmark" catalog="system" symbolScale="large" renderingMode="template"/>
+                                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" scale="large" weight="semibold"/>
+                                                </state>
                                                 <connections>
                                                     <segue destination="Gtg-lj-1NX" kind="presentation" identifier="participantSegue" id="ru2-g6-cI3"/>
                                                 </connections>
@@ -713,17 +716,29 @@
                                         <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
                                         <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
                                     </textView>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Send a message..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TjU-NL-STQ">
+                                    <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PXY-SZ-l0l">
                                         <rect key="frame" x="0.0" y="304" width="374" height="30"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="30" id="Ls2-Wu-dAi"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" returnKeyType="send" enablesReturnKeyAutomatically="YES"/>
-                                        <connections>
-                                            <action selector="enterPressed:" destination="Yoh-Be-QEB" eventType="primaryActionTriggered" id="70g-5o-anb"/>
-                                        </connections>
-                                    </textField>
+                                        <subviews>
+                                            <textField opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" placeholder="Send a message..." textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="TjU-NL-STQ">
+                                                <rect key="frame" x="0.0" y="0.0" width="328" height="30"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="30" id="Ls2-Wu-dAi"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits" returnKeyType="send" enablesReturnKeyAutomatically="YES"/>
+                                                <connections>
+                                                    <action selector="enterPressed:" destination="Yoh-Be-QEB" eventType="primaryActionTriggered" id="70g-5o-anb"/>
+                                                </connections>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1cZ-hM-A13">
+                                                <rect key="frame" x="338" y="0.0" width="36" height="30"/>
+                                                <state key="normal" title="Send"/>
+                                                <connections>
+                                                    <action selector="enterPressed:" destination="Yoh-Be-QEB" eventType="touchUpInside" id="Go0-1a-YDN"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -1518,6 +1533,7 @@
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="person" catalog="system" width="128" height="117"/>
         <image name="person.fill" catalog="system" width="128" height="120"/>
+        <image name="person.fill.checkmark" catalog="system" width="128" height="88"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="sportscourt" catalog="system" width="128" height="84"/>
         <image name="xmark" catalog="system" width="128" height="113"/>
