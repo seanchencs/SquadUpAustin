@@ -57,6 +57,7 @@ class SelectGameViewController: UIViewController {
     
     func setUpChat() {
         db.collection("games").document(selectedGame.id!).collection("chat")
+            .order(by: "date")
             .addSnapshotListener { querySnapshot, error in
                 guard let snapshot = querySnapshot else {
                     print("Error fetching snapshots: \(error!)")
@@ -71,7 +72,8 @@ class SelectGameViewController: UIViewController {
     }
     
     func sendMessage(message: String) {
-        db.collection("games").document(selectedGame.id!).collection("chat").addDocument(data: ["from": Auth.auth().currentUser!.displayName!, "message": message])
+        let date = Date()
+        db.collection("games").document(selectedGame.id!).collection("chat").addDocument(data: ["from": Auth.auth().currentUser!.displayName!, "message": message, "date": date])
     }
     
     @IBAction func enterPressed(_ sender: Any) {
