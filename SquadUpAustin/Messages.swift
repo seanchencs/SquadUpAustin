@@ -71,6 +71,10 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLa
         return 20
     }
     
+    func configureAvatarView(_ avatarView: AvatarView, for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) {
+      avatarView.isHidden = true
+    }
+    
     func messageTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
         let name = message.sender.displayName
         return NSAttributedString(string: name, attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .caption1)])
@@ -86,6 +90,15 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLa
         messagesCollectionView.messagesDataSource = self
         messagesCollectionView.messagesLayoutDelegate = self
         messagesCollectionView.messagesDisplayDelegate = self
+        
+        if let layout = messagesCollectionView.collectionViewLayout as? MessagesCollectionViewFlowLayout {
+            layout.setMessageIncomingAvatarSize(.zero)
+            layout.setMessageOutgoingAvatarSize(.zero)
+            layout.setMessageIncomingCellTopLabelAlignment(LabelAlignment(textAlignment: .left, textInsets: .zero))
+            layout.setMessageOutgoingCellTopLabelAlignment(LabelAlignment(textAlignment: .right, textInsets: .zero))
+            layout.setMessageIncomingMessageTopLabelAlignment(LabelAlignment(textAlignment: .left, textInsets: .zero))
+            layout.setMessageOutgoingMessageTopLabelAlignment(LabelAlignment(textAlignment: .right, textInsets: .zero))
+        }
         
         //load messages w/ listener
         db.collection("games").document(selectedGame!.id!).collection("chat")
