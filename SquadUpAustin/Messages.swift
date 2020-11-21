@@ -38,6 +38,7 @@ class Sender: SenderType {
 }
 
 class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLayoutDelegate, MessagesDisplayDelegate {
+    
     var selectedGame: Game?
     var messages: [Message] = []
     let db = Firestore.firestore()

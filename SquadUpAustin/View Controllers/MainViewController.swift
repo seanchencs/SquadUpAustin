@@ -14,6 +14,7 @@ import Firebase
 protocol JoinGame {
     func rsvp(g: Game) -> Game
     func leaveGame(g: Game) -> Game
+    func deleteGame(g: Game)
 }
 
 class MainViewController: UIViewController, JoinGame, UITableViewDelegate, UITableViewDataSource {
@@ -68,7 +69,7 @@ class MainViewController: UIViewController, JoinGame, UITableViewDelegate, UITab
         }
         
         let delete = UIContextualAction(style: .destructive, title: "Delete") { (action, view, completion) in
-            self.deleteGame(game: self.filteredGames[indexPath.row])
+            self.deleteGame(g: self.filteredGames[indexPath.row])
             self.fetchGames()
             completion(true)
         }
@@ -110,8 +111,8 @@ class MainViewController: UIViewController, JoinGame, UITableViewDelegate, UITab
     }
     
     /// Delete a given game from Firestore
-    func deleteGame(game:Game) {
-        db.collection("games").document(game.id!).delete() { err in
+    func deleteGame(g: Game) {
+        db.collection("games").document(g.id!).delete() { err in
             if let err = err {
                 print("Error removing document: \(err)")
             } else {

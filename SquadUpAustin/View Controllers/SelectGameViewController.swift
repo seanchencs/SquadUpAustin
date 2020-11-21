@@ -75,6 +75,10 @@ class SelectGameViewController: UIViewController {
             let temp = otherVC.leaveGame(g: selectedGame)
             participantsLabel.text = temp.players.joined(separator: ", ")
             checkRSVP(isCreator: false, isRSVP: false)
+        } else if rsvpButton.titleLabel?.text == "Delete" {
+            let otherVC = delegate as! JoinGame
+            otherVC.deleteGame(g: selectedGame)
+            self.dismiss(animated: true, completion: nil)
         }
     }
     
