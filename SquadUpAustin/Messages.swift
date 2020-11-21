@@ -60,7 +60,11 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLa
     }
     
     func textColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
-        return .white
+        return isFromCurrentSender(message: message) ? .white : .darkText
+    }
+    
+    func backgroundColor(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> UIColor {
+        return isFromCurrentSender(message: message) ? .orange : UIColor(red: 230/255, green: 230/255, blue: 230/255, alpha: 1)
     }
     
     func enabledDetectors(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> [DetectorType] {
@@ -68,6 +72,10 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLa
     }
     
     func messageTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
+        return 20
+    }
+    
+    func cellTopLabelHeight(for message: MessageType, at indexPath: IndexPath, in messagesCollectionView: MessagesCollectionView) -> CGFloat {
         return 20
     }
     
@@ -85,6 +93,13 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLa
         return NSAttributedString(string: dateString, attributes: [NSAttributedString.Key.font: UIFont.preferredFont(forTextStyle: .caption2)])
     }
     
+    func cellTopLabelAttributedText(for message: MessageType, at indexPath: IndexPath) -> NSAttributedString? {
+           if indexPath.section % 3 == 0 {
+               return NSAttributedString(string: MessageKitDateFormatter.shared.string(from: message.sentDate), attributes: [NSAttributedString.Key.font: UIFont.boldSystemFont(ofSize: 10), NSAttributedString.Key.foregroundColor: UIColor.darkGray])
+           }
+           return nil
+       }
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         messagesCollectionView.messagesDataSource = self
@@ -94,8 +109,8 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLa
         if let layout = messagesCollectionView.collectionViewLayout as? MessagesCollectionViewFlowLayout {
             layout.setMessageIncomingAvatarSize(.zero)
             layout.setMessageOutgoingAvatarSize(.zero)
-            layout.setMessageIncomingCellTopLabelAlignment(LabelAlignment(textAlignment: .left, textInsets: .zero))
-            layout.setMessageOutgoingCellTopLabelAlignment(LabelAlignment(textAlignment: .right, textInsets: .zero))
+            layout.setMessageIncomingCellTopLabelAlignment(LabelAlignment(textAlignment: .center, textInsets: .zero))
+            layout.setMessageOutgoingCellTopLabelAlignment(LabelAlignment(textAlignment: .center, textInsets: .zero))
             layout.setMessageIncomingMessageTopLabelAlignment(LabelAlignment(textAlignment: .left, textInsets: .zero))
             layout.setMessageOutgoingMessageTopLabelAlignment(LabelAlignment(textAlignment: .right, textInsets: .zero))
         }
@@ -114,8 +129,8 @@ class ChatViewController: MessagesViewController, MessagesDataSource, MessagesLa
                         let messageID = diff.document.documentID
                         let timestamp = diff.document.data()["date"]! as! Timestamp
                         let date = timestamp.dateValue()
-                        let text = NSAttributedString(string: diff.document.data()["body"]! as! String)
-                        let newMessage = Message(sender: sender, messageId: messageID, date: date, kind: .attributedText(text))
+                        let text = diff.document.data()["body"]! as! String
+                        let newMessage = Message(sender: sender, messageId: messageID, date: date, kind: .text(text))
                         self.messages.append(newMessage)
                         self.messagesCollectionView.reloadData()
                         DispatchQueue.main.async {
