@@ -19,40 +19,53 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Fcg-cG-T9k" userLabel="createAGameBtn">
-                                <rect key="frame" x="198" y="835" width="18" height="22"/>
+                                <rect key="frame" x="187" y="817" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="40" id="Mbx-c4-Ipo"/>
+                                    <constraint firstAttribute="width" constant="40" id="d27-CJ-4Fk"/>
+                                </constraints>
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle"/>
-                                    <imageReference key="image" image="plus" catalog="system" renderingMode="template"/>
+                                    <imageReference key="image" image="plus" catalog="system" symbolScale="large" renderingMode="template"/>
                                 </state>
                                 <connections>
                                     <segue destination="hiZ-uh-s1M" kind="presentation" identifier="createGameSegue" id="0Mc-jM-gR0"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="qgp-Wp-kXM" userLabel="profileBtn">
-                                <rect key="frame" x="371" y="835" width="18" height="22"/>
+                                <rect key="frame" x="349" y="817" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="SLQ-lh-PaW"/>
+                                    <constraint firstAttribute="height" constant="40" id="yhd-fY-K1M"/>
+                                </constraints>
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle"/>
-                                    <imageReference key="image" image="person.fill" catalog="system" renderingMode="template"/>
+                                    <imageReference key="image" image="person" catalog="system" symbolScale="large" renderingMode="template"/>
+                                    <preferredSymbolConfiguration key="preferredSymbolConfiguration" weight="bold"/>
                                 </state>
                                 <connections>
                                     <segue destination="fJN-9O-H15" kind="presentation" identifier="ProfileIdentifier" id="FH1-8C-WBQ"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" hasAttributedTitle="YES" translatesAutoresizingMaskIntoConstraints="NO" id="azQ-Xf-7Ed" userLabel="mainPageBtn">
-                                <rect key="frame" x="25" y="835" width="20" height="22"/>
+                                <rect key="frame" x="25" y="817" width="40" height="40"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" constant="40" id="Dr4-he-EUc"/>
+                                    <constraint firstAttribute="height" constant="40" id="wbi-ud-ucG"/>
+                                </constraints>
                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                 <state key="normal">
                                     <attributedString key="attributedTitle"/>
-                                    <imageReference key="image" image="magnifyingglass" catalog="system" renderingMode="template"/>
+                                    <imageReference key="image" image="line.horizontal.3.decrease.circle" catalog="system" symbolScale="large" renderingMode="template"/>
                                 </state>
                                 <connections>
                                     <segue destination="anx-7Q-Gqv" kind="presentation" identifier="filterSegue" id="cg3-Un-z3x"/>
                                 </connections>
                             </button>
                             <tableView clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="125" estimatedRowHeight="-1" sectionHeaderHeight="28" sectionFooterHeight="28" translatesAutoresizingMaskIntoConstraints="NO" id="peH-8C-PJ0">
-                                <rect key="frame" x="5" y="93" width="404" height="737"/>
+                                <rect key="frame" x="5" y="93" width="404" height="719"/>
                                 <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                 <prototypes>
                                     <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" insetsLayoutMarginsFromSafeArea="NO" selectionStyle="blue" hidesAccessoryWhenEditing="NO" indentationLevel="1" indentationWidth="0.0" reuseIdentifier="cellIdentifier" rowHeight="125" id="ujE-U7-HOu" customClass="GameTableViewCell" customModule="SquadUpAustin" customModuleProvider="target">
@@ -1554,6 +1567,7 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
+        <segue reference="FH1-8C-WBQ"/>
         <segue reference="Fb1-8P-MVb"/>
         <segue reference="D5J-gN-JcU"/>
         <segue reference="naq-ey-R0v"/>
@@ -1565,11 +1579,10 @@
         <image name="checkmark" catalog="system" width="128" height="114"/>
         <image name="clock" catalog="system" width="128" height="121"/>
         <image name="envelope" catalog="system" width="128" height="93"/>
+        <image name="line.horizontal.3.decrease.circle" catalog="system" width="128" height="121"/>
         <image name="lock" catalog="system" width="128" height="128"/>
-        <image name="magnifyingglass" catalog="system" width="128" height="115"/>
         <image name="mappin.and.ellipse" catalog="system" width="118" height="128"/>
         <image name="person" catalog="system" width="128" height="117"/>
-        <image name="person.fill" catalog="system" width="128" height="120"/>
         <image name="person.fill.checkmark" catalog="system" width="128" height="88"/>
         <image name="plus" catalog="system" width="128" height="113"/>
         <image name="sportscourt" catalog="system" width="128" height="84"/>
