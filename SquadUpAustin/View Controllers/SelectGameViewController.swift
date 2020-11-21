@@ -9,6 +9,7 @@
 import UIKit
 import Firebase
 import FirebaseAuth
+import MessageKit
 
 
 class SelectGameViewController: UIViewController {
@@ -52,7 +53,7 @@ class SelectGameViewController: UIViewController {
         }
         checkRSVP(isCreator: isOwner, isRSVP: RSVPed)
         
-        setUpChat()
+        //setUpChat()
     }
     
     func setUpChat() {
@@ -73,7 +74,7 @@ class SelectGameViewController: UIViewController {
     
     func sendMessage(message: String) {
         let date = Date()
-        db.collection("games").document(selectedGame.id!).collection("chat").addDocument(data: ["from": Auth.auth().currentUser!.displayName!, "message": message, "date": date])
+        db.collection("games").document(selectedGame.id!).collection("chat").addDocument(data: ["id": Auth.auth().currentUser!.uid, "displayName": Auth.auth().currentUser!.displayName!, "body": message, "date": date])
     }
     
     @IBAction func enterPressed(_ sender: Any) {
@@ -108,5 +109,10 @@ class SelectGameViewController: UIViewController {
                 nextVC.delegate = self
                 nextVC.game = selectedGame
             }
+        else if segue.identifier == "chatSegue",
+                let nextVC = segue.destination as? ChatViewController
+        {
+            nextVC.selectedGame = self.selectedGame
+        }
     }
 }

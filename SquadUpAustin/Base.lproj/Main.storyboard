@@ -708,8 +708,14 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wbs-qb-WUD">
                                 <rect key="frame" x="20" y="518" width="374" height="334"/>
                                 <subviews>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QAd-es-9sO">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="304"/>
+                                    <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rgo-7l-JkJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="128"/>
+                                        <connections>
+                                            <segue destination="CSk-MM-iR1" kind="embed" identifier="chatSegue" id="NVy-W5-2Wt"/>
+                                        </connections>
+                                    </containerView>
+                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QAd-es-9sO">
+                                        <rect key="frame" x="0.0" y="128" width="374" height="176"/>
                                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                                         <color key="textColor" systemColor="labelColor"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="14"/>
@@ -1540,11 +1546,25 @@
             </objects>
             <point key="canvasLocation" x="3946.376811594203" y="511.60714285714283"/>
         </scene>
+        <!--Chat View Controller-->
+        <scene sceneID="26E-M1-Ak3">
+            <objects>
+                <viewController id="CSk-MM-iR1" customClass="ChatViewController" customModule="SquadUpAustin" customModuleProvider="target" sceneMemberID="viewController">
+                    <view key="view" contentMode="scaleToFill" id="ZCx-tQ-T3v">
+                        <rect key="frame" x="0.0" y="0.0" width="374" height="128"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="eLm-ck-2uk" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2291" y="619"/>
+        </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Joc-WF-hwr"/>
+        <segue reference="Fb1-8P-MVb"/>
         <segue reference="rn3-AV-lRk"/>
-        <segue reference="7r8-Vc-RFb"/>
+        <segue reference="naq-ey-R0v"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="SplashScreenLogo" width="300" height="91"/>
