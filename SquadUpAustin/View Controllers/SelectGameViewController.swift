@@ -26,7 +26,6 @@ class SelectGameViewController: UIViewController {
     @IBOutlet weak var participantsLabel: UILabel!
     @IBOutlet weak var rsvpButton: UIButton!
     
-    @IBOutlet weak var chatView: UITextView!
     @IBOutlet weak var chatField: UITextField!
     
     override func viewDidLoad() {
@@ -52,24 +51,6 @@ class SelectGameViewController: UIViewController {
             }
         }
         checkRSVP(isCreator: isOwner, isRSVP: RSVPed)
-        
-        //setUpChat()
-    }
-    
-    func setUpChat() {
-        db.collection("games").document(selectedGame.id!).collection("chat")
-            .order(by: "date")
-            .addSnapshotListener { querySnapshot, error in
-                guard let snapshot = querySnapshot else {
-                    print("Error fetching snapshots: \(error!)")
-                    return
-                }
-                snapshot.documentChanges.forEach { diff in
-                    if (diff.type == .added) {
-                        self.chatView.text.append("\(diff.document.data()["from"]!): \(diff.document.data()["message"]!)\n")
-                    }
-                }
-            }
     }
     
     func sendMessage(message: String) {

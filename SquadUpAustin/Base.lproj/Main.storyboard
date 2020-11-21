@@ -708,20 +708,12 @@
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="wbs-qb-WUD">
                                 <rect key="frame" x="20" y="518" width="374" height="334"/>
                                 <subviews>
-                                    <containerView opaque="NO" contentMode="scaleToFill" ambiguous="YES" translatesAutoresizingMaskIntoConstraints="NO" id="rgo-7l-JkJ">
-                                        <rect key="frame" x="0.0" y="0.0" width="374" height="128"/>
+                                    <containerView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgo-7l-JkJ">
+                                        <rect key="frame" x="0.0" y="0.0" width="374" height="304"/>
                                         <connections>
                                             <segue destination="CSk-MM-iR1" kind="embed" identifier="chatSegue" id="NVy-W5-2Wt"/>
                                         </connections>
                                     </containerView>
-                                    <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" ambiguous="YES" editable="NO" textAlignment="natural" translatesAutoresizingMaskIntoConstraints="NO" id="QAd-es-9sO">
-                                        <rect key="frame" x="0.0" y="128" width="374" height="176"/>
-                                        <color key="backgroundColor" systemColor="systemBackgroundColor"/>
-                                        <color key="textColor" systemColor="labelColor"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
-                                        <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES" address="YES" calendarEvent="YES"/>
-                                    </textView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="PXY-SZ-l0l">
                                         <rect key="frame" x="0.0" y="304" width="374" height="30"/>
                                         <subviews>
@@ -763,7 +755,6 @@
                     <navigationItem key="navigationItem" id="FzX-ty-wWz"/>
                     <connections>
                         <outlet property="chatField" destination="TjU-NL-STQ" id="G5Z-sN-CJy"/>
-                        <outlet property="chatView" destination="QAd-es-9sO" id="tzn-dy-bUB"/>
                         <outlet property="equipmentLabel" destination="kZs-n1-fnF" id="6Te-xX-xdJ"/>
                         <outlet property="locationLabel" destination="aQH-PY-Na3" id="Uuv-qM-ZI4"/>
                         <outlet property="ownerLabel" destination="WGc-Pk-VGq" id="F65-T0-dQj"/>
@@ -1551,7 +1542,7 @@
             <objects>
                 <viewController id="CSk-MM-iR1" customClass="ChatViewController" customModule="SquadUpAustin" customModuleProvider="target" sceneMemberID="viewController">
                     <view key="view" contentMode="scaleToFill" id="ZCx-tQ-T3v">
-                        <rect key="frame" x="0.0" y="0.0" width="374" height="128"/>
+                        <rect key="frame" x="0.0" y="0.0" width="374" height="304"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <viewLayoutGuide key="safeArea" id="Ezo-O2-ENs"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
