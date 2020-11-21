@@ -107,7 +107,6 @@ class MainViewController: UIViewController, JoinGame, UITableViewDelegate, UITab
             }
         }
         game.id = ref!.documentID
-        //db.collection("games").document(ref!.documentID).collection("chat").addDocument(data: ["from": "System", "message": "Test"])
     }
     
     /// Delete a given game from Firestore
