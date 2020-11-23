@@ -68,17 +68,17 @@ class SelectGameViewController: UIViewController, EKEventEditViewDelegate {
     
     @IBAction func rsvpButtonPressed(_ sender: Any) {
         if rsvpButton.titleLabel?.text == "RSVP" {
-            let otherVC = delegate as! JoinGame
+            let otherVC = delegate!
             let temp = otherVC.rsvp(g: selectedGame)
             participantsLabel.text = temp.players.joined(separator: ", ")
             checkRSVP(isCreator: false, isRSVP: true)
         } else if rsvpButton.titleLabel?.text == "Cancel RSVP" {
-            let otherVC = delegate as! JoinGame
+            let otherVC = delegate!
             let temp = otherVC.leaveGame(g: selectedGame)
             participantsLabel.text = temp.players.joined(separator: ", ")
             checkRSVP(isCreator: false, isRSVP: false)
         } else if rsvpButton.titleLabel?.text == "Delete" {
-            let otherVC = delegate as! JoinGame
+            let otherVC = delegate!
             otherVC.deleteGame(g: selectedGame)
             self.dismiss(animated: true, completion: nil)
         }

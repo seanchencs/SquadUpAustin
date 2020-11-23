@@ -185,7 +185,7 @@ class MainViewController: UIViewController, JoinGame, UITableViewDelegate, UITab
     func rsvp(g: Game) -> Game {
         var givenGame = g
         if Auth.auth().currentUser != nil {
-            self.rsvpGame(displayName: ((Auth.auth().currentUser?.displayName) ?? Auth.auth().currentUser?.email?.components(separatedBy: "@")[0])!, game: &givenGame)
+            self.rsvpGame(displayName: (Auth.auth().currentUser?.displayName)!, game: &givenGame)
             tableView.reloadData()
         }
         return givenGame
