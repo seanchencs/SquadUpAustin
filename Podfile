@@ -13,5 +13,6 @@ target 'SquadUpAustin' do
   pod 'Firebase/Storage'
   pod 'FirebaseUI/Storage'
   pod 'MessageKit'
+  pod 'youtube-ios-player-helper'
 
 end

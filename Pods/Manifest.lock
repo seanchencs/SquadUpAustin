@@ -346,9 +346,10 @@ PODS:
   - nanopb/decode (1.30906.0)
   - nanopb/encode (1.30906.0)
   - PromisesObjC (1.2.11)
-  - SDWebImage (5.9.5):
-    - SDWebImage/Core (= 5.9.5)
-  - SDWebImage/Core (5.9.5)
+  - SDWebImage (5.10.0):
+    - SDWebImage/Core (= 5.10.0)
+  - SDWebImage/Core (5.10.0)
+  - youtube-ios-player-helper (0.1.6)
 
 DEPENDENCIES:
   - Firebase/Analytics
@@ -358,6 +359,7 @@ DEPENDENCIES:
   - FirebaseFirestoreSwift
   - FirebaseUI/Storage
   - MessageKit
+  - youtube-ios-player-helper
 
 SPEC REPOS:
   trunk:
@@ -385,6 +387,7 @@ SPEC REPOS:
     - nanopb
     - PromisesObjC
     - SDWebImage
+    - youtube-ios-player-helper
 
 SPEC CHECKSUMS:
   abseil: 6c8eb7892aefa08d929b39f9bb108e5367e3228f
@@ -410,8 +413,9 @@ SPEC CHECKSUMS:
   MessageKit: 3beb578737a5aa2bba25cc27c7b6d6faa09af5a7
   nanopb: 59317e09cf1f1a0af72f12af412d54edf52603fc
   PromisesObjC: 8c196f5a328c2cba3e74624585467a557dcb482f
-  SDWebImage: 0b2ba0d56479bf6a45ecddbfd5558bea93150d25
+  SDWebImage: 9169792e9eec3e45bba2a0c02f74bf8bd922d1ee
+  youtube-ios-player-helper: 21ab92db027c7ff86cb17a3843a3f6eafc8158d2
 
-PODFILE CHECKSUM: 94382cfaf50532d22ff932fc019cfc86bb084e14
+PODFILE CHECKSUM: b06c43634430b69f9aecd8717b226a36c47a75ae
 
 COCOAPODS: 1.10.0

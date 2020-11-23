@@ -13,12 +13,42 @@ import FirebaseAuth
 class CreateGameViewController: UIViewController {
     
     var createdGame = Game(id: "null", sport: "null", location: "null", time: "null", gameOwner: "null", players: [], equipmentCheck: true)
+    var alertSport: String!
     
     var delegate: UIViewController!
     @IBOutlet weak var chooseATimeButton: UIButton!
     @IBOutlet weak var chooseALocationButton: UIButton!
     @IBOutlet weak var chooseASportButton: UIButton!
     @IBOutlet weak var equipmentProvided: UISegmentedControl!
+    
+    @IBAction func instructionalVideoPressed(_ sender: Any) {
+        let controller = UIAlertController(title: "Sport",
+                                           message: "Choose a sport:",
+                                           preferredStyle: .actionSheet)
+        controller.addAction(UIAlertAction(title: "Basketball",
+                                           style:.default,
+                                           handler: showVideo(alert:)))
+        controller.addAction(UIAlertAction(title: "Soccer",
+                                           style:.default,
+                                           handler: showVideo(alert:)))
+        controller.addAction(UIAlertAction(title: "Tennis",
+                                           style:.default,
+                                           handler: showVideo(alert:)))
+        controller.addAction(UIAlertAction(title: "Ultimate Frisbee",
+                                           style:.default,
+                                           handler: showVideo(alert:)))
+        controller.addAction(UIAlertAction(title: "Volleyball",
+                                           style:.default,
+                                           handler: showVideo(alert:)))
+        controller.addAction(UIAlertAction(title: "Close", style: .cancel))
+        present(controller, animated: true, completion: nil)
+        
+    }
+    
+    func showVideo(alert:UIAlertAction!) {
+        alertSport = alert.title
+        performSegue(withIdentifier: "videoSegue", sender: self)
+    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -120,6 +150,11 @@ class CreateGameViewController: UIViewController {
         if segue.identifier == "chooseDateSegue",
            let destinationVC = segue.destination as? ChooseDateViewController {
             destinationVC.delegateVC = self
+        } else if segue.identifier == "videoSegue",
+                  let destinationVC = segue.destination as? InstructionalVideoViewController
+        {
+            destinationVC.delegate = self
+            destinationVC.sport = alertSport
         }
     }
 }
