@@ -53,11 +53,6 @@ class SelectGameViewController: UIViewController, EKEventEditViewDelegate {
             }
         }
         checkRSVP(isCreator: isOwner, isRSVP: RSVPed)
-        
-        //add add to calendar button
-        if !RSVPed {
-            addToCalendarButton.isHidden = true
-        }
     }
     
     func sendMessage(message: String) {
@@ -89,9 +84,11 @@ class SelectGameViewController: UIViewController, EKEventEditViewDelegate {
         }
     }
     
+    ///update the status of buttons based on rsvp and owner conditions
     func checkRSVP(isCreator: Bool, isRSVP: Bool) {
         rsvpButton.setTitle(!isCreator ? (isRSVP ? "Cancel RSVP" : "RSVP"): "Delete", for: .normal)
         rsvpButton.setTitleColor(!isCreator ? (isRSVP ? UIColor.systemRed : UIColor.systemGreen): UIColor.systemRed, for: .normal)
+        addToCalendarButton.isHidden = !isRSVP
     }
     
     @IBAction func addToCalendarPressed(_ sender: Any) {
