@@ -32,6 +32,10 @@ struct Game: Equatable{
         return output
     }
     
+    func getTitle() -> String {
+        return "\(gameOwner)'s \(sport) Game"
+    }
+    
     func getDate() -> Date {
         let formatter = DateFormatter()
         formatter.dateStyle = .medium

@@ -10,9 +10,10 @@ import UIKit
 import Firebase
 import FirebaseAuth
 import MessageKit
+import EventKit
+import EventKitUI
 
-
-class SelectGameViewController: UIViewController {
+class SelectGameViewController: UIViewController, EKEventEditViewDelegate {
     
     let db = Firestore.firestore()
     var delegate: MainViewController!
@@ -25,6 +26,7 @@ class SelectGameViewController: UIViewController {
     @IBOutlet weak var timeLabel: UILabel!
     @IBOutlet weak var participantsLabel: UILabel!
     @IBOutlet weak var rsvpButton: UIButton!
+    @IBOutlet weak var addToCalendarButton: UIButton!
     
     @IBOutlet weak var chatField: UITextField!
     
@@ -51,6 +53,11 @@ class SelectGameViewController: UIViewController {
             }
         }
         checkRSVP(isCreator: isOwner, isRSVP: RSVPed)
+        
+        //add add to calendar button
+        if !RSVPed {
+            addToCalendarButton.isHidden = true
+        }
     }
     
     func sendMessage(message: String) {
@@ -85,6 +92,35 @@ class SelectGameViewController: UIViewController {
     func checkRSVP(isCreator: Bool, isRSVP: Bool) {
         rsvpButton.setTitle(!isCreator ? (isRSVP ? "Cancel RSVP" : "RSVP"): "Delete", for: .normal)
         rsvpButton.setTitleColor(!isCreator ? (isRSVP ? UIColor.systemRed : UIColor.systemGreen): UIColor.systemRed, for: .normal)
+    }
+    
+    @IBAction func addToCalendarPressed(_ sender: Any) {
+        switch EKEventStore.authorizationStatus(for: .event) {
+        case .notDetermined:
+            let eventStore = EKEventStore()
+            eventStore.requestAccess(to: .event) { (granted, error) in
+                if (error != nil) || !granted {
+                    return
+                }
+            }
+        case .authorized:
+            break
+        default:
+            return
+        }
+        let eventVC = EKEventEditViewController()
+        eventVC.editViewDelegate = self
+        eventVC.eventStore = EKEventStore()
+        let event = EKEvent(eventStore: eventVC.eventStore)
+        event.title = selectedGame.getTitle()
+        event.startDate = selectedGame.getDate()
+        event.location = selectedGame.location
+        eventVC.event = event
+        present(eventVC, animated: true)
+    }
+    
+    func eventEditViewController(_ controller: EKEventEditViewController, didCompleteWith action: EKEventEditViewAction) {
+        dismiss(animated: true, completion: nil)
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

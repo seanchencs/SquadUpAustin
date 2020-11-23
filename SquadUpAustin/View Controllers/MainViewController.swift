@@ -41,7 +41,7 @@ class MainViewController: UIViewController, JoinGame, UITableViewDelegate, UITab
         let cell = tableView.dequeueReusableCell(withIdentifier: "cellIdentifier", for: indexPath as IndexPath) as! GameTableViewCell
         let row = indexPath.row
         let game = filteredGames[row]
-        cell.gameNameLabel.text = "\(game.gameOwner)'s \(game.sport) Game"
+        cell.gameNameLabel.text = game.getTitle()
         cell.timeLabel.text = game.time
         cell.locationLabel.text = game.location
         cell.playerCountLabel.text = String(game.players.count)
