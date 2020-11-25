@@ -37,7 +37,7 @@ class RegisterViewController: UIViewController {
                         favoriteSport: "noFavoriteSport :(",
                         hometown: "noHometown :(",
                         major: "noMajor :(",
-                        profilePicture: "noProfilePicture",
+                        profilePicture: "https://picsum.photos/200/300",
                         userUid: Auth.auth().currentUser!.uid)
                     collection.document(Auth.auth().currentUser!.uid).setData(user.dictionary)
                     

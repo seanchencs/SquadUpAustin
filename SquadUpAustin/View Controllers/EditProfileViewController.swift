@@ -28,6 +28,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
     
     @IBOutlet weak var editImageButton: UIButton!
     
+    let maxSizeOfImage = Int64(5 * 1024 * 1024) //5 MB
+    
     let picker = UIImagePickerController()
     
     let currentUser = Auth.auth().currentUser!
@@ -37,7 +39,7 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        SDImageCache.shared.clearDisk(onCompletion: nil)
+        //SDImageCache.shared.clearDisk(onCompletion: nil)
         
         circleProfilePicture()
         setupImageButton()
@@ -59,10 +61,30 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         let storage = Storage.storage()
         let storageRef = storage.reference()
         let photoRef = storageRef.child(currentUser.uid)
-
-        editProfileImage.sd_setImage(with: photoRef)
         
-        SDImageCache.shared.clearDisk(onCompletion: nil)
+        popProfileImageInView()
+
+        //editProfileImage.sd_setImage(with: photoRef)
+        
+        //SDImageCache.shared.clearDisk(onCompletion: nil)
+    }
+    
+    func popProfileImageInView() {
+        //populate with image from storage
+        let storage = Storage.storage()
+        let storageRef = storage.reference()
+        let photoRef = storageRef.child(currentUser.uid)
+        
+        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+        photoRef.getData(maxSize: maxSizeOfImage) { data, error in
+          if let error = error {
+            // Uh-oh, an error occurred!
+          } else {
+            // Data for "images/island.jpg" is returned
+            let image = UIImage(data: data!)
+            self.editProfileImage.image = image
+          }
+        }
     }
     
     //Setup edit image button.
@@ -321,9 +343,10 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
                 return
             }
             //Update ui for new photo.
-            SDImageCache.shared.clearDisk(onCompletion: nil)
-            self.editProfileImage.sd_setImage(with: photoRef)
-            SDImageCache.shared.clearDisk(onCompletion: nil)
+            //SDImageCache.shared.clearDisk(onCompletion: nil)
+            self.popProfileImageInView()
+            //self.editProfileImage.sd_setImage(with: photoRef)
+            //SDImageCache.shared.clearDisk(onCompletion: nil)
             
         }
     }

@@ -23,6 +23,8 @@ class DisplayProfileViewController: UIViewController {
     @IBOutlet weak var hometownLabel: UILabel!
     @IBOutlet weak var favoriteSportLabel: UILabel!
     
+    let maxSizeOfImage = Int64(5 * 1024 * 1024) //5 MB
+    
     
     var delegate: UIViewController!
     let settingsIdentifier = "EditSettingsIdentifier"
@@ -35,7 +37,7 @@ class DisplayProfileViewController: UIViewController {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
-        SDImageCache.shared.clearDisk(onCompletion: nil)
+        //SDImageCache.shared.clearDisk(onCompletion: nil)
         circleProfilePicture()
         setupSettingsButton()
         populateProfileSettings()
@@ -43,6 +45,7 @@ class DisplayProfileViewController: UIViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         populateProfileSettings()
+        popProfileImageInView()
     }
     
     //Setup the circular profile picture.
@@ -53,14 +56,41 @@ class DisplayProfileViewController: UIViewController {
         profileImage?.layer.borderWidth = 4.0
         profileImage?.layer.borderColor = UIColor.black.cgColor
         
+        popProfileImageInView()
+        
+//        //populate with image from storage
+//        let storage = Storage.storage()
+//        let storageRef = storage.reference()
+//        let photoRef = storageRef.child(currentUser.uid)
+//
+//        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+//        photoRef.getData(maxSize: maxSizeOfImage) { data, error in
+//          if let error = error {
+//            // Uh-oh, an error occurred!
+//          } else {
+//            // Data for "images/island.jpg" is returned
+//            let image = UIImage(data: data!)
+//            self.profileImage.image = image
+//          }
+//        }
+    }
+    
+    func popProfileImageInView() {
         //populate with image from storage
         let storage = Storage.storage()
         let storageRef = storage.reference()
         let photoRef = storageRef.child(currentUser.uid)
-
-        profileImage.sd_setImage(with: photoRef)
         
-        SDImageCache.shared.clearDisk(onCompletion: nil)
+        // Download in memory with a maximum allowed size of 1MB (1 * 1024 * 1024 bytes)
+        photoRef.getData(maxSize: maxSizeOfImage) { data, error in
+          if let error = error {
+            // Uh-oh, an error occurred!
+          } else {
+            // Data for "images/island.jpg" is returned
+            let image = UIImage(data: data!)
+            self.profileImage.image = image
+          }
+        }
     }
     
     func setupSettingsButton(){
