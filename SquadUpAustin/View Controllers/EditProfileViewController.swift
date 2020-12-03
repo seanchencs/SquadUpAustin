@@ -58,9 +58,9 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
         
         
         //populate with image from storage
-        let storage = Storage.storage()
-        let storageRef = storage.reference()
-        let photoRef = storageRef.child(currentUser.uid)
+//        let storage = Storage.storage()
+//        let storageRef = storage.reference()
+//        let photoRef = storageRef.child(currentUser.uid)
         
         popProfileImageInView()
 
@@ -83,6 +83,8 @@ class EditProfileViewController: UIViewController, UIImagePickerControllerDelega
             // Data for "images/island.jpg" is returned
             let image = UIImage(data: data!)
             self.editProfileImage.image = image
+            
+            self.editProfileImage.contentMode = .scaleToFill
           }
         }
     }

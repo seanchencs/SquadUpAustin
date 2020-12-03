@@ -89,6 +89,8 @@ class DisplayProfileViewController: UIViewController {
             // Data for "images/island.jpg" is returned
             let image = UIImage(data: data!)
             self.profileImage.image = image
+            
+            self.profileImage.contentMode = .scaleToFill
           }
         }
     }
