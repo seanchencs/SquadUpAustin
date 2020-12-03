@@ -14,10 +14,12 @@ class InstructionalVideoViewController: UIViewController {
     var sport: String!
     
     @IBOutlet var player:YTPlayerView!
+    @IBOutlet var titleLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
         identifySport()
+        titleLabel.text = sport + " Instructional Video"
         // Do any additional setup after loading the view.
     }
     

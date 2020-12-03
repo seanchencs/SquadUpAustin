@@ -386,10 +386,10 @@
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="7Kj-xT-HKf">
-                                        <rect key="frame" x="0.0" y="100" width="374" height="46.5"/>
+                                        <rect key="frame" x="0.0" y="100" width="374" height="47.5"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="jT0-zc-Vc4">
-                                                <rect key="frame" x="0.0" y="1.5" width="40" height="45.5"/>
+                                                <rect key="frame" x="0.0" y="1.5" width="40" height="46.5"/>
                                                 <color key="tintColor" systemColor="systemOrangeColor"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="40" id="7wX-Wd-BOg"/>
@@ -397,7 +397,7 @@
                                                 <imageReference key="image" image="calendar.badge.clock" catalog="system" renderingMode="template"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="spF-hA-EEQ">
-                                                <rect key="frame" x="60" y="0.0" width="314" height="46.5"/>
+                                                <rect key="frame" x="60" y="0.0" width="314" height="47.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="18"/>
                                                 <state key="normal" title="Choose a time">
                                                     <color key="titleColor" systemColor="systemOrangeColor"/>
@@ -409,7 +409,7 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="hg8-Rp-aFp">
-                                        <rect key="frame" x="0.0" y="196.5" width="374" height="50"/>
+                                        <rect key="frame" x="0.0" y="197.5" width="374" height="50"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="GXd-EX-ktk">
                                                 <rect key="frame" x="0.0" y="-0.5" width="40" height="50.5"/>
@@ -435,7 +435,7 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="GYr-12-PIk">
-                                        <rect key="frame" x="0.0" y="296.5" width="374" height="50"/>
+                                        <rect key="frame" x="0.0" y="297.5" width="374" height="50"/>
                                         <subviews>
                                             <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="lMO-hV-4zj">
                                                 <rect key="frame" x="0.0" y="1" width="45" height="47.5"/>
@@ -461,16 +461,16 @@
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="h0t-6C-krC">
-                                        <rect key="frame" x="0.0" y="396.5" width="374" height="56"/>
+                                        <rect key="frame" x="0.0" y="397.5" width="374" height="43"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Will you be providing equipment?" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="r5A-U6-Mv0">
-                                                <rect key="frame" x="0.0" y="0.0" width="187" height="56"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="187" height="43"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                                 <nil key="textColor"/>
                                                 <nil key="highlightedColor"/>
                                             </label>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="E9K-1y-8GB">
-                                                <rect key="frame" x="187" y="0.0" width="187" height="57"/>
+                                                <rect key="frame" x="187" y="0.0" width="187" height="44"/>
                                                 <segments>
                                                     <segment title="">
                                                         <imageReference key="image" image="checkmark" catalog="system" renderingMode="template"/>
@@ -487,35 +487,34 @@
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="OrZ-tO-x7M">
-                                        <rect key="frame" x="0.0" y="502.5" width="374" height="50"/>
+                                        <rect key="frame" x="0.0" y="490.5" width="374" height="50"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CP6-Iy-knA" userLabel="videoBtn">
-                                                <rect key="frame" x="0.0" y="0.0" width="40" height="50"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" constant="40" id="rj5-k1-FkU"/>
-                                                </constraints>
+                                            <imageView clipsSubviews="YES" userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="link.circle.fill" catalog="system" translatesAutoresizingMaskIntoConstraints="NO" id="C1Y-sI-2Cl">
+                                                <rect key="frame" x="0.0" y="0.5" width="45" height="49"/>
                                                 <color key="tintColor" systemColor="systemOrangeColor"/>
-                                                <state key="normal" image="link.circle.fill" catalog="system"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="45" id="QF6-e3-P8G"/>
+                                                </constraints>
+                                            </imageView>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vWk-U5-zDn">
+                                                <rect key="frame" x="45" y="0.0" width="329" height="50"/>
+                                                <state key="normal" title="Instructional Video">
+                                                    <color key="titleColor" systemColor="systemOrangeColor"/>
+                                                </state>
                                                 <connections>
-                                                    <action selector="instructionalVideoPressed:" destination="hiZ-uh-s1M" eventType="touchUpInside" id="b1L-eK-xjl"/>
+                                                    <action selector="instructionalVideoPressed:" destination="hiZ-uh-s1M" eventType="touchUpInside" id="AlR-3j-DDB"/>
                                                 </connections>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Instructional Video" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J6l-Wh-wWg">
-                                                <rect key="frame" x="40" y="0.0" width="334" height="50"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" systemColor="systemOrangeColor"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="50" id="Rwy-Ve-Ys1"/>
                                         </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" distribution="fillProportionally" translatesAutoresizingMaskIntoConstraints="NO" id="25O-uQ-Gcx">
-                                        <rect key="frame" x="0.0" y="602.5" width="374" height="205.5"/>
+                                        <rect key="frame" x="0.0" y="590.5" width="374" height="217.5"/>
                                         <subviews>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oDT-6F-g2e">
-                                                <rect key="frame" x="0.0" y="0.0" width="184" height="205.5"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="184" height="217.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Create"/>
                                                 <connections>
@@ -523,7 +522,7 @@
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="emY-5P-A5r">
-                                                <rect key="frame" x="184" y="0.0" width="190" height="205.5"/>
+                                                <rect key="frame" x="184" y="0.0" width="190" height="217.5"/>
                                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                                 <state key="normal" title="Cancel">
                                                     <color key="titleColor" systemColor="systemRedColor"/>
@@ -847,10 +846,17 @@
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Enh-LM-O46" customClass="YTPlayerView">
-                                <rect key="frame" x="87" y="277" width="240" height="128"/>
+                                <rect key="frame" x="48" y="149" width="318" height="231"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <color key="backgroundColor" white="0.0" alpha="1" colorSpace="custom" customColorSpace="genericGamma22GrayColorSpace"/>
                             </view>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Label" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ai4-60-t5r" userLabel="titleLabel">
+                                <rect key="frame" x="72" y="20" width="271" height="91"/>
+                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="21"/>
+                                <nil key="textColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="YaG-v8-ywW"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
@@ -858,11 +864,12 @@
                     <navigationItem key="navigationItem" id="aS2-dG-vKZ"/>
                     <connections>
                         <outlet property="player" destination="Enh-LM-O46" id="1ov-sF-LDQ"/>
+                        <outlet property="titleLabel" destination="ai4-60-t5r" id="O1F-eP-iRv"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Nk8-6z-AoL" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3874" y="218"/>
+            <point key="canvasLocation" x="3873.913043478261" y="217.63392857142856"/>
         </scene>
         <!--Welcome View Controller-->
         <scene sceneID="IHm-i4-R4l">
