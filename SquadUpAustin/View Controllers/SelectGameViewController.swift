@@ -80,8 +80,8 @@ class SelectGameViewController: UIViewController, EKEventEditViewDelegate {
         } else if rsvpButton.titleLabel?.text == "Delete" {
             let otherVC = delegate!
             otherVC.deleteGame(g: selectedGame)
-            self.dismiss(animated: true, completion: nil)
         }
+        self.dismiss(animated: false, completion: nil)
     }
     
     ///update the status of buttons based on rsvp and owner conditions
