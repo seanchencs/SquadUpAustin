@@ -8,8 +8,11 @@
 
 import UIKit
 import FirebaseAuth
+import FirebaseFirestore
 
 class WelcomeViewController: UIViewController {
+    
+    let collectionOfUsers = Firestore.firestore().collection("users")
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -18,8 +21,20 @@ class WelcomeViewController: UIViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         if Auth.auth().currentUser != nil {
-            performSegue(withIdentifier: "alreadyLoggedInSegue", sender: nil)
+            let docRef = collectionOfUsers.document(Auth.auth().currentUser!.uid)
+
+            docRef.getDocument { (document, error) in
+                if let document = document, document.exists {
+                    let dataDescription = document.data().map(String.init(describing:)) ?? "nil"
+                    print("Document data: \(dataDescription)")
+                    self.performSegue(withIdentifier: "alreadyLoggedInSegue", sender: nil)
+                } else {
+                    print("Document does not exist")
+                }
+            }
+
         }
+        
     }
 
     
