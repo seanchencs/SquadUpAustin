@@ -1644,29 +1644,34 @@
                                         <nil key="textColor"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the email to the account you want to reset your password." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ik-QZ-fGn">
-                                        <rect key="frame" x="0.0" y="430" width="374" height="41"/>
-                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                        <nil key="textColor"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Ee-cA-TiR">
-                                        <rect key="frame" x="0.0" y="471" width="374" height="35"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="35" id="X5r-1H-rqZ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" type="system" pointSize="14"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pgq-Jm-tLt">
-                                        <rect key="frame" x="0.0" y="506" width="374" height="312"/>
-                                        <state key="normal" title="Send reset link">
-                                            <color key="titleColor" systemColor="systemOrangeColor"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="resetPasswordButton:" destination="2ws-6b-1u2" eventType="touchUpInside" id="ykU-3t-qNX"/>
-                                        </connections>
-                                    </button>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="I1Q-t0-6KD">
+                                        <rect key="frame" x="0.0" y="430" width="374" height="388"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Enter the email to the account you want to reset your password." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="2" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2Ik-QZ-fGn">
+                                                <rect key="frame" x="0.0" y="0.0" width="374" height="41"/>
+                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                                <nil key="textColor"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <textField opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="roundedRect" textAlignment="natural" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="2Ee-cA-TiR">
+                                                <rect key="frame" x="0.0" y="56" width="374" height="35"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="35" id="X5r-1H-rqZ"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" type="system" pointSize="14"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Pgq-Jm-tLt">
+                                                <rect key="frame" x="0.0" y="106" width="374" height="282"/>
+                                                <state key="normal" title="Send reset link">
+                                                    <color key="titleColor" systemColor="systemOrangeColor"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="resetPasswordButton:" destination="2ws-6b-1u2" eventType="touchUpInside" id="ykU-3t-qNX"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
                             </stackView>
                         </subviews>
@@ -1674,8 +1679,8 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="Opz-ub-rXT" firstAttribute="leading" secondItem="cpe-Fx-HtI" secondAttribute="leading" constant="20" id="33Y-Ej-rdt"/>
+                            <constraint firstItem="cpe-Fx-HtI" firstAttribute="bottom" secondItem="Opz-ub-rXT" secondAttribute="bottom" id="Gw2-lc-U2F" customClass="KeyboardLayoutConstraint" customModule="SquadUpAustin" customModuleProvider="target"/>
                             <constraint firstItem="Opz-ub-rXT" firstAttribute="top" secondItem="cpe-Fx-HtI" secondAttribute="top" id="X3J-qj-noH"/>
-                            <constraint firstItem="cpe-Fx-HtI" firstAttribute="bottom" secondItem="Opz-ub-rXT" secondAttribute="bottom" id="g44-uk-lYX"/>
                             <constraint firstItem="cpe-Fx-HtI" firstAttribute="trailing" secondItem="Opz-ub-rXT" secondAttribute="trailing" constant="20" id="ig4-ag-aCz"/>
                         </constraints>
                     </view>
@@ -1740,9 +1745,9 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Joc-WF-hwr"/>
+        <segue reference="Fb1-8P-MVb"/>
         <segue reference="rn3-AV-lRk"/>
-        <segue reference="7r8-Vc-RFb"/>
+        <segue reference="naq-ey-R0v"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="SplashScreenLogo" width="300" height="91"/>
