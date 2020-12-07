@@ -73,5 +73,11 @@ class RegisterViewController: UIViewController {
         segue.destination.modalPresentationStyle = .fullScreen
     }
     
+    // code to enable tapping on the background to remove software keyboard
+        
+        override func touchesBegan(_ touches: Set<UITouch>, with event: UIEvent?) {
+            self.view.endEditing(true)
+        }
+    
 
 }
