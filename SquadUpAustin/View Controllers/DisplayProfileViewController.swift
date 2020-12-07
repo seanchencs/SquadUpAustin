@@ -90,7 +90,8 @@ class DisplayProfileViewController: UIViewController {
             let image = UIImage(data: data!)
             self.profileImage.image = image
             
-            self.profileImage.contentMode = .scaleToFill
+            self.profileImage
+                .contentMode = .scaleToFill
           }
         }
     }

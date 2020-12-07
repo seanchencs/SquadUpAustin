@@ -29,6 +29,7 @@
 		50ABD470255F1B7C0092637F /* ParticipantsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50ABD46F255F1B7C0092637F /* ParticipantsViewController.swift */; };
 		50CF46B5256C698300668C80 /* InstructionalVideoViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50CF46B4256C698300668C80 /* InstructionalVideoViewController.swift */; };
 		687E0BD5FF8F5FB7FD16E55E /* Pods_SquadUpAustin.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 532FEADF36F442A8757CA8DE /* Pods_SquadUpAustin.framework */; };
+		A72129B7257EC29F0006D165 /* KeyboardLayoutConstraint.swift in Sources */ = {isa = PBXBuildFile; fileRef = A72129B6257EC29F0006D165 /* KeyboardLayoutConstraint.swift */; };
 		A77C0E9D254226630033946D /* DeleteProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77C0E9C254226630033946D /* DeleteProfileViewController.swift */; };
 		A77C0E9F254232C30033946D /* Users.swift in Sources */ = {isa = PBXBuildFile; fileRef = A77C0E9E254232C30033946D /* Users.swift */; };
 		A7C8FF752553AFB400622543 /* ForgotPasswordViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = A7C8FF742553AFB400622543 /* ForgotPasswordViewController.swift */; };
@@ -63,6 +64,7 @@
 		50ABD46F255F1B7C0092637F /* ParticipantsViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ParticipantsViewController.swift; sourceTree = "<group>"; };
 		50CF46B4256C698300668C80 /* InstructionalVideoViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InstructionalVideoViewController.swift; sourceTree = "<group>"; };
 		532FEADF36F442A8757CA8DE /* Pods_SquadUpAustin.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SquadUpAustin.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		A72129B6257EC29F0006D165 /* KeyboardLayoutConstraint.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = KeyboardLayoutConstraint.swift; sourceTree = "<group>"; };
 		A77C0E9C254226630033946D /* DeleteProfileViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeleteProfileViewController.swift; sourceTree = "<group>"; };
 		A77C0E9E254232C30033946D /* Users.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Users.swift; sourceTree = "<group>"; };
 		A7C8FF742553AFB400622543 /* ForgotPasswordViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ForgotPasswordViewController.swift; sourceTree = "<group>"; };
@@ -118,6 +120,7 @@
 				14961D49253A20F200E721DC /* LaunchScreen.storyboard */,
 				14961D4C253A20F200E721DC /* Info.plist */,
 				14961D44253A20EE00E721DC /* SquadUpAustin.xcdatamodeld */,
+				A72129B6257EC29F0006D165 /* KeyboardLayoutConstraint.swift */,
 			);
 			path = SquadUpAustin;
 			sourceTree = "<group>";
@@ -291,6 +294,7 @@
 				50CF46B5256C698300668C80 /* InstructionalVideoViewController.swift in Sources */,
 				14961D3E253A20EE00E721DC /* SceneDelegate.swift in Sources */,
 				500198D02540E7FC0040D3BB /* CreateGameViewController.swift in Sources */,
+				A72129B7257EC29F0006D165 /* KeyboardLayoutConstraint.swift in Sources */,
 				146C0E192550A602001E4F27 /* FilterViewController.swift in Sources */,
 				504A8DA42542421B00BC4CA1 /* Game.swift in Sources */,
 				A77C0E9F254232C30033946D /* Users.swift in Sources */,

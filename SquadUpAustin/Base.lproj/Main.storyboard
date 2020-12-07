@@ -1588,7 +1588,7 @@
                         <constraints>
                             <constraint firstItem="CpK-xk-gaM" firstAttribute="trailing" secondItem="jDo-xh-4BF" secondAttribute="trailing" constant="20" id="K2d-8X-f6S"/>
                             <constraint firstItem="jDo-xh-4BF" firstAttribute="top" secondItem="CpK-xk-gaM" secondAttribute="top" constant="20" id="Kxq-oS-tiI"/>
-                            <constraint firstItem="CpK-xk-gaM" firstAttribute="bottom" secondItem="jDo-xh-4BF" secondAttribute="bottom" id="ZZG-Sf-K7Y"/>
+                            <constraint firstItem="CpK-xk-gaM" firstAttribute="bottom" secondItem="jDo-xh-4BF" secondAttribute="bottom" id="WsL-5g-xnA" customClass="KeyboardLayoutConstraint" customModule="SquadUpAustin" customModuleProvider="target"/>
                             <constraint firstItem="jDo-xh-4BF" firstAttribute="leading" secondItem="CpK-xk-gaM" secondAttribute="leading" constant="20" id="ae7-4C-JZL"/>
                         </constraints>
                     </view>
@@ -1732,7 +1732,7 @@
     <inferredMetricsTieBreakers>
         <segue reference="Joc-WF-hwr"/>
         <segue reference="rn3-AV-lRk"/>
-        <segue reference="7r8-Vc-RFb"/>
+        <segue reference="zKR-5K-niR"/>
     </inferredMetricsTieBreakers>
     <resources>
         <image name="SplashScreenLogo" width="300" height="91"/>
